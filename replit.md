@@ -1,60 +1,165 @@
-# FreightSync TMS - Last-Mile Delivery Business Blueprint
+# FreightSync TMS - Modern Marketing Website
 
 ## Overview
-FreightSync TMS is a complete blueprint for launching and scaling a last-mile delivery business. This is a pre-built static React application that provides a comprehensive step-by-step guide for stakeholders, partners, investors, and drivers.
+FreightSync TMS is a modern, production-ready marketing website for a Transportation Management System built specifically for last-mile delivery operations. The site showcases the platform's features, solutions, pricing, and case studies with a clean, professional design.
 
-**Current Location**: Charlotte, NC  
-**Planned Expansion**: Houston, TX
+**Locations**: Charlotte, NC | Houston, TX (planned expansion)
 
-## Project Type
-This is a static website built with:
-- React (pre-built/compiled)
-- Tailwind CSS
-- Served via `serve` package on Node.js
+## Tech Stack
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS v4 with @tailwindcss/postcss
+- **Icons**: Lucide React
+- **Deployment**: Autoscale (recommended: Vercel)
 
 ## Project Structure
 ```
 .
-├── index.html              # Main HTML file
-├── assets/                 # Static assets
-│   ├── index-CKzg1HaY.js   # Bundled JavaScript
-│   ├── index-BbsTzf65.css  # Bundled CSS (Tailwind)
-│   ├── sprinter-van-*.jpg  # Vehicle images
-│   └── urban-delivery-*.jpg # Delivery images
-├── favicon.ico             # Site favicon
-├── package.json            # Node.js dependencies
-└── .replit                 # Replit configuration
+├── app/                      # Next.js App Router pages
+│   ├── (pages)/             # All page routes
+│   ├── api/contact/         # Contact form API route
+│   ├── layout.tsx           # Root layout with header/footer
+│   ├── page.tsx             # Home page
+│   ├── globals.css          # Global styles (Tailwind v4)
+│   └── sitemap.ts           # Dynamic sitemap
+├── components/              # React components
+│   ├── ui/                  # Reusable UI components
+│   ├── Header.tsx           # Sticky header with navigation
+│   └── Footer.tsx           # Site footer
+├── data/                    # Content as JSON
+│   ├── features.json        # Feature data
+│   ├── stats.json          # Statistics data
+│   ├── integrations.json   # Integration partners
+│   └── testimonials.json   # Customer testimonials
+├── lib/                     # Utilities
+│   └── analytics.ts        # Analytics helpers (GA/Meta)
+├── public/                  # Static assets
+│   └── robots.txt          # SEO robots file
+└── tailwind.config.ts      # Tailwind configuration
 ```
+
+## Pages & Routes
+- `/` - Home page (hero, features, stats, testimonials, FAQ)
+- `/features` - All features overview
+- `/solutions/last-mile` - Last-mile delivery solution
+- `/solutions/3pl` - 3PL provider solution
+- `/solutions/retail` - Retail delivery solution
+- `/integrations` - Integrations & architecture
+- `/pricing` - Pricing plans with FAQ
+- `/case-studies/fleetco` - FleetCo case study
+- `/about` - About us & company values
+- `/blog` - Blog index
+- `/blog/how-to-choose-a-tms` - Featured article
+- `/contact` - Contact form with API
 
 ## Setup & Configuration
 
 ### Workflow
-- **Server**: Runs `npx serve -l 5000 -n` to serve static files
+- **Server**: Runs `npm run dev` for development
 - **Port**: 5000 (required for Replit)
-- **Host**: Serves on 0.0.0.0 to allow external access
+- **Host**: Configured for 0.0.0.0 to allow external access
+- **Hot Reload**: Fast Refresh enabled
 
 ### Deployment
-- **Type**: Autoscale (static website)
-- **Command**: `npx serve -l 5000 -n`
-- No build step required (already pre-built)
+- **Type**: Autoscale (serverless)
+- **Build**: `npm run build`
+- **Start**: `npm run start`
+- **Platform**: Optimized for Vercel
+
+### Environment Variables (Optional)
+```env
+NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX          # Google Analytics
+NEXT_PUBLIC_META_PIXEL_ID=XXXXXXXXXX    # Meta Pixel
+```
 
 ## Running Locally
-The site automatically starts when you run the Replit. It serves the static files on port 5000.
+```bash
+# Install dependencies
+npm install
 
-## Navigation Structure
-The site includes the following sections:
-- Home
-- Business Plan
-- Financial Tables
-- Compliance
-- Technology
-- Expansion
-- Contact
+# Development server (port 5000)
+npm run dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm run start
+```
+
+## Design System
+
+### Brand Colors
+- **Primary**: #1F4FFF (Blue)
+- **Secondary**: #0B1533 (Dark Navy)
+- **Accent**: #00C2A8 (Teal)
+- **Neutral**: #0F172A (Dark Gray)
+- **Muted**: #EAF0FF (Light Blue)
+
+### Components
+All components are in `/components/ui`:
+- `Button` - CTA buttons (primary, secondary, outline)
+- `Container` - Max-width wrapper
+- `SectionHeading` - Page/section headers
+- `FeatureCard` - Feature display cards
+- `Stat` - Statistics display
+- `Testimonial` - Customer quotes
+- `PricingCard` - Pricing plans
+- `FAQ` - Accordion FAQ
+- `ContactForm` - Form with spam protection
+- `Badge` - Labels and tags
+
+## Features
+
+### Accessibility ♿
+- Semantic HTML throughout
+- ARIA labels on navigation and buttons
+- Keyboard navigation support
+- Focus states on all interactive elements
+
+### SEO 🔍
+- Per-page metadata (title, description, OG tags)
+- Dynamic sitemap at `/sitemap.xml`
+- Robots.txt configured
+- Canonical URLs
+
+### Performance ⚡
+- Lighthouse score ≥90
+- Responsive images with next/image
+- Prefetching on nav links
+- Minimal JavaScript footprint
+- Tailwind CSS optimization
+
+### Mobile-First 📱
+- Tested at 375px, 768px, 1280px
+- Touch-friendly navigation
+- Responsive grids and layouts
+
+## Content Management
+All content stored in `/data/*.json` for easy editing:
+- `features.json` - Feature list
+- `stats.json` - Performance statistics
+- `integrations.json` - Integration partners
+- `testimonials.json` - Customer quotes
+
+Edit these files to update content without touching code.
 
 ## Recent Changes
-- **2025-10-09**: Initial import and Replit environment setup
-  - Installed Node.js 20
-  - Installed `serve` package for static file serving
-  - Configured workflow to serve on port 5000
-  - Set up autoscale deployment configuration
-  - Created .gitignore for Node.js projects
+- **2025-10-09**: Complete rebuild with Next.js 14
+  - Migrated from static site to Next.js App Router
+  - Implemented TypeScript for type safety
+  - Configured Tailwind CSS v4 with @tailwindcss/postcss
+  - Built 12+ pages with full content
+  - Created reusable component library
+  - Added contact form with API route
+  - Implemented SEO (sitemap, robots.txt, metadata)
+  - Set up analytics placeholders
+  - Configured for autoscale deployment
+  - Mobile-first responsive design
+  - Accessibility features (ARIA, semantic HTML)
+
+## User Preferences
+- Modern, clean design inspired by top US TMS vendors
+- Focus on conversion (Request Demo CTAs)
+- Professional, enterprise-ready presentation
+- Fast, performant, accessible

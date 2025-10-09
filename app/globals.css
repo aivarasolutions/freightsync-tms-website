@@ -1,23 +1,32 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@layer base {
-  body {
-    @apply bg-white text-neutral antialiased;
-  }
-  
-  .dark body {
-    @apply bg-neutral text-white;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    @apply tracking-tight;
-  }
+@theme {
+  --color-primary: #1F4FFF;
+  --color-secondary: #0B1533;
+  --color-accent: #00C2A8;
+  --color-neutral: #0F172A;
+  --color-muted: #EAF0FF;
 }
 
-@layer utilities {
-  .text-gradient {
-    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
-  }
+body {
+  background-color: white;
+  color: var(--color-neutral);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dark body {
+  background-color: var(--color-neutral);
+  color: white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.025em;
+}
+
+.text-gradient {
+  background: linear-gradient(to right, var(--color-primary), var(--color-accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }

@@ -21,18 +21,23 @@ args = "Server"
 name = "Server"
 author = "agent"
 
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "npx serve -l 5000 -n"
-waitForPort = 5000
-
 [workflows.workflow.metadata]
 outputType = "webview"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm run dev"
+waitForPort = 5000
 
 [[ports]]
 localPort = 5000
 externalPort = 80
 
+[[ports]]
+localPort = 43095
+externalPort = 3000
+
 [deployment]
 deploymentTarget = "autoscale"
-run = ["npx", "serve", "-l", "5000", "-n"]
+run = ["npm"]
+build = ["npm", "run", "build"]
