@@ -1,0 +1,94 @@
+You are an expert front-end engineer and product copywriter. Rebuild FreightSync TMS (https://www.freightsynctms.com) as a fast, modern marketing site focused on last-mile delivery and small–mid 3PLs. Use Next.js 14 (App Router) + TypeScript + Tailwind CSS. The design should feel like top US TMS vendors (clean grids, bold hero, clear CTAs, tasteful whitespace), but be original.
+
+Goals
+	1.	Make value crystal clear in 5 seconds.
+	2.	Drive “Request Demo” conversions.
+	3.	Show believable depth: modules, workflows, integrations, case studies.
+	4.	Ship production-quality code: a11y, SEO, performance.
+
+Pages & Routing
+
+Create these routes and content:
+	•	/ (Home)
+	•	/features (All modules overview)
+	•	/solutions/last-mile, /solutions/3pl, /solutions/retail (3 persona pages)
+	•	/integrations (APIs/partners list + architecture diagram section)
+	•	/pricing (Starter / Growth / Enterprise with “Contact Sales”)
+	•	/case-studies/fleetco (one detailed example)
+	•	/about
+	•	/blog (index) and /blog/how-to-choose-a-tms (one article)
+	•	/contact
+
+Global UI
+	•	Header: logo (text mark “FreightSync TMS”), nav, sticky, CTA button “Request demo”.
+	•	Footer: nav, address placeholder, social, legal.
+	•	Theme: tailwind config with brand tokens:
+	•	Primary #1F4FFF, Secondary #0B1533, Accent #00C2A8, Neutral #0F172A, Muted #EAF0FF.
+	•	Fonts: System stack; large, readable headings (tracking-tight).
+	•	Components: Button, Container, SectionHeading, FeatureCard, Stat, LogoCloud, Testimonial, PricingCard, FAQ, ContactForm.
+	•	Imagery: use simple SVG/React icons and subtle line illustrations (maps, routes). Avoid stock-photo clutter.
+
+Home (/)
+
+Sections (in order):
+	1.	Hero:
+H1: “The modern TMS for last-mile delivery.”
+Sub: “Dispatch faster, automate billing, and integrate carriers—on one platform.”
+CTAs: Primary “Request demo”, Secondary “See features”.
+Add small trust bar: “Built for couriers, 3PLs, and retail delivery teams.”
+	2.	Pain → Outcome (3 cards): Route chaos → Optimized routes; Billing errors → Automated settlement; No visibility → Live tracking & analytics.
+	3.	Feature snapshot (6 FeatureCard tiles):
+	•	Dispatch & Load Assignment
+	•	Route Optimization
+	•	Driver App (iOS/Android)
+	•	Carrier & Rate Management
+	•	Billing, Invoicing & Settlements
+	•	Analytics & Forecasting
+	4.	Workflow diagram: simple horizontal stepper (Orders → Plan → Dispatch → Track → Bill → Analyze).
+	5.	Integrations: small logo cloud (placeholders), copy: “Connect ERP, WMS, ELDs, and carrier APIs. REST + Webhooks.”
+	6.	Results / Social proof: 3 Stat blocks (e.g., “-18% empty miles”, “+22% on-time deliveries”, “3× faster invoicing”), 1 Testimonial.
+	7.	Security & compliance: “SSO, audit logs, role-based access; data encrypted in transit & at rest.”
+	8.	Final CTA: gradient panel, “Ready to streamline delivery?” Button “Request demo”.
+
+Features (/features)
+	•	Grid of modules with deeper copy and screenshots placeholders.
+	•	Each FeatureCard has: title, 2–3 bullets, “Learn more” anchor to section within the page.
+	•	Include a short “Admin & Permissions” and “APIs & Webhooks” block.
+
+Solutions (3 pages)
+
+Each solution page should include:
+	•	Persona headline (e.g., Last-Mile Operators)
+	•	Pain points section → mapped features
+	•	Mini case snippet + quote
+	•	CTA panel
+
+Integrations (/integrations)
+	•	Two columns: left text, right simple “architecture” SVG (boxes labeled ERP, WMS, EDI, Carrier APIs, FreightSync Core, Driver App).
+	•	Bullet list of typical integrations. Note “Developer docs available on request.”
+
+Pricing (/pricing)
+	•	3 cards: Starter, Growth, Enterprise.
+	•	Starter: essential modules, usage cap, email support.
+	•	Growth: all core modules, higher caps, API access, SSO optional.
+	•	Enterprise: all features, custom integrations, SSO, priority support.
+	•	Primary CTA on every card: “Request pricing”.
+
+Case Study (/case-studies/fleetco)
+	•	Headline + context: “FleetCo scaled last-mile with FreightSync”
+	•	Metrics list (3–4), Narrative (Problem → Solution → Outcome), Pull quote, Gallery placeholder.
+
+About (/about)
+	•	Mission, short founding story, credibility (FMCSA/DOT active operator history as trust signal), values.
+
+Blog (index + one article)
+	•	Simple list with cards; one long-form post: “How to choose a TMS for last-mile delivery” (800–1200 words, skimmable, H2s, internal links to Features/Pricing).
+
+Contact (/contact)
+	•	Form fields: name, work email, company, fleet size, message.
+	•	On submit: POST to /api/contact that just logs + displays success (mock). Include spam honeypot.
+
+Copy Guidelines
+	•	Tone: concise, confident, practical. Avoid jargon explosions; define terms once.
+	•	Repeat value props in CTAs.
+	•	Use real numbers in examples, but mark as illustrative.
