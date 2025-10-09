@@ -18,13 +18,13 @@ const metrics = [
 export default function FleetCoCaseStudy() {
   return (
     <>
-      <section className="bg-gradient-to-br from-primary/10 via-muted/30 to-accent/10 py-20">
+      <section className="bg-white py-16 sm:py-24">
         <Container>
           <div className="max-w-4xl">
-            <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl sm:text-5xl font-bold text-secondary mb-6">
               FleetCo scaled last-mile delivery with FreightSync
             </h1>
-            <p className="text-xl text-gray-700">
+            <p className="text-xl text-neutral">
               A regional courier service grew from 50 to 200+ daily routes without adding 
               operational overhead.
             </p>
@@ -32,7 +32,7 @@ export default function FleetCoCaseStudy() {
         </Container>
       </section>
 
-      <section className="py-20">
+      <section className="py-16 sm:py-24 bg-muted">
         <Container>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {metrics.map((metric, idx) => (
@@ -42,15 +42,15 @@ export default function FleetCoCaseStudy() {
 
           <div className="max-w-4xl mx-auto space-y-12">
             <div>
-              <h2 className="text-2xl font-bold text-secondary dark:text-white mb-4">
+              <h2 className="text-2xl font-bold text-secondary mb-4">
                 The Challenge
               </h2>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p className="text-neutral mb-4">
                 FleetCo, a Charlotte-based courier service, was struggling to keep up with demand. 
                 Their legacy TMS couldn't handle the complexity of multi-stop routes, and manual 
                 processes were creating bottlenecks in billing and dispatch.
               </p>
-              <ul className="space-y-2 text-gray-600 dark:text-gray-300">
+              <ul className="space-y-2 text-neutral">
                 <li className="flex items-start">
                   <span className="mr-2 text-accent">•</span>
                   Dispatchers spending 3+ hours planning routes manually
@@ -67,13 +67,13 @@ export default function FleetCoCaseStudy() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-secondary dark:text-white mb-4">
+              <h2 className="text-2xl font-bold text-secondary mb-4">
                 The Solution
               </h2>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p className="text-neutral mb-4">
                 FreightSync implemented a complete TMS transformation in just 3 weeks:
               </p>
-              <ul className="space-y-2 text-gray-600 dark:text-gray-300">
+              <ul className="space-y-2 text-neutral">
                 <li className="flex items-start">
                   <span className="mr-2 text-accent">•</span>
                   Automated route optimization reduced planning time to minutes
@@ -90,24 +90,24 @@ export default function FleetCoCaseStudy() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-secondary dark:text-white mb-4">
+              <h2 className="text-2xl font-bold text-secondary mb-4">
                 The Outcome
               </h2>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p className="text-neutral mb-4">
                 Within 6 months, FleetCo quadrupled their capacity without hiring additional 
                 dispatchers or billing staff. They're now planning expansion to Houston using 
                 the same FreightSync platform.
               </p>
             </div>
 
-            <div className="bg-muted dark:bg-gray-800 p-8 rounded-xl">
-              <blockquote className="text-xl text-gray-700 dark:text-gray-300 mb-6">
+            <div className="bg-white p-8 rounded-lg border border-border">
+              <blockquote className="text-xl text-neutral mb-6 italic">
                 "FreightSync gave us real-time visibility and cut our invoicing time from days 
                 to hours. We couldn't have scaled this fast without it."
               </blockquote>
               <div>
-                <div className="font-semibold text-secondary dark:text-white">Jordan A.</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">
+                <div className="font-semibold text-secondary">Jordan A.</div>
+                <div className="text-sm text-neutral">
                   Ops Director, FleetCo
                 </div>
               </div>
@@ -115,7 +115,7 @@ export default function FleetCoCaseStudy() {
           </div>
 
           <div className="text-center mt-16">
-            <h3 className="text-2xl font-bold text-secondary dark:text-white mb-4">
+            <h3 className="text-2xl font-bold text-secondary mb-4">
               Ready to scale like FleetCo?
             </h3>
             <Button href="/contact" size="lg">
