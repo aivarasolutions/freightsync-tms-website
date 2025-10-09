@@ -6,11 +6,11 @@ FreightSync TMS is a modern, production-ready marketing website for a Transporta
 **Locations**: Charlotte, NC | Houston, TX (planned expansion)
 
 ## Tech Stack
-- **Framework**: Next.js 14 (App Router)
+- **Framework**: Next.js 14.2.5 (App Router) - Stable
 - **Language**: TypeScript
-- **Styling**: Tailwind CSS v4 with @tailwindcss/postcss
+- **Styling**: Tailwind CSS v3.4.14 (Stable, Vercel-compatible)
 - **Icons**: Lucide React
-- **Deployment**: Autoscale (recommended: Vercel)
+- **Deployment**: Autoscale (Vercel-optimized)
 
 ## Project Structure
 ```
@@ -147,11 +147,13 @@ Edit these files to update content without touching code.
 
 ## Recent Changes
 - **2025-10-09 (v3)**: Fixed Vercel deployment compatibility
-  - Downgraded to stable versions: Next.js 14.2.33 + React 18.3.1
+  - Downgraded to stable versions: Next.js 14.2.5 + React 18.3.1
+  - Migrated from Tailwind CSS v4 (beta) to v3.4.14 (stable)
   - Fixed syntax errors in about page that were breaking builds
   - Removed all dark mode variants for consistent text readability
   - Fixed text contrast issues on pricing, blog, and case study pages
-  - Build now passes successfully and deploys to Vercel
+  - Updated PostCSS configuration for Tailwind v3 compatibility
+  - Build now passes successfully and deploys to Vercel without errors
   
 - **2025-10-09 (v2)**: Complete design overhaul - modern, clean, minimal
   - New color palette: bright blue (#0066FF), teal (#00D4AA), clean grays
