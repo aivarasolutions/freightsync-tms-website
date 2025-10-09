@@ -40,10 +40,10 @@ export default function LastMileSolution() {
                 Last-Mile Operators
               </span>
             </div>
-            <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+            <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
               Built for the complexity of last-mile delivery
             </h1>
-            <p className="text-xl text-gray-700 dark:text-gray-300">
+            <p className="text-xl text-gray-700">
               Handle high-volume, multi-stop routes with ease. From dispatch to delivery, 
               FreightSync streamlines every step of last-mile operations.
             </p>

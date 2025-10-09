@@ -38,10 +38,10 @@ export default function About() {
       <section className="bg-gradient-to-br from-primary/10 via-muted/30 to-accent/10 py-20">
         <Container>
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+            <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
               Built by operators, for operators
             </h1>
-            <p className="text-xl text-gray-700 dark:text-gray-300">
+            <p className="text-xl text-gray-700">
               We're on a mission to modernize last-mile delivery with software that 
               actually works for real-world logistics operations.
             </p>

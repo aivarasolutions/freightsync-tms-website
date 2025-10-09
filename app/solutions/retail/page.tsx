@@ -40,10 +40,10 @@ export default function RetailSolution() {
                 Retail Delivery Teams
               </span>
             </div>
-            <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+            <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
               Deliver exceptional customer experiences
             </h1>
-            <p className="text-xl text-gray-700 dark:text-gray-300">
+            <p className="text-xl text-gray-700">
               Meet customer expectations with fast, reliable delivery and real-time visibility.
             </p>
           </div>

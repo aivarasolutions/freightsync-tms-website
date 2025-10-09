@@ -40,10 +40,10 @@ export default function ThreePLSolution() {
                 3PL Providers
               </span>
             </div>
-            <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+            <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
               Scale your 3PL operations with confidence
             </h1>
-            <p className="text-xl text-gray-700 dark:text-gray-300">
+            <p className="text-xl text-gray-700">
               Manage multiple customers, carriers, and complex billing scenarios in one unified platform.
             </p>
           </div>

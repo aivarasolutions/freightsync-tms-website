@@ -60,10 +60,10 @@ export default function Home() {
       <section className="bg-gradient-to-br from-primary/10 via-muted/30 to-accent/10 py-20 sm:py-32">
         <Container>
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
               The modern TMS for last-mile delivery.
             </h1>
-            <p className="text-xl sm:text-2xl text-gray-700 dark:text-gray-300 mb-8">
+            <p className="text-xl sm:text-2xl text-gray-700 mb-8">
               Dispatch faster, automate billing, and integrate carriers—on one platform.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
@@ -74,7 +74,7 @@ export default function Home() {
                 See Features
               </Button>
             </div>
-            <p className="text-sm text-gray-600 dark:text-gray-400">
+            <p className="text-sm text-gray-600">
               Built for couriers, 3PLs, and retail delivery teams.
             </p>
           </div>
