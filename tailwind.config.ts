@@ -6,15 +6,15 @@ const config: Config = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        primary: '#1F4FFF',
-        secondary: '#0B1533',
-        accent: '#00C2A8',
-        neutral: '#0F172A',
-        muted: '#EAF0FF',
+        primary: '#0066FF',
+        secondary: '#1a1a1a',
+        accent: '#00D4AA',
+        neutral: '#333333',
+        muted: '#f8f9fa',
+        border: '#e5e7eb',
       },
       fontFamily: {
         sans: [

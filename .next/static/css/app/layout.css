@@ -109,11 +109,12 @@
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
-    --color-primary: #1F4FFF;
-    --color-secondary: #0B1533;
-    --color-accent: #00C2A8;
-    --color-neutral: #0F172A;
-    --color-muted: #EAF0FF;
+    --color-primary: #0066FF;
+    --color-secondary: #1a1a1a;
+    --color-accent: #00D4AA;
+    --color-neutral: #333333;
+    --color-muted: #f8f9fa;
+    --color-border: #e5e7eb;
   }
 }
 @layer base {
@@ -1253,6 +1254,9 @@
   .border-blue-600 {
     border-color: var(--color-blue-600);
   }
+  .border-border {
+    border-color: var(--color-border);
+  }
   .border-gray-100 {
     border-color: var(--color-gray-100);
   }
@@ -1318,6 +1322,9 @@
   }
   .bg-blue-100 {
     background-color: var(--color-blue-100);
+  }
+  .bg-border {
+    background-color: var(--color-border);
   }
   .bg-gray-50 {
     background-color: var(--color-gray-50);
@@ -1407,14 +1414,14 @@
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
   .from-primary\/5 {
-    --tw-gradient-from: color-mix(in srgb, #1F4FFF 5%, transparent);
+    --tw-gradient-from: color-mix(in srgb, #0066FF 5%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       --tw-gradient-from: color-mix(in oklab, var(--color-primary) 5%, transparent);
     }
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
   .from-primary\/10 {
-    --tw-gradient-from: color-mix(in srgb, #1F4FFF 10%, transparent);
+    --tw-gradient-from: color-mix(in srgb, #0066FF 10%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       --tw-gradient-from: color-mix(in oklab, var(--color-primary) 10%, transparent);
     }
@@ -1426,7 +1433,7 @@
     --tw-gradient-stops: var(--tw-gradient-via-stops);
   }
   .via-muted\/30 {
-    --tw-gradient-via: color-mix(in srgb, #EAF0FF 30%, transparent);
+    --tw-gradient-via: color-mix(in srgb, #f8f9fa 30%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       --tw-gradient-via: color-mix(in oklab, var(--color-muted) 30%, transparent);
     }
@@ -1443,14 +1450,14 @@
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
   .to-accent\/5 {
-    --tw-gradient-to: color-mix(in srgb, #00C2A8 5%, transparent);
+    --tw-gradient-to: color-mix(in srgb, #00D4AA 5%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       --tw-gradient-to: color-mix(in oklab, var(--color-accent) 5%, transparent);
     }
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
   .to-accent\/10 {
-    --tw-gradient-to: color-mix(in srgb, #00C2A8 10%, transparent);
+    --tw-gradient-to: color-mix(in srgb, #00D4AA 10%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       --tw-gradient-to: color-mix(in oklab, var(--color-accent) 10%, transparent);
     }
@@ -2113,7 +2120,7 @@
   .hover\:bg-muted\/50 {
     &:hover {
       @media (hover: hover) {
-        background-color: color-mix(in srgb, #EAF0FF 50%, transparent);
+        background-color: color-mix(in srgb, #f8f9fa 50%, transparent);
         @supports (color: color-mix(in lab, red, red)) {
           background-color: color-mix(in oklab, var(--color-muted) 50%, transparent);
         }
@@ -2130,7 +2137,7 @@
   .hover\:bg-primary\/90 {
     &:hover {
       @media (hover: hover) {
-        background-color: color-mix(in srgb, #1F4FFF 90%, transparent);
+        background-color: color-mix(in srgb, #0066FF 90%, transparent);
         @supports (color: color-mix(in lab, red, red)) {
           background-color: color-mix(in oklab, var(--color-primary) 90%, transparent);
         }
@@ -2140,7 +2147,7 @@
   .hover\:bg-secondary\/80 {
     &:hover {
       @media (hover: hover) {
-        background-color: color-mix(in srgb, #0B1533 80%, transparent);
+        background-color: color-mix(in srgb, #1a1a1a 80%, transparent);
         @supports (color: color-mix(in lab, red, red)) {
           background-color: color-mix(in oklab, var(--color-secondary) 80%, transparent);
         }
@@ -2479,7 +2486,7 @@
     @media (prefers-color-scheme: dark) {
       &:hover {
         @media (hover: hover) {
-          background-color: color-mix(in srgb, #00C2A8 50%, transparent);
+          background-color: color-mix(in srgb, #00D4AA 50%, transparent);
           @supports (color: color-mix(in lab, red, red)) {
             background-color: color-mix(in oklab, var(--color-accent) 50%, transparent);
           }
@@ -2573,7 +2580,7 @@
     a& {
       &:hover {
         @media (hover: hover) {
-          background-color: color-mix(in srgb, #1F4FFF 90%, transparent);
+          background-color: color-mix(in srgb, #0066FF 90%, transparent);
           @supports (color: color-mix(in lab, red, red)) {
             background-color: color-mix(in oklab, var(--color-primary) 90%, transparent);
           }
@@ -2585,7 +2592,7 @@
     a& {
       &:hover {
         @media (hover: hover) {
-          background-color: color-mix(in srgb, #0B1533 90%, transparent);
+          background-color: color-mix(in srgb, #1a1a1a 90%, transparent);
           @supports (color: color-mix(in lab, red, red)) {
             background-color: color-mix(in oklab, var(--color-secondary) 90%, transparent);
           }
@@ -2600,18 +2607,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.dark body {
-  background-color: var(--color-neutral);
-  color: white;
-}
 h1, h2, h3, h4, h5, h6 {
-  letter-spacing: -0.025em;
-}
-.text-gradient {
-  background: linear-gradient(to right, var(--color-primary), var(--color-accent));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  letter-spacing: -0.02em;
+  color: var(--color-secondary);
+  font-weight: 700;
 }
 @property --tw-translate-x {
   syntax: "*";

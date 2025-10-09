@@ -1,10 +1,7 @@
 {
   "/page": "app/page.js",
   "/features/page": "app/features/page.js",
-  "/solutions/last-mile/page": "app/solutions/last-mile/page.js",
-  "/integrations/page": "app/integrations/page.js",
   "/blog/page": "app/blog/page.js",
   "/pricing/page": "app/pricing/page.js",
-  "/case-studies/fleetco/page": "app/case-studies/fleetco/page.js",
   "/blog/how-to-choose-a-tms/page": "app/blog/how-to-choose-a-tms/page.js"
 }
