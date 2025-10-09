@@ -1,8 +1,6 @@
 import { Metadata } from 'next'
 import { Container } from '@/components/ui/Container'
-import { SectionHeading } from '@/components/ui/SectionHeading'
 import { Button } from '@/components/ui/Button'
-import { Badge } from '@/components/ui/Badge'
 import integrations from '@/data/integrations.json'
 
 export const metadata: Metadata = {
@@ -21,24 +19,27 @@ export default function Integrations() {
 
   return (
     <>
-      <section className="bg-gradient-to-br from-primary/10 via-muted/30 to-accent/10 py-20">
+      <section className="bg-white py-16 sm:py-24">
         <Container>
-          <SectionHeading
-            title="Connect your entire tech stack"
-            subtitle="FreightSync integrates seamlessly with the tools you already use"
-            centered
-          />
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-secondary mb-6">
+              Connect your entire tech stack
+            </h1>
+            <p className="text-xl text-neutral">
+              FreightSync integrates seamlessly with the tools you already use
+            </p>
+          </div>
         </Container>
       </section>
 
-      <section className="py-20">
+      <section className="py-16 sm:py-24 bg-muted">
         <Container>
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
             <div>
-              <h2 className="text-3xl font-bold text-secondary dark:text-white mb-6">
+              <h2 className="text-3xl font-bold text-secondary mb-6">
                 Built for integration
               </h2>
-              <div className="space-y-4 text-gray-600 dark:text-gray-300">
+              <div className="space-y-4 text-neutral">
                 <p>
                   FreightSync connects with your existing systems through our robust API platform 
                   and pre-built integrations.
@@ -61,44 +62,41 @@ export default function Integrations() {
                     Custom integration development available
                   </li>
                 </ul>
-                <p className="text-sm text-gray-500 dark:text-gray-400 pt-4">
-                  Developer docs available on request
-                </p>
               </div>
             </div>
             
-            <div className="bg-gray-50 dark:bg-gray-900 p-8 rounded-xl">
+            <div className="bg-white p-8 rounded-lg border border-border">
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
-                  <div className="px-6 py-3 bg-primary text-white rounded-lg font-semibold text-center flex-1">
+                  <div className="px-6 py-3 bg-primary text-white rounded-md font-semibold text-center flex-1">
                     ERP/WMS
                   </div>
-                  <div className="text-gray-400">→</div>
-                  <div className="px-6 py-3 bg-accent text-white rounded-lg font-semibold text-center flex-1">
+                  <div className="text-neutral">→</div>
+                  <div className="px-6 py-3 bg-accent text-white rounded-md font-semibold text-center flex-1">
                     FreightSync
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="px-6 py-3 bg-primary text-white rounded-lg font-semibold text-center flex-1">
+                  <div className="px-6 py-3 bg-primary text-white rounded-md font-semibold text-center flex-1">
                     Carrier APIs
                   </div>
-                  <div className="text-gray-400">→</div>
-                  <div className="px-6 py-3 bg-accent text-white rounded-lg font-semibold text-center flex-1">
+                  <div className="text-neutral">→</div>
+                  <div className="px-6 py-3 bg-accent text-white rounded-md font-semibold text-center flex-1">
                     FreightSync
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="px-6 py-3 bg-primary text-white rounded-lg font-semibold text-center flex-1">
+                  <div className="px-6 py-3 bg-primary text-white rounded-md font-semibold text-center flex-1">
                     ELD/Telematics
                   </div>
-                  <div className="text-gray-400">→</div>
-                  <div className="px-6 py-3 bg-accent text-white rounded-lg font-semibold text-center flex-1">
+                  <div className="text-neutral">→</div>
+                  <div className="px-6 py-3 bg-accent text-white rounded-md font-semibold text-center flex-1">
                     FreightSync
                   </div>
                 </div>
                 <div className="text-center">
-                  <div className="text-gray-400 mb-2">↓</div>
-                  <div className="px-6 py-3 bg-secondary text-white rounded-lg font-semibold">
+                  <div className="text-neutral mb-2">↓</div>
+                  <div className="px-6 py-3 bg-secondary text-white rounded-md font-semibold">
                     Driver App
                   </div>
                 </div>
@@ -109,14 +107,14 @@ export default function Integrations() {
           <div className="space-y-12">
             {Object.entries(groupedIntegrations).map(([category, items]) => (
               <div key={category}>
-                <h3 className="text-xl font-semibold text-secondary dark:text-white mb-6">
+                <h3 className="text-xl font-bold text-secondary mb-6">
                   {category}
                 </h3>
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                   {items.map((integration) => (
                     <div
                       key={integration.name}
-                      className="px-4 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-center"
+                      className="px-4 py-3 bg-white border border-border rounded-md text-center"
                     >
                       {integration.name}
                     </div>
@@ -125,16 +123,20 @@ export default function Integrations() {
               </div>
             ))}
           </div>
+        </Container>
+      </section>
 
-          <div className="text-center mt-16">
-            <h3 className="text-2xl font-bold text-secondary dark:text-white mb-4">
+      <section className="py-16 sm:py-24 bg-primary text-white">
+        <Container>
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-6">
               Need a custom integration?
-            </h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-6">
+            </h2>
+            <p className="text-xl mb-8 opacity-90">
               Our team can build custom integrations for your specific requirements
             </p>
-            <Button href="/contact" size="lg">
-              Contact Sales
+            <Button href="/contact" variant="secondary" size="lg">
+              Talk to an Expert
             </Button>
           </div>
         </Container>

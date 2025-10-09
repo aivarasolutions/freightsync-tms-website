@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 import { Container } from '@/components/ui/Container'
-import { SectionHeading } from '@/components/ui/SectionHeading'
 import { PricingCard } from '@/components/ui/PricingCard'
 import { FAQ } from '@/components/ui/FAQ'
+import { Button } from '@/components/ui/Button'
 
 export const metadata: Metadata = {
   title: 'Pricing',
@@ -73,35 +73,54 @@ const faqs = [
 export default function Pricing() {
   return (
     <>
-      <section className="bg-gradient-to-br from-primary/10 via-muted/30 to-accent/10 py-20">
+      <section className="bg-white py-16 sm:py-24">
         <Container>
-          <SectionHeading
-            title="Simple, transparent pricing"
-            subtitle="Choose the plan that's right for your business"
-            centered
-          />
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-secondary mb-6">
+              Simple, transparent pricing
+            </h1>
+            <p className="text-xl text-neutral">
+              Choose the plan that's right for your business
+            </p>
+          </div>
         </Container>
       </section>
 
-      <section className="py-20">
+      <section className="py-16 sm:py-24 bg-muted">
         <Container>
-          <div className="grid md:grid-cols-3 gap-8 mb-20">
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
             {plans.map((plan) => (
               <PricingCard key={plan.name} {...plan} />
             ))}
           </div>
 
-          <div className="text-center mb-20">
-            <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <div className="text-center mb-16">
+            <p className="text-neutral">
               All plans include: Mobile driver app, real-time tracking, automated billing, and cloud hosting
             </p>
           </div>
 
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-secondary dark:text-white mb-8 text-center">
+            <h2 className="text-3xl font-bold text-secondary mb-8 text-center">
               Frequently Asked Questions
             </h2>
             <FAQ items={faqs} />
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-16 sm:py-24 bg-primary text-white">
+        <Container>
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+              Ready to get started?
+            </h2>
+            <p className="text-xl mb-8 opacity-90">
+              Talk to our team to find the perfect plan for your business
+            </p>
+            <Button href="/contact" variant="secondary" size="lg">
+              Talk to an Expert
+            </Button>
           </div>
         </Container>
       </section>

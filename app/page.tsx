@@ -121,7 +121,7 @@ export default function Home() {
                 "{testimonials[0].quote}"
               </blockquote>
               <div className="text-secondary font-semibold">
-                {testimonials[0].name}
+                {testimonials[0].author}
               </div>
               <div className="text-neutral">
                 {testimonials[0].role}, {testimonials[0].company}

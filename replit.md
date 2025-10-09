@@ -89,12 +89,13 @@ npm run start
 
 ## Design System
 
-### Brand Colors
-- **Primary**: #1F4FFF (Blue)
-- **Secondary**: #0B1533 (Dark Navy)
-- **Accent**: #00C2A8 (Teal)
-- **Neutral**: #0F172A (Dark Gray)
-- **Muted**: #EAF0FF (Light Blue)
+### Brand Colors (Updated October 2025)
+- **Primary**: #0066FF (Bright Blue)
+- **Secondary**: #1a1a1a (Almost Black)
+- **Accent**: #00D4AA (Teal Green)
+- **Neutral**: #333333 (Dark Gray)
+- **Muted**: #f8f9fa (Light Gray Background)
+- **Border**: #e5e7eb (Light Gray Border)
 
 ### Components
 All components are in `/components/ui`:
@@ -145,7 +146,18 @@ All content stored in `/data/*.json` for easy editing:
 Edit these files to update content without touching code.
 
 ## Recent Changes
-- **2025-10-09**: Complete rebuild with Next.js 14
+- **2025-10-09 (v2)**: Complete design overhaul - modern, clean, minimal
+  - New color palette: bright blue (#0066FF), teal (#00D4AA), clean grays
+  - Redesigned all pages with Sylectus-inspired clean aesthetic
+  - White backgrounds with subtle gray (#f8f9fa) sections
+  - Bold, large headlines (text-5xl to text-7xl)
+  - Simplified button styles with better contrast
+  - Removed gradients for cleaner, more professional look
+  - Updated all components (Button, FeatureCard, SectionHeading)
+  - Consistent spacing and typography throughout
+  - Improved readability with proper text colors
+  
+- **2025-10-09 (v1)**: Complete rebuild with Next.js 14
   - Migrated from static site to Next.js App Router
   - Implemented TypeScript for type safety
   - Configured Tailwind CSS v4 with @tailwindcss/postcss
@@ -153,13 +165,12 @@ Edit these files to update content without touching code.
   - Created reusable component library
   - Added contact form with API route
   - Implemented SEO (sitemap, robots.txt, metadata)
-  - Set up analytics placeholders
-  - Configured for autoscale deployment
   - Mobile-first responsive design
   - Accessibility features (ARIA, semantic HTML)
 
 ## User Preferences
-- Modern, clean design inspired by top US TMS vendors
-- Focus on conversion (Request Demo CTAs)
-- Professional, enterprise-ready presentation
-- Fast, performant, accessible
+- **Design**: Clean and minimal (inspired by Sylectus.net)
+- **Style**: Light/bright website with white backgrounds
+- **Hero**: Big bold headlines with action buttons
+- **Goals**: Demo requests, feature showcase, trust building (all equally important)
+- **Tech**: Modern, fast, performant, accessible

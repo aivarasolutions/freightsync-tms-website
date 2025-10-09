@@ -1,13 +1,12 @@
 import { Metadata } from 'next'
 import { Container } from '@/components/ui/Container'
-import { SectionHeading } from '@/components/ui/SectionHeading'
-import { FeatureCard } from '@/components/ui/FeatureCard'
 import { Button } from '@/components/ui/Button'
+import { FeatureCard } from '@/components/ui/FeatureCard'
 import features from '@/data/features.json'
 
 export const metadata: Metadata = {
   title: 'Features',
-  description: 'Discover all the powerful features of FreightSync TMS for last-mile delivery and 3PL operations.',
+  description: 'Powerful features for modern last-mile delivery operations.',
 }
 
 const additionalFeatures = [
@@ -36,19 +35,22 @@ const additionalFeatures = [
 export default function Features() {
   return (
     <>
-      <section className="bg-gradient-to-br from-primary/10 via-muted/30 to-accent/10 py-20">
+      <section className="bg-white py-16 sm:py-24">
         <Container>
-          <SectionHeading
-            title="Powerful features for modern logistics"
-            subtitle="Everything you need to run efficient last-mile delivery operations"
-            centered
-          />
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-secondary mb-6">
+              Powerful features for modern logistics
+            </h1>
+            <p className="text-xl text-neutral">
+              Everything you need to run efficient last-mile delivery operations
+            </p>
+          </div>
         </Container>
       </section>
 
-      <section className="py-20">
+      <section className="py-16 sm:py-24 bg-muted">
         <Container>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {features.map((feature) => (
               <div key={feature.id} id={feature.id}>
                 <FeatureCard
@@ -60,7 +62,7 @@ export default function Features() {
             ))}
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
+          <div className="grid md:grid-cols-2 gap-6">
             {additionalFeatures.map((feature) => (
               <div key={feature.id} id={feature.id}>
                 <FeatureCard
@@ -71,13 +73,20 @@ export default function Features() {
               </div>
             ))}
           </div>
+        </Container>
+      </section>
 
-          <div className="text-center">
-            <h3 className="text-2xl font-bold text-secondary dark:text-white mb-4">
-              See it in action
-            </h3>
-            <Button href="/contact" size="lg">
-              Request Demo
+      <section className="py-16 sm:py-24 bg-primary text-white">
+        <Container>
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+              Ready to see these features in action?
+            </h2>
+            <p className="text-xl mb-8 opacity-90">
+              Schedule a personalized demo with our team.
+            </p>
+            <Button href="/contact" variant="secondary" size="lg">
+              Talk to an Expert
             </Button>
           </div>
         </Container>
