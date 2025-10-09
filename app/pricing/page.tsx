@@ -73,7 +73,7 @@ const faqs = [
 export default function Pricing() {
   return (
     <>
-      <section className="bg-gradient-to-br from-primary/5 to-accent/5 py-20">
+      <section className="bg-gradient-to-br from-primary/10 via-muted/30 to-accent/10 py-20">
         <Container>
           <SectionHeading
             title="Simple, transparent pricing"

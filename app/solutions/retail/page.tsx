@@ -31,7 +31,7 @@ const painPoints = [
 export default function RetailSolution() {
   return (
     <>
-      <section className="bg-gradient-to-br from-primary/5 to-accent/5 py-20">
+      <section className="bg-gradient-to-br from-primary/10 via-muted/30 to-accent/10 py-20">
         <Container>
           <div className="max-w-4xl">
             <div className="inline-flex items-center gap-3 mb-6">
@@ -40,10 +40,10 @@ export default function RetailSolution() {
                 Retail Delivery Teams
               </span>
             </div>
-            <h1 className="text-4xl sm:text-5xl font-bold text-secondary dark:text-white mb-6">
+            <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6">
               Deliver exceptional customer experiences
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300">
+            <p className="text-xl text-gray-700 dark:text-gray-300">
               Meet customer expectations with fast, reliable delivery and real-time visibility.
             </p>
           </div>
