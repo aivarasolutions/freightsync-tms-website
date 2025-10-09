@@ -117,6 +117,10 @@ Then add the analytics script to `app/layout.tsx`:
 />
 ```
 
+## 🖼️ Social Media Images
+
+Create an Open Graph image at `public/og-image.png` (1200x630px) for social media previews. The metadata is already configured in `app/layout.tsx` to reference this image.
+
 ## 🚢 Deployment
 
 ### Vercel (Recommended)

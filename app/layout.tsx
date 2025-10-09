@@ -18,6 +18,20 @@ export const metadata: Metadata = {
     siteName: 'FreightSync TMS',
     title: 'FreightSync TMS - The modern TMS for last-mile delivery',
     description: 'Plan routes, dispatch drivers, track live ETAs, and automate billing—all in one place.',
+    images: [
+      {
+        url: 'https://www.freightsynctms.com/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'FreightSync TMS',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'FreightSync TMS - The modern TMS for last-mile delivery',
+    description: 'Plan routes, dispatch drivers, track live ETAs, and automate billing—all in one place.',
+    images: ['https://www.freightsynctms.com/og-image.png'],
   },
 }
 
