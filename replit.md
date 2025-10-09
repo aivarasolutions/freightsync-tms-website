@@ -146,6 +146,13 @@ All content stored in `/data/*.json` for easy editing:
 Edit these files to update content without touching code.
 
 ## Recent Changes
+- **2025-10-09 (v3)**: Fixed Vercel deployment compatibility
+  - Downgraded to stable versions: Next.js 14.2.33 + React 18.3.1
+  - Fixed syntax errors in about page that were breaking builds
+  - Removed all dark mode variants for consistent text readability
+  - Fixed text contrast issues on pricing, blog, and case study pages
+  - Build now passes successfully and deploys to Vercel
+  
 - **2025-10-09 (v2)**: Complete design overhaul - modern, clean, minimal
   - New color palette: bright blue (#0066FF), teal (#00D4AA), clean grays
   - Redesigned all pages with Sylectus-inspired clean aesthetic
