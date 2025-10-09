@@ -2,6 +2,7 @@
   "/page": "app/page.js",
   "/pricing/page": "app/pricing/page.js",
   "/integrations/page": "app/integrations/page.js",
+  "/case-studies/fleetco/page": "app/case-studies/fleetco/page.js",
   "/blog/page": "app/blog/page.js",
-  "/case-studies/fleetco/page": "app/case-studies/fleetco/page.js"
+  "/solutions/last-mile/page": "app/solutions/last-mile/page.js"
 }
