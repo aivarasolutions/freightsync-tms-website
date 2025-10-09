@@ -1,8 +1,4 @@
 {
   "/page": "app/page.js",
-  "/features/page": "app/features/page.js",
-  "/blog/page": "app/blog/page.js",
-  "/pricing/page": "app/pricing/page.js",
-  "/blog/how-to-choose-a-tms/page": "app/blog/how-to-choose-a-tms/page.js",
-  "/integrations/page": "app/integrations/page.js"
+  "/features/page": "app/features/page.js"
 }
