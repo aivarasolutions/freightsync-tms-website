@@ -1,0 +1,17 @@
+[
+  {
+    "value": "18%",
+    "label": "Fewer empty miles",
+    "description": "Optimized routing reduces deadhead miles"
+  },
+  {
+    "value": "22%",
+    "label": "Higher on-time delivery",
+    "description": "Better planning and real-time tracking"
+  },
+  {
+    "value": "3×",
+    "label": "Faster invoicing",
+    "description": "Automated billing and settlements"
+  }
+]

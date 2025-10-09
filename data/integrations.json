@@ -1,0 +1,12 @@
+[
+  { "name": "SAP", "category": "ERP" },
+  { "name": "Oracle", "category": "ERP" },
+  { "name": "NetSuite", "category": "ERP" },
+  { "name": "Manhattan WMS", "category": "WMS" },
+  { "name": "Blue Yonder", "category": "WMS" },
+  { "name": "Samsara", "category": "ELD" },
+  { "name": "Geotab", "category": "ELD" },
+  { "name": "EDI 204/214", "category": "EDI" },
+  { "name": "Shopify", "category": "eCommerce" },
+  { "name": "Stripe", "category": "Payments" }
+]

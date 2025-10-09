@@ -1,0 +1,62 @@
+[
+  {
+    "id": "dispatch",
+    "title": "Dispatch & Load Assignment",
+    "description": "Assign loads to drivers in seconds with intelligent matching based on location, capacity, and availability.",
+    "bullets": [
+      "Real-time driver availability",
+      "Automated load matching",
+      "Manual override options"
+    ]
+  },
+  {
+    "id": "routing",
+    "title": "Route Optimization",
+    "description": "Calculate optimal routes considering traffic, delivery windows, and vehicle constraints.",
+    "bullets": [
+      "Multi-stop optimization",
+      "Traffic-aware routing",
+      "Time window compliance"
+    ]
+  },
+  {
+    "id": "driver-app",
+    "title": "Driver App (iOS/Android)",
+    "description": "Mobile app for drivers with turn-by-turn navigation, proof of delivery, and real-time updates.",
+    "bullets": [
+      "Offline mode support",
+      "Digital proof of delivery",
+      "In-app messaging"
+    ]
+  },
+  {
+    "id": "carrier-management",
+    "title": "Carrier & Rate Management",
+    "description": "Manage carrier relationships, rate cards, and performance metrics in one place.",
+    "bullets": [
+      "Rate card management",
+      "Carrier scorecards",
+      "Bid management"
+    ]
+  },
+  {
+    "id": "billing",
+    "title": "Billing, Invoicing & Settlements",
+    "description": "Automate invoice generation, accessorial charges, and carrier settlements.",
+    "bullets": [
+      "Automated invoicing",
+      "Accessorial calculations",
+      "Settlement automation"
+    ]
+  },
+  {
+    "id": "analytics",
+    "title": "Analytics & Forecasting",
+    "description": "Track KPIs, identify trends, and forecast demand with powerful analytics.",
+    "bullets": [
+      "Real-time dashboards",
+      "Custom reports",
+      "Predictive analytics"
+    ]
+  }
+]
