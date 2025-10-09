@@ -18,7 +18,7 @@ const values = [
   {
     icon: <Users className="w-full h-full" />,
     title: 'Customer Success',
-    description: 'Your growth is our success. We're invested in your outcomes'
+    description: "Your growth is our success. We're invested in your outcomes"
   },
   {
     icon: <Zap className="w-full h-full" />,
@@ -35,13 +35,13 @@ const values = [
 export default function About() {
   return (
     <>
-      <section className="bg-gradient-to-br from-primary/10 via-muted/30 to-accent/10 py-20">
+      <section className="bg-white py-16 sm:py-24">
         <Container>
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl sm:text-5xl font-bold text-secondary mb-6">
               Built by operators, for operators
             </h1>
-            <p className="text-xl text-gray-700">
+            <p className="text-xl text-neutral">
               We're on a mission to modernize last-mile delivery with software that 
               actually works for real-world logistics operations.
             </p>
@@ -49,14 +49,14 @@ export default function About() {
         </Container>
       </section>
 
-      <section className="py-20">
+      <section className="py-16 sm:py-24 bg-muted">
         <Container>
           <div className="max-w-4xl mx-auto space-y-12">
             <div>
-              <h2 className="text-3xl font-bold text-secondary dark:text-white mb-6">
+              <h2 className="text-3xl font-bold text-secondary mb-6">
                 Our Story
               </h2>
-              <div className="space-y-4 text-gray-600 dark:text-gray-300">
+              <div className="space-y-4 text-neutral">
                 <p>
                   FreightSync was founded by former logistics operators who experienced firsthand 
                   the challenges of managing last-mile delivery with outdated software. After years 
@@ -78,10 +78,10 @@ export default function About() {
             </div>
 
             <div>
-              <h2 className="text-3xl font-bold text-secondary dark:text-white mb-6">
+              <h2 className="text-3xl font-bold text-secondary mb-6">
                 Credibility & Compliance
               </h2>
-              <p className="text-gray-600 dark:text-gray-300">
+              <p className="text-neutral">
                 As active DOT/FMCSA operators ourselves, we understand the regulatory requirements 
                 and operational realities of transportation. FreightSync is built with compliance 
                 in mind, from ELD integration to audit logs and data retention policies.
@@ -91,7 +91,7 @@ export default function About() {
         </Container>
       </section>
 
-      <section className="py-20 bg-gray-50 dark:bg-gray-900">
+      <section className="py-16 sm:py-24 bg-white">
         <Container>
           <SectionHeading title="Our Values" centered />
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -100,10 +100,10 @@ export default function About() {
                 <div className="w-16 h-16 mx-auto mb-4 text-primary">
                   {value.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-secondary dark:text-white mb-2">
+                <h3 className="text-xl font-semibold text-secondary mb-2">
                   {value.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-400">
+                <p className="text-neutral">
                   {value.description}
                 </p>
               </div>
@@ -112,7 +112,7 @@ export default function About() {
         </Container>
       </section>
 
-      <section className="py-20 bg-gradient-to-r from-primary to-accent text-white">
+      <section className="py-16 sm:py-24 bg-primary text-white">
         <Container>
           <div className="text-center">
             <h2 className="text-3xl font-bold mb-6">
