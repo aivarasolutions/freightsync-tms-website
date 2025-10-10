@@ -146,6 +146,11 @@ All content stored in `/data/*.json` for easy editing:
 Edit these files to update content without touching code.
 
 ## Recent Changes
+- **2025-10-10 (v4)**: Deployed successfully to Vercel!
+  - Fixed Vercel configuration: Set Framework Preset to Next.js (was treating as static site)
+  - Fixed blog article text readability: removed all dark mode variants, now using text-neutral
+  - Site is live and working perfectly on freightsynctms.com
+  
 - **2025-10-09 (v3)**: Fixed Vercel deployment compatibility
   - Downgraded to stable versions: Next.js 14.2.5 + React 18.3.1
   - Migrated from Tailwind CSS v4 (beta) to v3.4.14 (stable)

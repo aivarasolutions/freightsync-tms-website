@@ -1,3 +1,5 @@
 {
+  "/blog/how-to-choose-a-tms/page": "app/blog/how-to-choose-a-tms/page.js",
+  "/blog/page": "app/blog/page.js",
   "/page": "app/page.js"
 }
