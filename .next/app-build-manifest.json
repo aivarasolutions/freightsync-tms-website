@@ -1,116 +1,15 @@
 {
   "pages": {
-    "/_not-found/page": [
-      "static/chunks/webpack-6956dcac8326fe2b.js",
-      "static/chunks/fd9d1056-8042ad09b3c311e2.js",
-      "static/chunks/23-7bc4d58157a5df57.js",
-      "static/chunks/main-app-831de1faa369aaae.js",
-      "static/chunks/app/_not-found/page-eb6d3dc737531fa7.js"
+    "/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/page.js"
     ],
     "/layout": [
-      "static/chunks/webpack-6956dcac8326fe2b.js",
-      "static/chunks/fd9d1056-8042ad09b3c311e2.js",
-      "static/chunks/23-7bc4d58157a5df57.js",
-      "static/chunks/main-app-831de1faa369aaae.js",
-      "static/css/04a74acc2e54aeb4.css",
-      "static/chunks/231-e80a453c79f1ed74.js",
-      "static/chunks/app/layout-a9834f340f7c5bf7.js"
-    ],
-    "/page": [
-      "static/chunks/webpack-6956dcac8326fe2b.js",
-      "static/chunks/fd9d1056-8042ad09b3c311e2.js",
-      "static/chunks/23-7bc4d58157a5df57.js",
-      "static/chunks/main-app-831de1faa369aaae.js",
-      "static/chunks/231-e80a453c79f1ed74.js",
-      "static/chunks/app/page-9a7e5dcb87ef81ad.js"
-    ],
-    "/blog/page": [
-      "static/chunks/webpack-6956dcac8326fe2b.js",
-      "static/chunks/fd9d1056-8042ad09b3c311e2.js",
-      "static/chunks/23-7bc4d58157a5df57.js",
-      "static/chunks/main-app-831de1faa369aaae.js",
-      "static/chunks/231-e80a453c79f1ed74.js",
-      "static/chunks/app/blog/page-a9b782636b45dbf4.js"
-    ],
-    "/about/page": [
-      "static/chunks/webpack-6956dcac8326fe2b.js",
-      "static/chunks/fd9d1056-8042ad09b3c311e2.js",
-      "static/chunks/23-7bc4d58157a5df57.js",
-      "static/chunks/main-app-831de1faa369aaae.js",
-      "static/chunks/231-e80a453c79f1ed74.js",
-      "static/chunks/app/about/page-ddd5dc00eb2e0496.js"
-    ],
-    "/case-studies/fleetco/page": [
-      "static/chunks/webpack-6956dcac8326fe2b.js",
-      "static/chunks/fd9d1056-8042ad09b3c311e2.js",
-      "static/chunks/23-7bc4d58157a5df57.js",
-      "static/chunks/main-app-831de1faa369aaae.js",
-      "static/chunks/231-e80a453c79f1ed74.js",
-      "static/chunks/app/case-studies/fleetco/page-e705a9ea0018b070.js"
-    ],
-    "/contact/page": [
-      "static/chunks/webpack-6956dcac8326fe2b.js",
-      "static/chunks/fd9d1056-8042ad09b3c311e2.js",
-      "static/chunks/23-7bc4d58157a5df57.js",
-      "static/chunks/main-app-831de1faa369aaae.js",
-      "static/chunks/231-e80a453c79f1ed74.js",
-      "static/chunks/app/contact/page-505a42c3d347800e.js"
-    ],
-    "/features/page": [
-      "static/chunks/webpack-6956dcac8326fe2b.js",
-      "static/chunks/fd9d1056-8042ad09b3c311e2.js",
-      "static/chunks/23-7bc4d58157a5df57.js",
-      "static/chunks/main-app-831de1faa369aaae.js",
-      "static/chunks/231-e80a453c79f1ed74.js",
-      "static/chunks/app/features/page-a97b3801ffb00ff6.js"
-    ],
-    "/solutions/3pl/page": [
-      "static/chunks/webpack-6956dcac8326fe2b.js",
-      "static/chunks/fd9d1056-8042ad09b3c311e2.js",
-      "static/chunks/23-7bc4d58157a5df57.js",
-      "static/chunks/main-app-831de1faa369aaae.js",
-      "static/chunks/231-e80a453c79f1ed74.js",
-      "static/chunks/app/solutions/3pl/page-2df1798e94ade133.js"
-    ],
-    "/solutions/retail/page": [
-      "static/chunks/webpack-6956dcac8326fe2b.js",
-      "static/chunks/fd9d1056-8042ad09b3c311e2.js",
-      "static/chunks/23-7bc4d58157a5df57.js",
-      "static/chunks/main-app-831de1faa369aaae.js",
-      "static/chunks/231-e80a453c79f1ed74.js",
-      "static/chunks/app/solutions/retail/page-e365710191086855.js"
-    ],
-    "/integrations/page": [
-      "static/chunks/webpack-6956dcac8326fe2b.js",
-      "static/chunks/fd9d1056-8042ad09b3c311e2.js",
-      "static/chunks/23-7bc4d58157a5df57.js",
-      "static/chunks/main-app-831de1faa369aaae.js",
-      "static/chunks/231-e80a453c79f1ed74.js",
-      "static/chunks/app/integrations/page-25ae19f71adc20dc.js"
-    ],
-    "/blog/how-to-choose-a-tms/page": [
-      "static/chunks/webpack-6956dcac8326fe2b.js",
-      "static/chunks/fd9d1056-8042ad09b3c311e2.js",
-      "static/chunks/23-7bc4d58157a5df57.js",
-      "static/chunks/main-app-831de1faa369aaae.js",
-      "static/chunks/231-e80a453c79f1ed74.js",
-      "static/chunks/app/blog/how-to-choose-a-tms/page-0fdeedc3daca6541.js"
-    ],
-    "/pricing/page": [
-      "static/chunks/webpack-6956dcac8326fe2b.js",
-      "static/chunks/fd9d1056-8042ad09b3c311e2.js",
-      "static/chunks/23-7bc4d58157a5df57.js",
-      "static/chunks/main-app-831de1faa369aaae.js",
-      "static/chunks/231-e80a453c79f1ed74.js",
-      "static/chunks/app/pricing/page-b418d4fe33bd7caa.js"
-    ],
-    "/solutions/last-mile/page": [
-      "static/chunks/webpack-6956dcac8326fe2b.js",
-      "static/chunks/fd9d1056-8042ad09b3c311e2.js",
-      "static/chunks/23-7bc4d58157a5df57.js",
-      "static/chunks/main-app-831de1faa369aaae.js",
-      "static/chunks/231-e80a453c79f1ed74.js",
-      "static/chunks/app/solutions/last-mile/page-0ba67c45f7e221d3.js"
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/layout.css",
+      "static/chunks/app/layout.js"
     ]
   }
 }
