@@ -146,15 +146,17 @@ All content stored in `/data/*.json` for easy editing:
 Edit these files to update content without touching code.
 
 ## Recent Changes
-- **2025-10-11 (v5)**: Added AI-Powered Chatbot with Transportation Expertise!
+- **2025-10-11 (v5)**: Added AI-Powered Chatbot with Transportation Expertise + Real-Time Guidance!
   - Integrated OpenAI GPT-4o-mini for intelligent customer support
   - Comprehensive knowledge base: FreightSync TMS + transportation industry expertise
   - Answers questions about LTL/FTL, 3PL/4PL, industry challenges, best practices
   - Covers transportation modes, logistics concepts, industry metrics, and solutions
+  - Provides guidance on current trends and directs users to real-time data sources
+  - Framework for live data integration (fuel prices, freight rates, news APIs)
   - Provides smart contextual suggestions for follow-up questions
   - Works on Replit (Replit AI) and Vercel (OpenAI API key required)
   - Widget appears on all pages with 💬 icon in bottom-right
-  - See CHATBOT_SETUP.md for Vercel deployment instructions
+  - See CHATBOT_SETUP.md for setup and REALTIME_DATA_OPTIONS.md for API integrations
 
 - **2025-10-10 (v4)**: Deployed successfully to Vercel!
   - Fixed Vercel configuration: Set Framework Preset to Next.js (was treating as static site)

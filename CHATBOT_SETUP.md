@@ -6,6 +6,7 @@ Your FreightSync TMS website now includes an AI-powered chatbot that provides in
 - **Answers questions** about FreightSync TMS features, pricing, and integrations
 - **Provides transportation & logistics expertise** (LTL vs FTL, 3PL, industry best practices)
 - **Educates visitors** on industry challenges and solutions
+- **Offers guidance on current trends** and where to find real-time data
 - **Provides smart suggestions** for follow-up questions
 - **Works on all pages** with a 💬 icon in the bottom-right corner
 - **Uses GPT-4o-mini** for fast, accurate responses
@@ -48,6 +49,11 @@ Click the 💬 icon on your website and try:
 - "What's the difference between LTL and FTL?"
 - "What are the biggest challenges in last-mile delivery?"
 - "What is a 3PL?"
+- "What affects fuel costs in transportation?"
+- "Where can I find current freight rates?"
+
+## Real-Time Data
+The chatbot provides intelligent guidance on current trends and directs users to authoritative sources for live data. See `REALTIME_DATA_OPTIONS.md` for information about adding live API integrations.
 
 ## Customization
 To update chatbot knowledge, edit: `app/api/chatbot/route.ts` (SYSTEM_PROMPT section)
