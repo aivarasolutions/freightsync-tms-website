@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 
 export function ChatbotWidget() {
   useEffect(() => {
-    // ⚙️ CONFIGURATION - Chatbot API URL
+    // ⚙️ CONFIGURATION - Chatbot API URL (without /api/chat - will be added in fetch)
     const CHATBOT_API_URL = 'https://freight-sync-tms-bot.replit.app';
     
     // Create widget container
