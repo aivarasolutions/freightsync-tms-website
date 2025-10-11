@@ -147,11 +147,12 @@ Edit these files to update content without touching code.
 
 ## Recent Changes
 - **2025-10-11 (v5)**: Added AI-Powered Chatbot!
-  - Integrated Replit AI gateway for intelligent customer support
+  - Integrated OpenAI GPT-4o-mini for intelligent customer support
   - Chatbot trained on FreightSync TMS knowledge (features, pricing, integrations)
   - Provides smart contextual suggestions for follow-up questions
-  - No API key required - uses Replit's AI Integrations
+  - Works on Replit (Replit AI) and Vercel (OpenAI API key required)
   - Widget appears on all pages with 💬 icon in bottom-right
+  - See CHATBOT_SETUP.md for Vercel deployment instructions
 
 - **2025-10-10 (v4)**: Deployed successfully to Vercel!
   - Fixed Vercel configuration: Set Framework Preset to Next.js (was treating as static site)
@@ -195,3 +196,4 @@ Edit these files to update content without touching code.
 - **Hero**: Big bold headlines with action buttons
 - **Goals**: Demo requests, feature showcase, trust building (all equally important)
 - **Tech**: Modern, fast, performant, accessible
+- **AI Support**: Fast, accurate chatbot providing best information
