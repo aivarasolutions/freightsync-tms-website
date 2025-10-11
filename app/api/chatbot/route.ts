@@ -101,8 +101,21 @@ export async function POST(request: NextRequest) {
       conversationId: `conv-${Date.now()}` // Simple conversation ID
     });
 
-  } catch (error) {
+  } catch (error: any) {
     console.error('Chatbot error:', error);
+    
+    // Better error messages for debugging
+    const errorMessage = error?.message || 'Unknown error';
+    const isAuthError = errorMessage.includes('401') || errorMessage.includes('authentication');
+    
+    if (isAuthError) {
+      return NextResponse.json({
+        response: "I'm currently unavailable due to a configuration issue. Please contact us directly for assistance.",
+        suggestions: ['View pricing plans', 'Request a demo', 'Contact sales'],
+        conversationId: `conv-${Date.now()}`
+      });
+    }
+    
     return NextResponse.json(
       { error: 'Failed to process your message. Please try again.' },
       { status: 500 }
