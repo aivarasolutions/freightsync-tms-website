@@ -1,11 +1,32 @@
 'use client'
 
 import { useEffect } from 'react'
+import { marked } from 'marked'
+import DOMPurify from 'dompurify'
 
 export function ChatbotWidget() {
   useEffect(() => {
     // ⚙️ CONFIGURATION - Using local API endpoint
     const CHATBOT_API_URL = '/api/chatbot';
+    
+    // Add markdown styles once (outside message rendering)
+    if (!document.getElementById('chatbot-markdown-styles')) {
+      const style = document.createElement('style');
+      style.id = 'chatbot-markdown-styles';
+      style.textContent = `
+        #chat-messages p { margin: 0 0 8px 0; }
+        #chat-messages p:last-child { margin-bottom: 0; }
+        #chat-messages strong { font-weight: 600; color: #111827; }
+        #chat-messages ul, #chat-messages ol { margin: 8px 0; padding-left: 20px; }
+        #chat-messages li { margin: 4px 0; }
+        #chat-messages h1, #chat-messages h2, #chat-messages h3 { font-weight: 600; margin: 8px 0 4px 0; color: #111827; }
+        #chat-messages h1 { font-size: 16px; }
+        #chat-messages h2 { font-size: 15px; }
+        #chat-messages h3 { font-size: 14px; }
+        #chat-messages code { background: #f3f4f6; padding: 2px 4px; border-radius: 3px; font-size: 13px; }
+      `;
+      document.head.appendChild(style);
+    }
     
     // Create widget container
     const widgetHTML = `
@@ -154,13 +175,22 @@ export function ChatbotWidget() {
       `;
 
       const bubble = document.createElement('div');
-      bubble.textContent = text;
+      
+      // Render markdown for bot messages, plain text for user messages
+      if (sender === 'bot') {
+        const rawHtml = marked(text) as string;
+        const sanitizedHtml = DOMPurify.sanitize(rawHtml);
+        bubble.innerHTML = sanitizedHtml;
+      } else {
+        bubble.textContent = text;
+      }
+      
       bubble.style.cssText = `
         max-width: 80%;
         padding: 10px 14px;
         border-radius: 12px;
         font-size: 14px;
-        line-height: 1.4;
+        line-height: 1.6;
         ${sender === 'user' 
           ? 'background: #0066FF; color: white;' 
           : 'background: white; color: #1f2937; border: 1px solid #e5e7eb;'
