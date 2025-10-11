@@ -146,10 +146,13 @@ All content stored in `/data/*.json` for easy editing:
 Edit these files to update content without touching code.
 
 ## Recent Changes
-- **2025-10-11 (v5)**: Added AI-Powered Chatbot with Transportation Expertise + Real-Time Guidance!
+- **2025-10-11 (v5)**: Added AI-Powered Chatbot with Transportation Expertise + Complete Financial Data!
   - Integrated OpenAI GPT-4o-mini for intelligent customer support
   - Comprehensive knowledge base: FreightSync TMS + transportation industry expertise
   - Answers questions about LTL/FTL, 3PL/4PL, industry challenges, best practices
+  - **Complete financial data**: revenue, costs, expenses, profit margins, insurance, driver pay
+  - **Regional specifics**: Charlotte, NC and Houston, TX market data
+  - Provides detailed breakdowns of operating costs and industry benchmarks
   - Covers transportation modes, logistics concepts, industry metrics, and solutions
   - Provides guidance on current trends and directs users to real-time data sources
   - Framework for live data integration (fuel prices, freight rates, news APIs)

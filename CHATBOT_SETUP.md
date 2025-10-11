@@ -43,14 +43,23 @@ To make the chatbot work on your live website (freightsynctms.com):
 
 ## Testing
 Click the 💬 icon on your website and try:
+
+**FreightSync Questions:**
 - "What is FreightSync TMS?"
 - "How much does the Professional plan cost?"
 - "What integrations do you support?"
+
+**Industry Knowledge:**
 - "What's the difference between LTL and FTL?"
 - "What are the biggest challenges in last-mile delivery?"
 - "What is a 3PL?"
-- "What affects fuel costs in transportation?"
-- "Where can I find current freight rates?"
+
+**Financial Data (NEW!):**
+- "What is average revenue per month in Charlotte, NC?"
+- "How much do delivery drivers get paid?"
+- "What are typical profit margins for last-mile delivery?"
+- "How much does insurance cost for a delivery truck?"
+- "What are operating expenses for a delivery business?"
 
 ## Real-Time Data
 The chatbot provides intelligent guidance on current trends and directs users to authoritative sources for live data. See `REALTIME_DATA_OPTIONS.md` for information about adding live API integrations.
