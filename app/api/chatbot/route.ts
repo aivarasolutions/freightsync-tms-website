@@ -8,6 +8,46 @@ const openai = new OpenAI({
   apiKey: process.env.AI_INTEGRATIONS_OPENAI_API_KEY || process.env.OPENAI_API_KEY || 'dummy-key'
 });
 
+// Get real-time transportation data
+async function getRealTimeData(query: string): Promise<string> {
+  try {
+    // Use DuckDuckGo Instant Answer API (free, no API key required)
+    const response = await fetch(`https://api.duckduckgo.com/?q=${encodeURIComponent(query)}&format=json&no_html=1`);
+    
+    if (!response.ok) {
+      return 'Unable to fetch real-time data at the moment.';
+    }
+
+    const data = await response.json();
+    
+    // Try to get useful information from the response
+    let result = '';
+    
+    if (data.AbstractText) {
+      result += data.AbstractText;
+    }
+    
+    if (data.RelatedTopics && data.RelatedTopics.length > 0) {
+      const topics = data.RelatedTopics
+        .filter((t: any) => t.Text)
+        .slice(0, 3)
+        .map((t: any) => t.Text)
+        .join(' ');
+      if (topics) result += (result ? ' ' : '') + topics;
+    }
+
+    if (result) {
+      return result;
+    }
+
+    // Fallback: provide general guidance
+    return 'For the most current data, I recommend checking industry sources or contacting our team for the latest information.';
+  } catch (error) {
+    console.error('Real-time data fetch error:', error);
+    return 'Unable to fetch real-time data. Please contact us for the latest information.';
+  }
+}
+
 // FreightSync TMS knowledge base + Transportation Industry Expertise
 const SYSTEM_PROMPT = `You are a helpful AI assistant for FreightSync TMS with deep expertise in transportation and logistics. You can answer questions about both FreightSync TMS and general transportation industry topics.
 
@@ -88,9 +128,19 @@ const SYSTEM_PROMPT = `You are a helpful AI assistant for FreightSync TMS with d
 - **Driver Utilization**: Target 75-85% of available hours
 - **Fuel Efficiency**: 6-8 MPG for last-mile box trucks
 
+## Real-Time Data Access:
+When users ask about current/real-time information (fuel prices, market rates, news, etc.), you can search for the latest data. Use the search function for:
+- Current diesel/fuel prices
+- Latest freight market rates
+- Recent transportation industry news
+- Current economic indicators affecting logistics
+- Today's weather affecting deliveries
+- Live traffic conditions
+
 ## Your Role:
 - Answer questions about FreightSync TMS features, pricing, and capabilities
 - Provide expert guidance on transportation and logistics topics
+- Fetch real-time data when users ask about current prices, rates, or news
 - Help users understand industry challenges and best practices
 - Relate general transportation questions back to how FreightSync TMS can help
 - Be friendly, professional, and educational
@@ -122,18 +172,80 @@ export async function POST(request: NextRequest) {
       });
     }
 
-    // Call OpenAI API using Replit AI Integrations
+    // Define available tools for function calling
+    const tools = [
+      {
+        type: 'function' as const,
+        function: {
+          name: 'search_real_time_data',
+          description: 'Search for current, real-time information about transportation industry data such as fuel prices, market rates, news, weather, or traffic conditions.',
+          parameters: {
+            type: 'object',
+            properties: {
+              query: {
+                type: 'string',
+                description: 'The search query for real-time data (e.g., "current diesel fuel prices USA", "latest LTL freight rates", "transportation industry news today")'
+              }
+            },
+            required: ['query']
+          }
+        }
+      }
+    ];
+
+    // First API call with function calling enabled
     const completion = await openai.chat.completions.create({
-      model: 'gpt-4o-mini', // Fast and cost-effective
+      model: 'gpt-4o-mini',
       messages: [
         { role: 'system', content: SYSTEM_PROMPT },
         { role: 'user', content: message }
       ],
+      tools: tools,
+      tool_choice: 'auto', // Let the model decide when to use tools
       max_completion_tokens: 500,
       temperature: 0.7,
     });
 
-    const response = completion.choices[0]?.message?.content || 'I apologize, but I encountered an issue. Please try again.';
+    const responseMessage = completion.choices[0]?.message;
+
+    // Check if the model wants to call a function
+    if (responseMessage?.tool_calls && responseMessage.tool_calls.length > 0) {
+      const toolCall = responseMessage.tool_calls[0];
+      
+      if (toolCall.type === 'function' && toolCall.function.name === 'search_real_time_data') {
+        const args = JSON.parse(toolCall.function.arguments);
+        const searchResults = await getRealTimeData(args.query);
+        
+        // Second API call with function results
+        const secondCompletion = await openai.chat.completions.create({
+          model: 'gpt-4o-mini',
+          messages: [
+            { role: 'system', content: SYSTEM_PROMPT },
+            { role: 'user', content: message },
+            responseMessage,
+            {
+              role: 'tool',
+              tool_call_id: toolCall.id,
+              content: searchResults
+            }
+          ],
+          max_completion_tokens: 500,
+          temperature: 0.7,
+        });
+        
+        const finalResponse = secondCompletion.choices[0]?.message?.content || 'I apologize, but I encountered an issue. Please try again.';
+        const suggestions = generateSuggestions(message);
+        
+        return NextResponse.json({
+          response: finalResponse,
+          suggestions,
+          conversationId: `conv-${Date.now()}`
+        });
+      }
+    }
+
+    // If no function call, use the direct response
+    const response = responseMessage?.content || 'I apologize, but I encountered an issue. Please try again.';
 
     // Generate smart suggestions based on the conversation
     const suggestions = generateSuggestions(message);
