@@ -146,9 +146,11 @@ All content stored in `/data/*.json` for easy editing:
 Edit these files to update content without touching code.
 
 ## Recent Changes
-- **2025-10-11 (v5)**: Added AI-Powered Chatbot!
+- **2025-10-11 (v5)**: Added AI-Powered Chatbot with Transportation Expertise!
   - Integrated OpenAI GPT-4o-mini for intelligent customer support
-  - Chatbot trained on FreightSync TMS knowledge (features, pricing, integrations)
+  - Comprehensive knowledge base: FreightSync TMS + transportation industry expertise
+  - Answers questions about LTL/FTL, 3PL/4PL, industry challenges, best practices
+  - Covers transportation modes, logistics concepts, industry metrics, and solutions
   - Provides smart contextual suggestions for follow-up questions
   - Works on Replit (Replit AI) and Vercel (OpenAI API key required)
   - Widget appears on all pages with 💬 icon in bottom-right
