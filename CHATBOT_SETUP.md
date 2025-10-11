@@ -10,6 +10,7 @@ Your FreightSync TMS website now includes an AI-powered chatbot that provides in
 - **Provides smart suggestions** for follow-up questions
 - **Works on all pages** with a 💬 icon in the bottom-right corner
 - **Uses GPT-4o-mini** for fast, accurate responses
+- **Professional formatting** - Clean display without markdown symbols (**, ##, etc.)
 
 ## How It Works
 

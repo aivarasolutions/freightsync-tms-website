@@ -146,6 +146,12 @@ All content stored in `/data/*.json` for easy editing:
 Edit these files to update content without touching code.
 
 ## Recent Changes
+- **2025-10-11 (v6)**: Enhanced Chatbot with Professional Markdown Formatting!
+  - Implemented clean, professional formatting using marked + DOMPurify
+  - Responses now display without visible markdown symbols (**, ##, etc.)
+  - Optimized rendering: styles injected once, sanitized HTML for security
+  - Maintains minimal, clean design aesthetic (Sylectus-inspired)
+  
 - **2025-10-11 (v5)**: Added AI-Powered Chatbot with Transportation Expertise + Complete Financial Data!
   - Integrated OpenAI GPT-4o-mini for intelligent customer support
   - Comprehensive knowledge base: FreightSync TMS + transportation industry expertise
