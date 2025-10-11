@@ -46,6 +46,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <script src="chat-widget.js"></script>
       </body>
     </html>
   )
