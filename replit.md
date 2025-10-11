@@ -146,6 +146,13 @@ All content stored in `/data/*.json` for easy editing:
 Edit these files to update content without touching code.
 
 ## Recent Changes
+- **2025-10-11 (v5)**: Added AI-Powered Chatbot!
+  - Integrated Replit AI gateway for intelligent customer support
+  - Chatbot trained on FreightSync TMS knowledge (features, pricing, integrations)
+  - Provides smart contextual suggestions for follow-up questions
+  - No API key required - uses Replit's AI Integrations
+  - Widget appears on all pages with 💬 icon in bottom-right
+
 - **2025-10-10 (v4)**: Deployed successfully to Vercel!
   - Fixed Vercel configuration: Set Framework Preset to Next.js (was treating as static site)
   - Fixed blog article text readability: removed all dark mode variants, now using text-neutral

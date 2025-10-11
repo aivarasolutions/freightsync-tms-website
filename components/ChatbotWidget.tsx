@@ -4,8 +4,8 @@ import { useEffect } from 'react'
 
 export function ChatbotWidget() {
   useEffect(() => {
-    // ⚙️ CONFIGURATION - Chatbot API URL (without /api/chat - will be added in fetch)
-    const CHATBOT_API_URL = 'https://freight-sync-tms-bot.replit.app';
+    // ⚙️ CONFIGURATION - Using local API endpoint
+    const CHATBOT_API_URL = '/api/chatbot';
     
     // Create widget container
     const widgetHTML = `
@@ -223,15 +223,13 @@ export function ChatbotWidget() {
 
       try {
         // Call chatbot API
-        const response = await fetch(`${CHATBOT_API_URL}/api/chat`, {
+        const response = await fetch(CHATBOT_API_URL, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            message: message,
-            userToken: null,
-            conversationId: conversationId
+            message: message
           })
         });
 
