@@ -13,10 +13,10 @@ export function PricingCard({ name, description, price, features, highlighted = 
   return (
     <div className={`p-8 rounded-xl border-2 ${
       highlighted 
-        ? 'border-primary bg-gradient-to-br from-primary/5 to-accent/5' 
+        ? 'border-teal bg-gradient-to-br from-navy/5 to-teal/5' 
         : 'border-border bg-white'
     }`}>
-      <h3 className="text-2xl font-bold text-secondary mb-2">
+      <h3 className="text-2xl font-bold text-navy mb-2">
         {name}
       </h3>
       <p className="text-neutral mb-6">
@@ -24,7 +24,7 @@ export function PricingCard({ name, description, price, features, highlighted = 
       </p>
       {price && (
         <div className="mb-6">
-          <span className="text-4xl font-bold text-secondary">
+          <span className="text-4xl font-bold text-navy">
             {price}
           </span>
         </div>

@@ -76,7 +76,7 @@ export default function Pricing() {
       <section className="bg-white py-16 sm:py-24">
         <Container>
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-secondary mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-navy mb-6">
               Simple, transparent pricing
             </h1>
             <p className="text-xl text-neutral">
@@ -101,7 +101,7 @@ export default function Pricing() {
           </div>
 
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-secondary mb-8 text-center">
+            <h2 className="text-3xl font-bold text-navy mb-8 text-center">
               Frequently Asked Questions
             </h2>
             <FAQ items={faqs} />

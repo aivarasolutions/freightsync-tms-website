@@ -38,7 +38,7 @@ export default function Features() {
       <section className="bg-white py-16 sm:py-24">
         <Container>
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-secondary mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-navy mb-6">
               Powerful features for modern logistics
             </h1>
             <p className="text-xl text-neutral">

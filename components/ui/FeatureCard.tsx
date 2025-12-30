@@ -9,13 +9,13 @@ interface FeatureCardProps {
 
 export function FeatureCard({ title, description, icon, bullets }: FeatureCardProps) {
   return (
-    <div className="p-6 bg-white rounded-lg border border-border hover:border-primary transition-colors">
+    <div className="p-6 bg-white rounded-xl border border-border hover:border-teal hover:shadow-md transition-all">
       {icon && (
-        <div className="w-12 h-12 mb-4 text-primary">
+        <div className="w-12 h-12 mb-4 text-teal">
           {icon}
         </div>
       )}
-      <h3 className="text-xl font-bold text-secondary mb-2">
+      <h3 className="text-xl font-bold text-navy mb-2">
         {title}
       </h3>
       <p className="text-neutral mb-4">

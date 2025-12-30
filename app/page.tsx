@@ -56,7 +56,7 @@ export default function Home() {
               <Button href="/contact" variant="teal" size="lg">
                 Get Started Today
               </Button>
-              <Button href="/features" variant="secondary" size="lg" className="bg-transparent border-white text-white hover:bg-white hover:text-navy">
+              <Button href="/features" variant="outline" size="lg" className="border-2 border-white text-white hover:bg-white hover:text-navy bg-transparent">
                 Explore Services
               </Button>
             </div>

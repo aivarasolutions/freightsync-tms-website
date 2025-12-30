@@ -36,9 +36,9 @@ export function ChatbotWidget() {
           width: 60px;
           height: 60px;
           border-radius: 50%;
-          background: #0066FF;
+          background: #00b4a0;
           border: none;
-          box-shadow: 0 4px 12px rgba(0, 102, 255, 0.3);
+          box-shadow: 0 4px 12px rgba(0, 180, 160, 0.3);
           cursor: pointer;
           display: flex;
           align-items: center;
@@ -65,7 +65,7 @@ export function ChatbotWidget() {
         ">
           <!-- Header -->
           <div style="
-            background: #0066FF;
+            background: #1a365d;
             color: white;
             padding: 16px;
             display: flex;
@@ -121,7 +121,7 @@ export function ChatbotWidget() {
             />
             <button id="chat-send-btn" style="
               padding: 10px 20px;
-              background: #0066FF;
+              background: #00b4a0;
               color: white;
               border: none;
               border-radius: 8px;
@@ -192,7 +192,7 @@ export function ChatbotWidget() {
         font-size: 14px;
         line-height: 1.6;
         ${sender === 'user' 
-          ? 'background: #0066FF; color: white;' 
+          ? 'background: #1a365d; color: white;' 
           : 'background: white; color: #1f2937; border: 1px solid #e5e7eb;'
         }
       `;

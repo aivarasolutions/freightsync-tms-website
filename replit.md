@@ -89,13 +89,13 @@ npm run start
 
 ## Design System
 
-### Brand Colors (Updated October 2025)
-- **Primary**: #0066FF (Bright Blue)
-- **Secondary**: #1a1a1a (Almost Black)
-- **Accent**: #00D4AA (Teal Green)
-- **Neutral**: #333333 (Dark Gray)
-- **Muted**: #f8f9fa (Light Gray Background)
-- **Border**: #e5e7eb (Light Gray Border)
+### Brand Colors (Updated December 2025)
+- **Primary/Navy**: #1a365d (Navy Blue)
+- **Secondary**: #0f2847 (Dark Navy)
+- **Accent/Teal**: #00b4a0 (Teal Green)
+- **Neutral**: #4a5568 (Gray)
+- **Muted**: #f7fafc (Light Gray Background)
+- **Border**: #e2e8f0 (Light Gray Border)
 
 ### Components
 All components are in `/components/ui`:
@@ -146,6 +146,17 @@ All content stored in `/data/*.json` for easy editing:
 Edit these files to update content without touching code.
 
 ## Recent Changes
+- **2025-12-30 (v7)**: Complete Brand Redesign Matching New Marketing Materials!
+  - New navy blue (#1a365d) and teal (#00b4a0) color scheme
+  - Updated logo: "Freight" (navy) + "Sync" (teal) + "TMS" (navy) with truck icon
+  - New hero section with gradient navy background
+  - Updated tagline: "Your Complete Blueprint for Launching and Scaling a Full-Service Logistics Business"
+  - Highlighted 4 core services: LTL, Next-Day Delivery, Real-Time Tracking, Damage-Free Transport
+  - Added contact info: 281-310-1114, Admin@FreightSyncTMS.com, Charlotte, North Carolina
+  - Updated footer with complete business contact information
+  - Updated all UI components (buttons, cards, headings) with new color scheme
+  - Chatbot widget updated to match new teal/navy branding
+
 - **2025-10-11 (v6)**: Enhanced Chatbot with Professional Markdown Formatting!
   - Implemented clean, professional formatting using marked + DOMPurify
   - Responses now display without visible markdown symbols (**, ##, etc.)

@@ -26,46 +26,45 @@ export default function Contact() {
         <Container>
           <div className="grid lg:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-2xl font-bold text-secondary dark:text-white mb-6">
+              <h2 className="text-2xl font-bold text-navy mb-6">
                 Get a personalized demo
               </h2>
-              <p className="text-gray-600 dark:text-gray-300 mb-8">
+              <p className="text-neutral mb-8">
                 See how FreightSync can streamline your last-mile delivery operations. 
                 We'll tailor the demo to your specific needs and use cases.
               </p>
               
               <div className="space-y-6 mb-12">
                 <div className="flex items-start gap-4">
-                  <Mail className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
+                  <Mail className="w-6 h-6 text-teal mt-1 flex-shrink-0" />
                   <div>
-                    <div className="font-semibold text-secondary dark:text-white">Email</div>
-                    <div className="text-gray-600 dark:text-gray-400">contact@freightsynctms.com</div>
+                    <div className="font-semibold text-navy">Email</div>
+                    <a href="mailto:Admin@FreightSyncTMS.com" className="text-neutral hover:text-teal">Admin@FreightSyncTMS.com</a>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <Phone className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
+                  <Phone className="w-6 h-6 text-teal mt-1 flex-shrink-0" />
                   <div>
-                    <div className="font-semibold text-secondary dark:text-white">Phone</div>
-                    <div className="text-gray-600 dark:text-gray-400">1-800-FREIGHT (1-800-373-4448)</div>
+                    <div className="font-semibold text-navy">Phone</div>
+                    <a href="tel:281-310-1114" className="text-neutral hover:text-teal">281-310-1114</a>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <MapPin className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
+                  <MapPin className="w-6 h-6 text-teal mt-1 flex-shrink-0" />
                   <div>
-                    <div className="font-semibold text-secondary dark:text-white">Office</div>
-                    <div className="text-gray-600 dark:text-gray-400">
-                      Charlotte, NC<br />
-                      Houston, TX (coming soon)
+                    <div className="font-semibold text-navy">Office</div>
+                    <div className="text-neutral">
+                      Charlotte, North Carolina
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-muted dark:bg-gray-800 p-6 rounded-xl">
-                <h3 className="font-semibold text-secondary dark:text-white mb-3">
+              <div className="bg-muted p-6 rounded-xl">
+                <h3 className="font-semibold text-navy mb-3">
                   What to expect
                 </h3>
-                <ul className="space-y-2 text-gray-600 dark:text-gray-400">
+                <ul className="space-y-2 text-neutral">
                   <li className="flex items-start">
                     <span className="mr-2 text-accent">•</span>
                     30-minute personalized demo
@@ -86,7 +85,7 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="bg-white dark:bg-gray-800 p-8 rounded-xl border border-gray-200 dark:border-gray-700">
+            <div className="bg-white p-8 rounded-xl border border-border">
               <ContactForm />
             </div>
           </div>
