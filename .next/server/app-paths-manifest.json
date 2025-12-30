@@ -1,18 +1,1 @@
-{
-  "/_not-found/page": "app/_not-found/page.js",
-  "/api/chatbot/route": "app/api/chatbot/route.js",
-  "/api/contact/route": "app/api/contact/route.js",
-  "/page": "app/page.js",
-  "/sitemap.xml/route": "app/sitemap.xml/route.js",
-  "/case-studies/fleetco/page": "app/case-studies/fleetco/page.js",
-  "/about/page": "app/about/page.js",
-  "/blog/page": "app/blog/page.js",
-  "/contact/page": "app/contact/page.js",
-  "/blog/how-to-choose-a-tms/page": "app/blog/how-to-choose-a-tms/page.js",
-  "/features/page": "app/features/page.js",
-  "/pricing/page": "app/pricing/page.js",
-  "/solutions/3pl/page": "app/solutions/3pl/page.js",
-  "/solutions/last-mile/page": "app/solutions/last-mile/page.js",
-  "/solutions/retail/page": "app/solutions/retail/page.js",
-  "/integrations/page": "app/integrations/page.js"
-}
+{}
