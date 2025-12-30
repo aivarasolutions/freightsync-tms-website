@@ -51,7 +51,7 @@ export function ContactForm() {
       </div>
       
       <div>
-        <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+        <label htmlFor="name" className="block text-sm font-medium text-navy mb-2">
           Name *
         </label>
         <input
@@ -59,12 +59,12 @@ export function ContactForm() {
           id="name"
           name="name"
           required
-          className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-800 dark:text-white"
+          className="w-full px-4 py-2 border border-border rounded-lg focus:ring-2 focus:ring-teal focus:border-transparent bg-white text-navy"
         />
       </div>
       
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+        <label htmlFor="email" className="block text-sm font-medium text-navy mb-2">
           Work Email *
         </label>
         <input
@@ -72,12 +72,12 @@ export function ContactForm() {
           id="email"
           name="email"
           required
-          className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-800 dark:text-white"
+          className="w-full px-4 py-2 border border-border rounded-lg focus:ring-2 focus:ring-teal focus:border-transparent bg-white text-navy"
         />
       </div>
       
       <div>
-        <label htmlFor="company" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+        <label htmlFor="company" className="block text-sm font-medium text-navy mb-2">
           Company *
         </label>
         <input
@@ -85,18 +85,18 @@ export function ContactForm() {
           id="company"
           name="company"
           required
-          className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-800 dark:text-white"
+          className="w-full px-4 py-2 border border-border rounded-lg focus:ring-2 focus:ring-teal focus:border-transparent bg-white text-navy"
         />
       </div>
       
       <div>
-        <label htmlFor="fleetSize" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+        <label htmlFor="fleetSize" className="block text-sm font-medium text-navy mb-2">
           Fleet Size
         </label>
         <select
           id="fleetSize"
           name="fleetSize"
-          className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-800 dark:text-white"
+          className="w-full px-4 py-2 border border-border rounded-lg focus:ring-2 focus:ring-teal focus:border-transparent bg-white text-navy"
         >
           <option value="">Select...</option>
           <option value="1-10">1-10 vehicles</option>
@@ -107,14 +107,14 @@ export function ContactForm() {
       </div>
       
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+        <label htmlFor="message" className="block text-sm font-medium text-navy mb-2">
           Message
         </label>
         <textarea
           id="message"
           name="message"
           rows={4}
-          className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-800 dark:text-white"
+          className="w-full px-4 py-2 border border-border rounded-lg focus:ring-2 focus:ring-teal focus:border-transparent bg-white text-navy"
         ></textarea>
       </div>
       
@@ -123,10 +123,10 @@ export function ContactForm() {
       </Button>
       
       {status === 'success' && (
-        <p className="text-green-600 dark:text-green-400">Thank you! We'll be in touch soon.</p>
+        <p className="text-green-600">Thank you! We'll be in touch soon.</p>
       )}
       {status === 'error' && (
-        <p className="text-red-600 dark:text-red-400">Something went wrong. Please try again.</p>
+        <p className="text-red-600">Something went wrong. Please try again.</p>
       )}
     </form>
   )
