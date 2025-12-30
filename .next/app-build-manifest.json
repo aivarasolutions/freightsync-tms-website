@@ -11,15 +11,10 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/features/page": [
+    "/case-studies/fleetco/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/features/page.js"
-    ],
-    "/solutions/last-mile/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/solutions/last-mile/page.js"
+      "static/chunks/app/case-studies/fleetco/page.js"
     ]
   }
 }

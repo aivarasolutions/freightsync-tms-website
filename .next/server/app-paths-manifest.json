@@ -1,5 +1,4 @@
 {
   "/page": "app/page.js",
-  "/features/page": "app/features/page.js",
-  "/solutions/last-mile/page": "app/solutions/last-mile/page.js"
+  "/case-studies/fleetco/page": "app/case-studies/fleetco/page.js"
 }

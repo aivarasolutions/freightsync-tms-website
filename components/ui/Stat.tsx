@@ -7,14 +7,14 @@ interface StatProps {
 export function Stat({ value, label, description }: StatProps) {
   return (
     <div className="text-center p-6">
-      <div className="text-4xl sm:text-5xl font-bold text-gradient mb-2">
+      <div className="text-4xl sm:text-5xl font-bold text-teal mb-2">
         {value}
       </div>
-      <div className="text-lg font-semibold text-secondary dark:text-white mb-1">
+      <div className="text-lg font-semibold text-navy mb-1">
         {label}
       </div>
       {description && (
-        <div className="text-sm text-gray-600 dark:text-gray-400">
+        <div className="text-sm text-neutral">
           {description}
         </div>
       )}

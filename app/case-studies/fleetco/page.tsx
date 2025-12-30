@@ -21,7 +21,7 @@ export default function FleetCoCaseStudy() {
       <section className="bg-white py-16 sm:py-24">
         <Container>
           <div className="max-w-4xl">
-            <h1 className="text-4xl sm:text-5xl font-bold text-secondary mb-6">
+            <h1 className="text-4xl sm:text-5xl font-bold text-navy mb-6">
               FleetCo scaled last-mile delivery with FreightSync
             </h1>
             <p className="text-xl text-neutral">
@@ -42,7 +42,7 @@ export default function FleetCoCaseStudy() {
 
           <div className="max-w-4xl mx-auto space-y-12">
             <div>
-              <h2 className="text-2xl font-bold text-secondary mb-4">
+              <h2 className="text-2xl font-bold text-navy mb-4">
                 The Challenge
               </h2>
               <p className="text-neutral mb-4">
@@ -67,7 +67,7 @@ export default function FleetCoCaseStudy() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-secondary mb-4">
+              <h2 className="text-2xl font-bold text-navy mb-4">
                 The Solution
               </h2>
               <p className="text-neutral mb-4">
@@ -90,7 +90,7 @@ export default function FleetCoCaseStudy() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-secondary mb-4">
+              <h2 className="text-2xl font-bold text-navy mb-4">
                 The Outcome
               </h2>
               <p className="text-neutral mb-4">
@@ -106,7 +106,7 @@ export default function FleetCoCaseStudy() {
                 to hours. We couldn't have scaled this fast without it."
               </blockquote>
               <div>
-                <div className="font-semibold text-secondary">Jordan A.</div>
+                <div className="font-semibold text-navy">Jordan A.</div>
                 <div className="text-sm text-neutral">
                   Ops Director, FleetCo
                 </div>
@@ -115,7 +115,7 @@ export default function FleetCoCaseStudy() {
           </div>
 
           <div className="text-center mt-16">
-            <h3 className="text-2xl font-bold text-secondary mb-4">
+            <h3 className="text-2xl font-bold text-navy mb-4">
               Ready to scale like FleetCo?
             </h3>
             <Button href="/contact" size="lg">

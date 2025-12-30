@@ -211,7 +211,7 @@ export default function Home() {
       <section className="py-16 sm:py-24 bg-gradient-to-r from-navy to-secondary text-white">
         <Container>
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-white">
               Ready to Scale Your Logistics Business?
             </h2>
             <p className="text-xl mb-4 text-white/90">
