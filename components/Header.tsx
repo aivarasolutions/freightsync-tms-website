@@ -15,6 +15,7 @@ export function Header() {
     { name: 'Pricing', href: '/pricing' },
     { name: 'Case Studies', href: '/case-studies/fleetco' },
     { name: 'Blog', href: '/blog' },
+    { name: 'Owner Portal', href: 'https://portal.freightsynctms.com', external: true },
   ]
 
   return (
@@ -39,22 +40,42 @@ export function Header() {
             </Link>
           </div>
           
-          <div className="hidden md:flex md:items-center md:space-x-8">
+          <div className="hidden lg:flex lg:items-center lg:space-x-5">
             {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="text-neutral hover:text-navy transition-colors font-medium"
-              >
-                {item.name}
-              </Link>
+              item.external ? (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-neutral hover:text-navy transition-colors font-medium whitespace-nowrap"
+                >
+                  {item.name}
+                </a>
+              ) : (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="text-sm text-neutral hover:text-navy transition-colors font-medium whitespace-nowrap"
+                >
+                  {item.name}
+                </Link>
+              )
             ))}
+            <a
+              href="https://portal.freightsynctms.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-3 py-1.5 text-sm font-semibold rounded-lg bg-teal text-white hover:bg-teal/90 transition-colors whitespace-nowrap"
+            >
+              Access Owner Dashboard
+            </a>
             <Button href="/contact" size="sm">
               Get Started
             </Button>
           </div>
           
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <button
               type="button"
               className="text-navy"
@@ -69,18 +90,40 @@ export function Header() {
         </div>
         
         {mobileMenuOpen && (
-          <div id="mobile-menu" className="md:hidden py-4 border-t border-gray-200">
+          <div id="mobile-menu" className="lg:hidden py-4 border-t border-gray-200">
             <div className="space-y-4">
               {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="block text-neutral hover:text-navy font-medium"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
+                item.external ? (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-neutral hover:text-navy font-medium"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.name}
+                  </a>
+                ) : (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className="block text-neutral hover:text-navy font-medium"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                )
               ))}
+              <a
+                href="https://portal.freightsynctms.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-center px-4 py-2 font-semibold rounded-lg bg-teal text-white hover:bg-teal/90 transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Access Owner Dashboard
+              </a>
               <Button href="/contact" className="w-full">
                 Get Started
               </Button>
