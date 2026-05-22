@@ -19,10 +19,10 @@ export function Button({
   const baseStyles = 'inline-flex items-center justify-center font-semibold rounded-md transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-navy'
   
   const variants = {
-    primary: 'bg-navy text-white hover:bg-secondary shadow-sm',
+    primary: 'bg-gradient-to-r from-navy to-royal text-white hover:from-royal hover:to-cyan shadow-md',
     secondary: 'bg-white text-navy border-2 border-navy hover:bg-navy hover:text-white',
-    outline: 'border-2 border-gray-300 text-neutral hover:border-navy hover:text-navy',
-    teal: 'bg-teal text-white hover:bg-emerald-600 shadow-sm'
+    outline: 'border-2 border-gray-300 text-neutral hover:border-cyan hover:text-cyan',
+    teal: 'bg-gradient-to-r from-cyan to-teal text-white hover:from-teal hover:to-cyan shadow-md'
   }
   
   const sizes = {

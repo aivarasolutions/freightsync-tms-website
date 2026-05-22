@@ -6,33 +6,47 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: {
-    default: 'FreightSync TMS - The modern TMS for last-mile delivery',
+    default: 'FreightSync TMS | Logistics Services & Transportation Management Software',
     template: '%s | FreightSync TMS'
   },
-  description: 'Plan routes, dispatch drivers, track live ETAs, and automate billing—all in one place.',
-  keywords: ['TMS', 'transportation management', 'last-mile delivery', '3PL', 'logistics'],
+  description: 'FreightSync TMS provides logistics services and transportation management software for dispatch, fleet operations, load tracking, driver settlements, reporting, and growing logistics companies.',
+  keywords: [
+    'transportation management system',
+    'logistics services',
+    'fleet management',
+    'dispatch software',
+    'load tracking',
+    'driver settlements',
+    'freight operations',
+    'Charlotte logistics company',
+    'TMS portal',
+  ],
   authors: [{ name: 'FreightSync TMS' }],
+  icons: {
+    icon: '/freightsync-logo.png',
+    apple: '/freightsync-logo.png',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: 'https://www.freightsynctms.com',
     siteName: 'FreightSync TMS',
-    title: 'FreightSync TMS - The modern TMS for last-mile delivery',
-    description: 'Plan routes, dispatch drivers, track live ETAs, and automate billing—all in one place.',
+    title: 'FreightSync TMS | Logistics Services & Transportation Management Software',
+    description: 'Logistics services and TMS software for dispatch, fleet operations, load tracking, driver settlements, and reporting.',
     images: [
       {
-        url: 'https://www.freightsynctms.com/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'FreightSync TMS',
+        url: 'https://www.freightsynctms.com/freightsync-logo.png',
+        width: 1024,
+        height: 1024,
+        alt: 'FreightSync TMS logo',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'FreightSync TMS - The modern TMS for last-mile delivery',
-    description: 'Plan routes, dispatch drivers, track live ETAs, and automate billing—all in one place.',
-    images: ['https://www.freightsynctms.com/og-image.png'],
+    title: 'FreightSync TMS | Logistics Services & TMS Software',
+    description: 'Logistics services and TMS software for dispatch, fleet operations, load tracking, and driver settlements.',
+    images: ['https://www.freightsynctms.com/freightsync-logo.png'],
   },
 }
 

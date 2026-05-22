@@ -9,14 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: '#1a365d',
+        primary: '#0a1f44',
         secondary: '#0f2847',
-        accent: '#00b4a0',
+        accent: '#06b6d4',
         neutral: '#4a5568',
-        muted: '#f7fafc',
+        muted: '#f5f8fc',
         border: '#e2e8f0',
-        navy: '#1a365d',
-        teal: '#00b4a0',
+        navy: '#0a1f44',
+        royal: '#1e40af',
+        cyan: '#06b6d4',
+        teal: '#14b8a6',
       },
       fontFamily: {
         sans: [
