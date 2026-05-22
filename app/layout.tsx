@@ -73,73 +73,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
-        <script dangerouslySetInnerHTML={{ __html: `
-(function() {
-  const CHATBOT_API_URL = 'https://freight-sync-tms-bot.replit.app';
-  const css = '#fs-bot *{box-sizing:border-box}#fs-bot{position:fixed;bottom:20px;right:20px;z-index:9999;font-family:Inter,system-ui,sans-serif}#fs-toggle{width:60px;height:60px;border-radius:50%;background:#0066FF;border:none;box-shadow:0 4px 12px rgba(0,102,255,.3);cursor:pointer;color:#fff;font-size:26px;display:flex;align-items:center;justify-content:center}#fs-win{position:absolute;bottom:80px;right:0;width:400px;max-width:calc(100vw - 40px);height:620px;max-height:calc(100vh - 120px);background:#fff;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,.15);display:none;flex-direction:column;overflow:hidden}#fs-head{background:#0066FF;color:#fff;padding:16px;display:flex;justify-content:space-between;align-items:center}#fs-head .t{font-weight:600;font-size:16px}#fs-head .s{font-size:12px;opacity:.9}#fs-close{background:transparent;border:none;color:#fff;cursor:pointer;font-size:22px;padding:0;line-height:1}#fs-msgs{flex:1;overflow-y:auto;padding:16px;background:#f8f9fa}.fs-row{margin-bottom:14px;display:flex;flex-direction:column}.fs-row.u{align-items:flex-end}.fs-row.b{align-items:flex-start}.fs-bub{max-width:88%;padding:10px 14px;border-radius:12px;font-size:14px;line-height:1.5;word-wrap:break-word}.fs-bub.u{background:#0066FF;color:#fff}.fs-bub.b{background:#fff;color:#1f2937;border:1px solid #e5e7eb}.fs-bub.b p{margin:0 0 8px}.fs-bub.b p:last-child{margin-bottom:0}.fs-bub.b ul{margin:6px 0 8px;padding-left:18px}.fs-bub.b li{margin-bottom:4px}.fs-bub.b strong{font-weight:600;color:#0f172a}.fs-bub.b h3,.fs-bub.b h4{margin:8px 0 4px;font-size:14px;font-weight:600}.fs-sugs{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}.fs-sug{padding:6px 12px;background:#fff;border:1px solid #d1d5db;border-radius:6px;font-size:12px;cursor:pointer;color:#374151}#fs-form{padding:14px;border-top:1px solid #e5e7eb;background:#fff;display:flex;gap:8px}#fs-in{flex:1;padding:10px 14px;border:1px solid #d1d5db;border-radius:8px;font-size:14px;outline:none}#fs-send{padding:10px 18px;background:#0066FF;color:#fff;border:none;border-radius:8px;cursor:pointer;font-weight:500}.fs-typ{color:#6b7280;font-size:13px;font-style:italic;margin-bottom:12px}';
-  const style = document.createElement('style'); style.textContent = css; document.head.appendChild(style);
-  const html = '<div id="fs-bot"><button id="fs-toggle" aria-label="Open chat">&#128172;</button><div id="fs-win" role="dialog"><div id="fs-head"><div><div class="t">FreightSync Support</div><div class="s">AI-powered assistance</div></div><button id="fs-close" aria-label="Close">&#215;</button></div><div id="fs-msgs"></div><form id="fs-form"><input id="fs-in" type="text" placeholder="Type your message..." autocomplete="off"/><button id="fs-send" type="submit">Send</button></form></div></div>';
-  document.body.insertAdjacentHTML('beforeend', html);
-  const $ = function(id){ return document.getElementById(id); };
-  const win=$('fs-win'), msgs=$('fs-msgs'), input=$('fs-in'), form=$('fs-form');
-  let conversationId=null, isOpen=false;
-  function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
-  function renderMd(text){
-    const lines = text.split(/\\r?\\n/);
-    let html='', inList=false;
-    for (let i=0;i<lines.length;i++){
-      let ln = lines[i];
-      const bullet = ln.match(/^\\s*[-*•]\\s+(.*)$/);
-      const num = ln.match(/^\\s*\\d+\\.\\s+(.*)$/);
-      const item = bullet ? bullet[1] : (num ? num[1] : null);
-      if (item !== null){
-        if (!inList){ html += '<ul>'; inList = true; }
-        html += '<li>' + fmt(item) + '</li>';
-      } else {
-        if (inList){ html += '</ul>'; inList = false; }
-        if (ln.trim() === '') { html += ''; }
-        else { html += '<p>' + fmt(ln) + '</p>'; }
-      }
-    }
-    if (inList) html += '</ul>';
-    return html;
-  }
-  function fmt(s){
-    s = esc(s);
-    s = s.replace(/\\*\\*([^*]+)\\*\\*/g, '<strong>$1</strong>');
-    s = s.replace(/\\*([^*]+)\\*/g, '<em>$1</em>');
-    s = s.replace(/\`([^\`]+)\`/g, '<code>$1</code>');
-    return s;
-  }
-  function addMsg(sender, text, suggestions){
-    const row=document.createElement('div'); row.className='fs-row '+(sender==='user'?'u':'b');
-    const bub=document.createElement('div'); bub.className='fs-bub '+(sender==='user'?'u':'b');
-    if (sender==='user') bub.textContent = text;
-    else bub.innerHTML = renderMd(text);
-    row.appendChild(bub);
-    if (suggestions && suggestions.length){
-      const sg=document.createElement('div'); sg.className='fs-sugs';
-      suggestions.forEach(function(t){ const b=document.createElement('button'); b.type='button'; b.className='fs-sug'; b.textContent=t; b.onclick=function(){ input.value=t; form.requestSubmit(); }; sg.appendChild(b); });
-      row.appendChild(sg);
-    }
-    msgs.appendChild(row); msgs.scrollTop = msgs.scrollHeight;
-  }
-  function toggle(){ isOpen=!isOpen; win.style.display = isOpen?'flex':'none'; if(isOpen && !msgs.children.length) addMsg('bot','Hello! How can I help you with your logistics needs today?'); }
-  async function send(msg){
-    addMsg('user', msg);
-    const t=document.createElement('div'); t.className='fs-typ'; t.textContent='AI is typing...'; msgs.appendChild(t); msgs.scrollTop=msgs.scrollHeight;
-    try {
-      const r=await fetch(CHATBOT_API_URL+'/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:msg,userToken:null,conversationId:conversationId})});
-      const data=await r.json(); t.remove();
-      if(r.ok){ if(data.conversationId) conversationId=data.conversationId; addMsg('bot', data.response, data.suggestions||[]); }
-      else addMsg('bot','Sorry, I encountered an error. Please try again.');
-    } catch(e){ t.remove(); addMsg('bot','Sorry, I encountered an error. Please try again.'); }
-  }
-  $('fs-toggle').addEventListener('click', toggle);
-  $('fs-close').addEventListener('click', toggle);
-  form.addEventListener('submit', function(e){ e.preventDefault(); const v=input.value.trim(); if(!v) return; input.value=''; send(v); });
-})();
-` }} />
+        <script src="https://freight-sync-tms-bot.replit.app/widget.js" async></script>
       </body>
     </html>
   )
