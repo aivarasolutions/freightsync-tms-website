@@ -97,27 +97,29 @@ export default function Home() {
               <span className="text-white/90 text-sm font-medium">Full-Service Logistics + TMS Technology</span>
             </div>
 
-            <div className="flex justify-center mb-6">
-              <Image
-                src="/freightsync-logo.png"
-                alt="FreightSync TMS logo"
-                width={140}
-                height={140}
-                priority
-                className="h-28 w-auto drop-shadow-2xl"
-              />
+            <div className="flex justify-center mb-8">
+              <div className="bg-white rounded-2xl p-4 shadow-2xl ring-4 ring-white/20">
+                <Image
+                  src="/freightsync-logo.png"
+                  alt="FreightSync TMS logo"
+                  width={160}
+                  height={160}
+                  priority
+                  className="h-24 w-auto sm:h-28"
+                />
+              </div>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight bg-gradient-to-r from-white via-cyan to-teal bg-clip-text text-transparent">
-              FreightSync TMS
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 pb-2 leading-[1.15] text-white tracking-tight">
+              Freight<span className="text-cyan">Sync</span> TMS
             </h1>
-            <p className="text-xl sm:text-2xl text-white/90 mb-4 max-w-3xl mx-auto font-light">
+            <p className="text-xl sm:text-2xl text-white mb-4 max-w-3xl mx-auto font-semibold">
               Logistics Services + Transportation Management Software Built to Help Fleets Scale
             </p>
-            <p className="text-base sm:text-lg text-white/70 mb-6 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg text-white/85 mb-6 max-w-3xl mx-auto">
               From dispatch and load tracking to driver settlements, reporting, and fleet operations, FreightSync TMS helps logistics companies streamline the back office and move freight with confidence.
             </p>
-            <p className="text-sm text-cyan mb-10">
+            <p className="text-sm font-medium text-cyan mb-10">
               Charlotte, North Carolina | Serving logistics teams nationwide
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -143,16 +145,15 @@ export default function Home() {
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            <div className="relative bg-gradient-to-br from-navy to-royal rounded-2xl p-8 text-white overflow-hidden">
-              <div className="absolute -top-10 -right-10 w-40 h-40 bg-cyan/20 rounded-full blur-2xl"></div>
-              <div className="relative">
-                <div className="inline-flex items-center justify-center h-12 w-12 rounded-xl bg-cyan/20 backdrop-blur-sm mb-4">
-                  <Truck className="h-6 w-6 text-cyan" />
+            <div className="relative bg-gradient-to-br from-navy to-royal rounded-2xl p-8 text-white overflow-hidden shadow-xl">
+              <div className="relative z-10">
+                <div className="inline-flex items-center justify-center h-12 w-12 rounded-xl bg-cyan/30 mb-4">
+                  <Truck className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4">Logistics Services</h3>
+                <h3 className="text-2xl font-bold mb-4 text-white">Logistics Services</h3>
                 <ul className="space-y-3">
                   {['Dispatch support', 'Load coordination', 'Fleet operations', 'Driver communication', 'Delivery management'].map((item) => (
-                    <li key={item} className="flex items-center gap-3 text-white/90">
+                    <li key={item} className="flex items-center gap-3 text-white">
                       <CheckCircle2 className="h-5 w-5 text-cyan flex-shrink-0" />
                       <span>{item}</span>
                     </li>

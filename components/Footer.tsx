@@ -33,7 +33,7 @@ export function Footer() {
       <Container className="py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           <div>
-            <div className="mb-4 inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-xl p-2">
+            <div className="mb-4 inline-flex items-center gap-3 bg-white rounded-xl px-3 py-2 shadow-md">
               <Image
                 src="/freightsync-logo.png"
                 alt="FreightSync TMS logo"
@@ -41,7 +41,7 @@ export function Footer() {
                 height={56}
                 className="h-12 w-auto"
               />
-              <span className="text-base font-bold text-white">FreightSync TMS</span>
+              <span className="text-base font-bold text-navy">FreightSync TMS</span>
             </div>
             <p className="text-sm text-gray-300 mb-4">
               Logistics services and transportation management software for growing fleets, dispatch teams, and delivery operations.
