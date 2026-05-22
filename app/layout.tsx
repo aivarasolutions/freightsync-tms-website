@@ -22,10 +22,18 @@ export const metadata: Metadata = {
     'TMS portal',
   ],
   authors: [{ name: 'FreightSync TMS' }],
+  metadataBase: new URL('https://www.freightsynctms.com'),
   icons: {
-    icon: '/freightsync-logo.png',
-    apple: '/freightsync-logo.png',
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/logo-square.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: '/apple-touch-icon.png',
+    shortcut: '/favicon.ico',
   },
+  manifest: '/site.webmanifest',
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -35,18 +43,23 @@ export const metadata: Metadata = {
     description: 'Logistics services and TMS software for dispatch, fleet operations, load tracking, driver settlements, and reporting.',
     images: [
       {
-        url: 'https://www.freightsynctms.com/freightsync-logo.png',
-        width: 1024,
-        height: 1024,
-        alt: 'FreightSync TMS logo',
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'FreightSync TMS — Logistics Services + Transportation Management Software',
+        type: 'image/png',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
+    site: '@FreightSyncTMS',
     title: 'FreightSync TMS | Logistics Services & TMS Software',
     description: 'Logistics services and TMS software for dispatch, fleet operations, load tracking, and driver settlements.',
-    images: ['https://www.freightsynctms.com/freightsync-logo.png'],
+    images: ['/og-image.png'],
+  },
+  other: {
+    'theme-color': '#0a1f44',
   },
 }
 
