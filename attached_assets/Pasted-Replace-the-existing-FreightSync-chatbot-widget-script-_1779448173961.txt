@@ -1,79 +1,6 @@
-import type { Metadata } from 'next'
-import { Header } from '@/components/Header'
-import { Footer } from '@/components/Footer'
-import './globals.css'
+Replace the existing FreightSync chatbot widget script (the one before </body> that references freight-sync-tms-bot.replit.app) with this updated version. It renders markdown formatting (bold, bullets, line breaks) so AI replies are readable instead of one wall of text.
 
-export const metadata: Metadata = {
-  title: {
-    default: 'FreightSync TMS | Logistics Services & Transportation Management Software',
-    template: '%s | FreightSync TMS'
-  },
-  description: 'FreightSync TMS provides logistics services and transportation management software for dispatch, fleet operations, load tracking, driver settlements, reporting, and growing logistics companies.',
-  keywords: [
-    'transportation management system',
-    'logistics services',
-    'fleet management',
-    'dispatch software',
-    'load tracking',
-    'driver settlements',
-    'freight operations',
-    'Charlotte logistics company',
-    'TMS portal',
-  ],
-  authors: [{ name: 'FreightSync TMS' }],
-  metadataBase: new URL('https://www.freightsynctms.com'),
-  icons: {
-    icon: [
-      { url: '/favicon.ico', sizes: 'any' },
-      { url: '/favicon-16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/favicon-32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/logo-square.png', sizes: '512x512', type: 'image/png' },
-    ],
-    apple: '/apple-touch-icon.png',
-    shortcut: '/favicon.ico',
-  },
-  manifest: '/site.webmanifest',
-  openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://www.freightsynctms.com',
-    siteName: 'FreightSync TMS',
-    title: 'FreightSync TMS | Logistics Services & Transportation Management Software',
-    description: 'Logistics services and TMS software for dispatch, fleet operations, load tracking, driver settlements, and reporting.',
-    images: [
-      {
-        url: '/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'FreightSync TMS — Logistics Services + Transportation Management Software',
-        type: 'image/png',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    site: '@FreightSyncTMS',
-    title: 'FreightSync TMS | Logistics Services & TMS Software',
-    description: 'Logistics services and TMS software for dispatch, fleet operations, load tracking, and driver settlements.',
-    images: ['/og-image.png'],
-  },
-  other: {
-    'theme-color': '#0a1f44',
-  },
-}
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
-  return (
-    <html lang="en">
-      <body>
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        <script dangerouslySetInnerHTML={{ __html: `
+<script dangerouslySetInnerHTML={{ __html: `
 (function() {
   const CHATBOT_API_URL = 'https://freight-sync-tms-bot.replit.app';
   const css = '#fs-bot *{box-sizing:border-box}#fs-bot{position:fixed;bottom:20px;right:20px;z-index:9999;font-family:Inter,system-ui,sans-serif}#fs-toggle{width:60px;height:60px;border-radius:50%;background:#0066FF;border:none;box-shadow:0 4px 12px rgba(0,102,255,.3);cursor:pointer;color:#fff;font-size:26px;display:flex;align-items:center;justify-content:center}#fs-win{position:absolute;bottom:80px;right:0;width:400px;max-width:calc(100vw - 40px);height:620px;max-height:calc(100vh - 120px);background:#fff;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,.15);display:none;flex-direction:column;overflow:hidden}#fs-head{background:#0066FF;color:#fff;padding:16px;display:flex;justify-content:space-between;align-items:center}#fs-head .t{font-weight:600;font-size:16px}#fs-head .s{font-size:12px;opacity:.9}#fs-close{background:transparent;border:none;color:#fff;cursor:pointer;font-size:22px;padding:0;line-height:1}#fs-msgs{flex:1;overflow-y:auto;padding:16px;background:#f8f9fa}.fs-row{margin-bottom:14px;display:flex;flex-direction:column}.fs-row.u{align-items:flex-end}.fs-row.b{align-items:flex-start}.fs-bub{max-width:88%;padding:10px 14px;border-radius:12px;font-size:14px;line-height:1.5;word-wrap:break-word}.fs-bub.u{background:#0066FF;color:#fff}.fs-bub.b{background:#fff;color:#1f2937;border:1px solid #e5e7eb}.fs-bub.b p{margin:0 0 8px}.fs-bub.b p:last-child{margin-bottom:0}.fs-bub.b ul{margin:6px 0 8px;padding-left:18px}.fs-bub.b li{margin-bottom:4px}.fs-bub.b strong{font-weight:600;color:#0f172a}.fs-bub.b h3,.fs-bub.b h4{margin:8px 0 4px;font-size:14px;font-weight:600}.fs-sugs{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}.fs-sug{padding:6px 12px;background:#fff;border:1px solid #d1d5db;border-radius:6px;font-size:12px;cursor:pointer;color:#374151}#fs-form{padding:14px;border-top:1px solid #e5e7eb;background:#fff;display:flex;gap:8px}#fs-in{flex:1;padding:10px 14px;border:1px solid #d1d5db;border-radius:8px;font-size:14px;outline:none}#fs-send{padding:10px 18px;background:#0066FF;color:#fff;border:none;border-radius:8px;cursor:pointer;font-weight:500}.fs-typ{color:#6b7280;font-size:13px;font-style:italic;margin-bottom:12px}';
@@ -140,7 +67,5 @@ export default function RootLayout({
   form.addEventListener('submit', function(e){ e.preventDefault(); const v=input.value.trim(); if(!v) return; input.value=''; send(v); });
 })();
 ` }} />
-      </body>
-    </html>
-  )
-}
+
+Remove the old script and put this one in its place. Do not change anything else.
