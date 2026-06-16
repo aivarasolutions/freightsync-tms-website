@@ -10,6 +10,7 @@ export function Footer() {
       { name: 'Next-Day Delivery', href: '/features' },
       { name: 'Dispatch Support', href: '/features' },
       { name: 'Fleet Operations', href: '/features' },
+      { name: 'Carrier Accelerator Program', href: '/carrier-accelerator-program' },
       { name: 'Real-Time Tracking', href: '/features' },
     ],
     platform: [

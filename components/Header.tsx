@@ -13,6 +13,7 @@ export function Header() {
     { name: 'Services', href: '/features' },
     { name: 'TMS Portal', href: '/integrations' },
     { name: 'Solutions', href: '/solutions/last-mile' },
+    { name: 'Carrier Program', href: '/carrier-accelerator-program' },
     { name: 'Pricing', href: '/pricing' },
     { name: 'Case Studies', href: '/case-studies/fleetco' },
     { name: 'Blog', href: '/blog' },
@@ -39,7 +40,7 @@ export function Header() {
             </Link>
           </div>
 
-          <div className="hidden lg:flex lg:items-center lg:space-x-5">
+          <div className="hidden lg:flex lg:items-center lg:space-x-4">
             {navigation.map((item) => (
               item.external ? (
                 <a
