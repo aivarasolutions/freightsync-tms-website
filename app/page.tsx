@@ -37,7 +37,7 @@ const images = {
     'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1800&q=85',
   fleet: '/scene-18-wheeler.png',
   control: '/scene-sprinter-van.png',
-  warehouse: '/scene-box-truck.png',
+  warehouse: '/scene-box-truck-v2.png',
 }
 
 const revenueExamples = [
@@ -305,7 +305,7 @@ export default function Home() {
 
       <section className="bg-white py-14 sm:py-20">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+          <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
             <div>
               <SectionIntro
                 eyebrow="Managed fleet operator"

@@ -18,3 +18,9 @@ id = "IhDZ5I6nTRKCYbK9dAVEe"
 uri = "file://public/scene-18-wheeler.png"
 type = "image"
 title = "18 wheeler vendor payment handshake"
+
+[[generated]]
+id = "7hgUZ_6JugQB8sQ_Oznbw"
+uri = "file://public/scene-box-truck-v2.png"
+type = "image"
+title = "box trucks warehouse loading dock"
