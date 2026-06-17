@@ -1,9 +1,4 @@
 import type { Metadata } from 'next'
-import { Container } from '@/components/ui/Container'
-import { Button } from '@/components/ui/Button'
-import { FAQ } from '@/components/ui/FAQ'
-import { CarrierAcceleratorForm } from '@/components/ui/CarrierAcceleratorForm'
-import { CarrierRoiCalculator } from '@/components/ui/CarrierRoiCalculator'
 import {
   ArrowRight,
   Banknote,
@@ -15,41 +10,138 @@ import {
   Handshake,
   Headphones,
   Landmark,
+  LineChart,
   ReceiptText,
   ShieldCheck,
   Truck,
   UserPlus,
   WalletCards,
   Wrench,
+  XCircle,
 } from 'lucide-react'
+import { CarrierAcceleratorForm } from '@/components/ui/CarrierAcceleratorForm'
+import { Container } from '@/components/ui/Container'
+import { Button } from '@/components/ui/Button'
+import { FAQ } from '@/components/ui/FAQ'
+import { ROICalculator } from '@/components/ui/ROICalculator'
 
 export const metadata: Metadata = {
   title: 'Carrier Accelerator Program',
-  description: 'Own the vehicle while FreightSync helps manage the trucking operation with vehicle guidance, insurance direction, onboarding, dispatch, driver recruiting support, reporting, and operations.',
+  description:
+    'Turn a semi truck or Sprinter van into a managed revenue-producing asset with FreightSync dispatching, operations support, reporting, and owner payout visibility.',
 }
 
-const steps = [
-  'Choose a semi truck or Sprinter van purchase or financing path.',
-  'Obtain commercial insurance in your company name with coverage guidance.',
-  'Complete FreightSync onboarding, broker setup, and compliance review.',
-  'FreightSync supports driver recruiting and operational setup.',
-  'FreightSync manages dispatch, reporting, settlements, and operations.',
+const investmentHighlights = [
+  'You purchase or finance the vehicle.',
+  'You obtain commercial insurance.',
+  'FreightSync helps with onboarding, setup, dispatching, driver recruiting, load coordination, reporting, and operations.',
+  'The goal is recurring monthly cash flow while working toward paying off the vehicle investment.',
 ]
+
+const roiExamples = [
+  {
+    title: 'Semi Truck Investment Example',
+    icon: Truck,
+    stats: [
+      ['Estimated Truck Purchase', '$60,000'],
+      ['Startup / Registration / Setup', '$3,000'],
+      ['Estimated Insurance', '$2,000/month'],
+      ['Estimated Monthly Gross Revenue', '$22,000-$28,000'],
+      ['Estimated Monthly Owner Net Profit', '$4,000-$7,000'],
+      ['Estimated Payback Period', '12-18 months'],
+    ],
+    note:
+      'A semi truck can require a larger upfront investment, but it also has stronger gross revenue potential. With consistent utilization and proper cost control, the goal is to recover the initial investment within approximately 12-18 months, then continue generating monthly cash flow in future years.',
+  },
+  {
+    title: 'Sprinter Van Investment Example',
+    icon: WalletCards,
+    stats: [
+      ['Estimated Vehicle Purchase', '$35,000-$55,000'],
+      ['Startup / Registration / Setup', '$1,500-$3,000'],
+      ['Estimated Insurance', '$600-$1,200/month'],
+      ['Estimated Monthly Gross Revenue', '$8,000-$15,000'],
+      ['Estimated Monthly Owner Net Profit', '$2,000-$5,000'],
+      ['Estimated Payback Period', '12-24 months'],
+    ],
+    note:
+      'Sprinter vans may have a lower entry cost than semi trucks, but results depend heavily on load availability, location, vehicle utilization, and operating expenses.',
+  },
+]
+
+const investorResponsibilities = [
+  'Purchase or finance the vehicle',
+  'Maintain commercial insurance',
+  'Keep the vehicle roadworthy',
+  'Review performance reports',
+  'Fund required reserves or repairs when needed',
+]
+
+const freightSyncResponsibilities = [
+  'Dispatching',
+  'Load sourcing',
+  'Broker coordination',
+  'Driver recruiting assistance',
+  'Driver management support',
+  'Compliance guidance',
+  'Weekly reporting',
+  'Settlement tracking',
+  'Owner payout reporting',
+  'FreightSync TMS portal access',
+  'Operational support',
+]
+
+const payoffPath = [
+  {
+    year: 'Year 1',
+    items: ['Stabilize the vehicle operation', 'Build driver consistency', 'Recover startup costs', 'Work toward paying down or paying off the asset'],
+  },
+  {
+    year: 'Year 2',
+    items: ['Reduce debt burden', 'Improve monthly cash flow', 'Build operating reserves', 'Consider adding another vehicle'],
+  },
+  {
+    year: 'Year 3',
+    items: ['Continue cash-flowing from the asset', 'Scale additional vehicles if performance is strong', 'Build a larger managed fleet with FreightSync'],
+  },
+]
+
+const comparison = {
+  alone: [
+    'New authority takes time to build trust',
+    'Must learn dispatching',
+    'Must recruit and manage drivers',
+    'Must build broker relationships',
+    'Must manage compliance and paperwork',
+    'Must track expenses, settlements, and payouts manually',
+  ],
+  freightSync: [
+    'Use FreightSync operational support',
+    'Professional dispatch and load coordination',
+    'Driver recruiting assistance',
+    'Broker and carrier setup support',
+    'Compliance guidance',
+    'Weekly reporting and owner portal access',
+    'Read-only investor visibility',
+  ],
+}
 
 const programOptions = [
   {
-    title: 'Semi Truck Program',
-    fee: '$2,500',
-    payment: '$500 down and $333/month for 6 months',
-    management: '25% of gross revenue',
+    title: 'Semi Truck',
     icon: Truck,
+    onboarding: '$2,500',
+    payment: '$500 down + $333/month for 6 months',
+    fee: '25% of gross revenue',
+    additional: '$1,000 onboarding per added truck',
   },
   {
-    title: 'Sprinter Van Program',
-    fee: '$1,000',
-    payment: '$250 down and $125/month for 6 months',
-    management: '25% of gross revenue',
+    title: 'Sprinter Van',
     icon: WalletCards,
+    onboarding: '$1,000',
+    payment: '$250 down + $125/month for 6 months',
+    fee: '25% of gross revenue',
+    additional: '$500 onboarding per added van',
   },
 ]
 
@@ -58,11 +150,12 @@ const included = [
   { label: 'Load Sourcing', icon: Truck },
   { label: 'Driver Recruiting Assistance', icon: UserPlus },
   { label: 'Driver Management Support', icon: ClipboardCheck },
-  { label: 'Broker Onboarding', icon: Handshake },
-  { label: 'Compliance Assistance', icon: ShieldCheck },
+  { label: 'Broker Coordination', icon: Handshake },
+  { label: 'Compliance Guidance', icon: ShieldCheck },
   { label: 'FreightSync TMS Access', icon: BarChart3 },
   { label: 'Weekly Reporting', icon: ReceiptText },
-  { label: 'Settlement Management', icon: Banknote },
+  { label: 'Settlement Tracking', icon: Banknote },
+  { label: 'Owner Payout Reporting', icon: LineChart },
   { label: 'Administrative Support', icon: FileCheck2 },
   { label: 'Operational Guidance', icon: Wrench },
 ]
@@ -83,8 +176,8 @@ const vehicles = [
 const revenue = [
   {
     type: 'Semi Truck',
-    gross: '$18,000-$28,000',
-    profit: '$3,000-$7,000',
+    gross: '$22,000-$28,000',
+    profit: '$4,000-$7,000',
   },
   {
     type: 'Sprinter Van',
@@ -93,58 +186,85 @@ const revenue = [
   },
 ]
 
+const bestFit = [
+  'Investors who want to own a trucking asset without running daily operations',
+  'Owner-operators who want professional dispatch and operational support',
+  'Small fleet owners who want to scale',
+  'Business owners looking for monthly cash flow potential',
+  'People who understand that trucking involves risk, maintenance, insurance, and market cycles',
+]
+
+const notFit = [
+  'People expecting guaranteed income',
+  'People without enough capital for insurance, repairs, and reserves',
+  'People unwilling to maintain the vehicle properly',
+  'People who cannot handle fluctuating monthly profit',
+  'People who want FreightSync to cover all vehicle expenses',
+]
+
 const requirements = ['LLC', 'EIN', 'Business Bank Account', 'Commercial Insurance', 'Vehicle Registration', 'Compliance Documentation']
 
 const faqs = [
   {
-    question: 'Why partner with FreightSync?',
-    answer: 'FreightSync gives investors and owner-operators access to managed freight operations, dispatching, reporting, settlement support, carrier management workflows, and practical guidance that can shorten the path from equipment purchase to operating readiness.',
+    question: 'Is this an investment opportunity or a dispatch service?',
+    answer:
+      'It is structured around asset ownership. You own or finance the vehicle and maintain insurance while FreightSync supports the operational side, including dispatching, load coordination, reporting, driver support, and owner payout visibility.',
   },
   {
-    question: 'How long does onboarding take?',
-    answer: 'Timing depends on insurance, equipment readiness, documentation, and driver availability. Many partners can move through onboarding once required business, insurance, vehicle, and compliance documents are complete.',
+    question: 'Does FreightSync guarantee revenue or profit?',
+    answer:
+      'No. FreightSync does not guarantee revenue, profit, loads, utilization, or payback timelines. All examples are estimates for planning only and actual results vary.',
   },
   {
     question: 'Can FreightSync help find drivers?',
-    answer: 'Yes. FreightSync can assist with driver recruiting needs, screening coordination, and operational setup so partners are better prepared to keep equipment utilized.',
+    answer:
+      'Yes. FreightSync can assist with driver recruiting needs, screening coordination, and operational setup so partners are better prepared to keep equipment utilized.',
   },
   {
     question: 'What insurance is required?',
-    answer: 'Partners need commercial insurance in their company name. Specific coverage requirements can vary by vehicle type, freight profile, broker requirements, and operating model.',
+    answer:
+      'Partners need commercial insurance in their company name. Specific coverage requirements can vary by vehicle type, freight profile, broker requirements, and operating model.',
   },
   {
     question: 'Can I add more vehicles later?',
-    answer: 'Yes. The program is designed for growth. Additional semi trucks and Sprinter vans can be onboarded later with reduced additional-vehicle onboarding fees.',
+    answer:
+      'Yes. The program is designed for growth. Additional semi trucks and Sprinter vans can be onboarded later with reduced additional-vehicle onboarding fees.',
   },
   {
     question: 'How are settlements handled?',
-    answer: 'FreightSync supports settlement management with weekly reporting so owners can review gross revenue, fees, expenses, and operating performance with clearer visibility.',
+    answer:
+      'FreightSync supports settlement tracking and weekly reporting so owners can review gross revenue, expenses, FreightSync management fees, and operating performance with clearer visibility.',
   },
 ]
 
-function CTASection({ title, body, variant = 'light' }: { title: string; body: string; variant?: 'light' | 'dark' }) {
-  const dark = variant === 'dark'
-
+function CTASection({ title, body, primary = 'Request an Investment Review' }: { title: string; body: string; primary?: string }) {
   return (
-    <div className={`${dark ? 'bg-gradient-to-r from-navy to-royal text-white' : 'bg-white text-navy'} rounded-xl border border-border p-6 sm:p-8 shadow-lg`}>
+    <div className="rounded-xl border border-border bg-gradient-to-r from-navy to-royal p-6 sm:p-8 text-white shadow-lg">
       <div className="grid lg:grid-cols-[1fr_auto] gap-6 items-center">
         <div>
-          <h2 className={`text-2xl sm:text-3xl font-bold mb-3 ${dark ? 'text-white' : 'text-navy'}`}>{title}</h2>
-          <p className={dark ? 'text-white/85' : 'text-neutral'}>{body}</p>
+          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">{title}</h2>
+          <p className="text-white/85">{body}</p>
         </div>
         <div className="flex flex-col sm:flex-row lg:flex-col gap-3">
           <Button href="#consultation" variant="teal">
-            Schedule a Consultation
+            {primary}
           </Button>
-          <Button
-            href="#program-options"
-            variant="outline"
-            className={dark ? 'border-white text-white hover:bg-white hover:text-navy' : ''}
-          >
-            Become a FreightSync Partner
+          <Button href="#roi-calculator" variant="outline" className="border-white text-white hover:bg-white hover:text-navy">
+            Run the ROI Calculator
           </Button>
         </div>
       </div>
+    </div>
+  )
+}
+
+function DisclaimerBox({ compact = false }: { compact?: boolean }) {
+  return (
+    <div className={`rounded-xl border border-cyan/20 bg-cyan/5 ${compact ? 'p-4 text-sm' : 'p-5 text-sm sm:text-base'} text-neutral`}>
+      <p className="font-semibold text-navy mb-2">Important financial disclaimer</p>
+      <p>
+        These examples are estimates only. Actual results vary based on freight market conditions, vehicle cost, insurance cost, fuel prices, driver performance, maintenance, utilization, and financing terms.
+      </p>
     </div>
   )
 }
@@ -165,78 +285,182 @@ export default function CarrierAcceleratorProgram() {
         </div>
 
         <Container>
-          <div className="relative z-10 grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
+          <div className="relative z-10 grid lg:grid-cols-[1.05fr_0.95fr] gap-12 items-center">
             <div>
               <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-cyan mb-6">
                 <Truck className="h-4 w-4" />
                 FreightSync Carrier Accelerator Program
               </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.12] text-white mb-6">
-                Own the Vehicle. FreightSync Runs the Operation.
+                You Own the Asset. FreightSync Runs the Operation.
               </h1>
               <p className="text-lg sm:text-xl text-white/85 max-w-3xl mb-8">
-                Build a trucking asset with guidance on vehicle selection, insurance direction, onboarding, dispatch, driver recruiting support, owner reporting, and managed day-to-day operations.
+                FreightSync helps investors, owner-operators, and small fleet builders get into trucking by owning the vehicle while our team supports dispatching, drivers, load coordination, reporting, and daily operations.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button href="#consultation" variant="teal" size="lg">
-                  Schedule a Consultation
+                  Request an Investment Review
                 </Button>
-                <Button href="/contact" variant="outline" size="lg" className="border-2 border-white text-white hover:bg-white hover:text-navy">
-                  Become a FreightSync Partner
+                <Button href="#investment" variant="outline" size="lg" className="border-2 border-white text-white hover:bg-white hover:text-navy">
+                  See the ROI Examples
                 </Button>
               </div>
             </div>
 
-            <div className="bg-white rounded-xl p-6 sm:p-8 shadow-2xl border border-white/20">
-              <div className="grid grid-cols-2 gap-4 mb-6">
+            <div className="rounded-xl border border-white/20 bg-white p-6 sm:p-8 shadow-2xl">
+              <p className="text-sm font-semibold uppercase tracking-wide text-cyan mb-3">Investment model</p>
+              <h2 className="text-2xl sm:text-3xl font-bold text-navy mb-5">Turn a vehicle into a managed trucking business.</h2>
+              <div className="space-y-4">
                 {[
-                  ['You own', 'The vehicle asset'],
-                  ['Recruiting', 'Driver support'],
-                  ['We manage', 'Operations and dispatch'],
-                  ['Visibility', 'Reports and settlements'],
+                  ['Asset owner', 'You purchase or finance the vehicle and maintain insurance.'],
+                  ['Operating partner', 'FreightSync supports dispatch, drivers, brokers, reporting, and workflow.'],
+                  ['Visibility', 'Review performance, expenses, settlements, and owner payout reporting.'],
                 ].map(([title, body]) => (
                   <div key={title} className="rounded-lg bg-muted p-4">
                     <div className="text-sm font-bold text-navy">{title}</div>
-                    <div className="text-xs text-neutral mt-1">{body}</div>
+                    <div className="text-sm text-neutral mt-1">{body}</div>
                   </div>
                 ))}
               </div>
-              <div className="rounded-lg bg-gradient-to-r from-cyan to-teal p-5 text-white">
-                <p className="text-sm font-semibold text-white/80 mb-1">Built for</p>
-                <p className="text-2xl font-bold">Investors seeking trucking asset ownership without daily operations</p>
+              <div className="mt-6 rounded-lg bg-gradient-to-r from-cyan to-teal p-5 text-white">
+                <p className="text-sm font-semibold text-white/80 mb-1">Core message</p>
+                <p className="text-2xl font-bold">Own one vehicle. Build toward recurring cash flow.</p>
               </div>
             </div>
           </div>
         </Container>
       </section>
 
-      <section className="py-16 sm:py-24 bg-white">
+      <section id="investment" className="py-16 sm:py-24 bg-white">
         <Container>
-          <div className="max-w-3xl mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-navy mb-4">How It Works</h2>
+          <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-10 items-start">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-wide text-cyan mb-3">ROI and investment planning</p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-navy mb-4">Turn a Vehicle Into a Revenue-Producing Asset</h2>
+              <p className="text-lg text-neutral mb-6">
+                The Carrier Accelerator Program is built for people who want trucking exposure through asset ownership, not by becoming the full-time dispatcher, recruiter, broker coordinator, compliance tracker, and back-office operator.
+              </p>
+              <ul className="space-y-3 mb-6">
+                {investmentHighlights.map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-neutral">
+                    <CheckCircle2 className="h-5 w-5 text-teal flex-shrink-0 mt-0.5" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <Button href="#consultation" variant="teal">
+                Start With One Vehicle
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </div>
+            <div className="grid sm:grid-cols-2 gap-5">
+              {[
+                ['Monthly gross revenue', 'Top-line revenue before expenses and fees.'],
+                ['Owner net profit', 'Estimated amount after operating expenses and FreightSync management fee.'],
+                ['Payback period', 'Estimated time to recover the initial vehicle investment when net profit is positive.'],
+                ['Long-term cash flow', 'Potential cash flow after debt burden is reduced or the vehicle is paid off.'],
+              ].map(([title, body]) => (
+                <div key={title} className="rounded-xl border border-border bg-muted p-5">
+                  <h3 className="font-bold text-navy mb-2">{title}</h3>
+                  <p className="text-sm text-neutral">{body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="mt-10">
+            <DisclaimerBox />
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-16 sm:py-24 bg-muted">
+        <Container>
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <p className="text-sm font-semibold uppercase tracking-wide text-cyan mb-3">Investment examples</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-navy mb-4">Semi Truck and Sprinter Van ROI Examples</h2>
             <p className="text-lg text-neutral">
-              FreightSync helps structure the path from asset ownership to insured, onboarded, dispatched, and reported trucking operations.
+              Compare two common entry points. Gross revenue is not owner profit; owner profit is what remains after operating costs and FreightSync management fees.
             </p>
           </div>
-          <div className="grid md:grid-cols-5 gap-4">
-            {steps.map((step, idx) => (
-              <div key={step} className="rounded-xl border border-border bg-white p-5 shadow-sm">
-                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-cyan to-teal text-white font-bold">
-                  {idx + 1}
+          <div className="grid lg:grid-cols-2 gap-6">
+            {roiExamples.map((example) => (
+              <div key={example.title} className="rounded-xl border border-border bg-white p-6 sm:p-8 shadow-lg">
+                <div className="mb-6 flex items-center gap-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-cyan/10">
+                    <example.icon className="h-6 w-6 text-cyan" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-navy">{example.title}</h3>
                 </div>
-                <p className="text-sm font-medium text-navy">{step}</p>
+                <div className="space-y-3">
+                  {example.stats.map(([label, value]) => (
+                    <div key={label} className="flex items-start justify-between gap-4 border-b border-border pb-3 last:border-b-0">
+                      <span className="text-neutral">{label}</span>
+                      <span className="font-bold text-navy text-right">{value}</span>
+                    </div>
+                  ))}
+                </div>
+                <p className="mt-6 text-sm leading-relaxed text-neutral">{example.note}</p>
               </div>
             ))}
           </div>
         </Container>
       </section>
 
+      <section className="py-16 sm:py-24 bg-white">
+        <Container>
+          <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-10 items-start">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-wide text-cyan mb-3">Hands-off ownership</p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-navy mb-4">You Own the Asset. We Run the Operation.</h2>
+              <p className="text-lg text-neutral">
+                FreightSync is designed for investors and owners who want trucking income without managing dispatch, drivers, brokers, paperwork, and daily operations themselves.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-5">
+              <div className="rounded-xl border border-border bg-muted p-6">
+                <h3 className="text-xl font-bold text-navy mb-4">Investor responsibilities</h3>
+                <ul className="space-y-3">
+                  {investorResponsibilities.map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-neutral">
+                      <CheckCircle2 className="h-5 w-5 text-teal flex-shrink-0 mt-0.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="rounded-xl border border-cyan/30 bg-white p-6 shadow-lg">
+                <h3 className="text-xl font-bold text-navy mb-4">FreightSync responsibilities</h3>
+                <ul className="space-y-3">
+                  {freightSyncResponsibilities.map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-neutral">
+                      <CheckCircle2 className="h-5 w-5 text-cyan flex-shrink-0 mt-0.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-16 bg-gradient-to-br from-navy to-secondary">
+        <Container>
+          <CTASection
+            title="Ready to review your first vehicle?"
+            body="Share your vehicle type, purchase plan, insurance status, and target market. FreightSync will help you evaluate whether the program is a fit."
+            primary="Schedule a Carrier Strategy Call"
+          />
+        </Container>
+      </section>
+
       <section id="program-options" className="py-16 sm:py-24 bg-muted">
         <Container>
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-navy mb-4">Program Options</h2>
+            <p className="text-sm font-semibold uppercase tracking-wide text-cyan mb-3">Program pricing</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-navy mb-4">Onboarding and Management Fee</h2>
             <p className="text-lg text-neutral">
-              Choose the equipment lane that matches your capital plan, growth strategy, and operating goals.
+              Keep the current setup clear: onboarding covers launch support, while FreightSync earns a management fee tied to gross revenue.
             </p>
           </div>
           <div className="grid lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
@@ -250,53 +474,102 @@ export default function CarrierAcceleratorProgram() {
                 </div>
                 <div className="space-y-4">
                   <div className="flex items-start justify-between gap-4 border-b border-border pb-4">
-                    <span className="text-neutral">Starting onboarding fee</span>
-                    <span className="font-bold text-navy text-right">{option.fee}</span>
+                    <span className="text-neutral">Onboarding</span>
+                    <span className="font-bold text-navy text-right">{option.onboarding}</span>
                   </div>
                   <div className="flex items-start justify-between gap-4 border-b border-border pb-4">
                     <span className="text-neutral">Payment option</span>
                     <span className="font-bold text-navy text-right">{option.payment}</span>
                   </div>
-                  <div className="flex items-start justify-between gap-4">
+                  <div className="flex items-start justify-between gap-4 border-b border-border pb-4">
                     <span className="text-neutral">FreightSync Management Fee</span>
-                    <span className="font-bold text-navy text-right">{option.management}</span>
+                    <span className="font-bold text-navy text-right">{option.fee}</span>
+                  </div>
+                  <div className="flex items-start justify-between gap-4">
+                    <span className="text-neutral">Additional vehicles</span>
+                    <span className="font-bold text-navy text-right">{option.additional}</span>
                   </div>
                 </div>
               </div>
             ))}
           </div>
-          <p className="max-w-5xl mx-auto mt-6 text-sm text-neutral">
-            Pricing may vary based on operational complexity, equipment, insurance requirements, and driver recruiting needs.
-          </p>
         </Container>
       </section>
 
-      <section className="py-16 bg-white">
+      <section id="roi-calculator" className="py-16 sm:py-24 bg-white">
         <Container>
-          <CTASection
-            title="Ready to turn equipment into an operating business?"
-            body="FreightSync brings vehicle guidance, insurance direction, dispatch, recruiting support, compliance guidance, technology, and back-office structure together so partners can focus on ownership and growth."
-          />
+          <div className="max-w-3xl mb-10">
+            <p className="text-sm font-semibold uppercase tracking-wide text-cyan mb-3">Simple ROI calculator</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-navy mb-4">Estimate Monthly Net Profit and Payback</h2>
+            <p className="text-lg text-neutral">
+              Adjust the assumptions for your vehicle. The default FreightSync management fee is 25% of gross revenue.
+            </p>
+          </div>
+          <ROICalculator />
+        </Container>
+      </section>
+
+      <section className="py-16 sm:py-24 bg-muted">
+        <Container>
+          <div className="grid lg:grid-cols-[0.85fr_1.15fr] gap-10">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-wide text-cyan mb-3">Payoff path</p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-navy mb-4">Build Toward Asset Payoff and Long-Term Cash Flow</h2>
+              <p className="text-lg text-neutral">
+                The objective is not just to run loads. The objective is to stabilize the operation, reduce the debt burden, and build repeatable cash flow from an owned asset.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-5">
+              {payoffPath.map((phase) => (
+                <div key={phase.year} className="rounded-xl border border-border bg-white p-6 shadow-sm">
+                  <h3 className="text-xl font-bold text-navy mb-4">{phase.year}</h3>
+                  <ul className="space-y-3">
+                    {phase.items.map((item) => (
+                      <li key={item} className="flex items-start gap-2 text-sm text-neutral">
+                        <CheckCircle2 className="h-4 w-4 text-teal flex-shrink-0 mt-0.5" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
         </Container>
       </section>
 
       <section className="py-16 sm:py-24 bg-white">
         <Container>
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-navy mb-4">What's Included</h2>
+            <p className="text-sm font-semibold uppercase tracking-wide text-cyan mb-3">Operational leverage</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-navy mb-4">Why Not Do It Alone?</h2>
             <p className="text-lg text-neutral">
-              A full-service carrier management foundation for investors who want to own the asset while FreightSync manages the operating workflow.
+              Trucking requires more than buying a vehicle. FreightSync gives owners a managed operating structure instead of forcing them to build every workflow from scratch.
             </p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {included.map((item) => (
-              <div key={item.label} className="rounded-xl border border-border bg-white p-5 hover:border-cyan hover:shadow-lg transition-all">
-                <div className="h-11 w-11 rounded-lg bg-gradient-to-br from-cyan/10 to-teal/10 flex items-center justify-center mb-4">
-                  <item.icon className="h-5 w-5 text-cyan" />
-                </div>
-                <h3 className="font-bold text-navy">{item.label}</h3>
-              </div>
-            ))}
+          <div className="grid lg:grid-cols-2 gap-6">
+            <div className="rounded-xl border border-border bg-muted p-6 sm:p-8">
+              <h3 className="text-2xl font-bold text-navy mb-5">Starting Alone</h3>
+              <ul className="space-y-3">
+                {comparison.alone.map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-neutral">
+                    <XCircle className="h-5 w-5 text-neutral/60 flex-shrink-0 mt-0.5" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="rounded-xl border border-cyan/30 bg-white p-6 sm:p-8 shadow-lg">
+              <h3 className="text-2xl font-bold text-navy mb-5">With FreightSync</h3>
+              <ul className="space-y-3">
+                {comparison.freightSync.map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-neutral">
+                    <CheckCircle2 className="h-5 w-5 text-cyan flex-shrink-0 mt-0.5" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </Container>
       </section>
@@ -307,7 +580,7 @@ export default function CarrierAcceleratorProgram() {
             <div>
               <h2 className="text-3xl sm:text-4xl font-bold text-navy mb-4">Recommended Vehicles</h2>
               <p className="text-lg text-neutral mb-8">
-                FreightSync helps partners evaluate equipment with broad broker acceptance, stronger service access, resale considerations, and practical operating economics.
+                FreightSync recommends equipment with broad acceptance, stronger service access, and practical operating economics.
               </p>
               <div className="space-y-6">
                 {vehicles.map((vehicle) => (
@@ -330,7 +603,7 @@ export default function CarrierAcceleratorProgram() {
             <div>
               <h2 className="text-3xl sm:text-4xl font-bold text-navy mb-4">Revenue Expectations</h2>
               <p className="text-lg text-neutral mb-8">
-                Revenue ranges give prospective partners a practical starting point for planning, not a guarantee.
+                Gross revenue is the top-line amount before operating expenses. Owner profit is what remains after insurance, fuel, driver pay, repairs, maintenance, other expenses, and the FreightSync management fee.
               </p>
               <div className="space-y-6">
                 {revenue.map((item) => (
@@ -338,11 +611,11 @@ export default function CarrierAcceleratorProgram() {
                     <h3 className="text-xl font-bold text-navy mb-5">{item.type}</h3>
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div className="rounded-lg bg-muted p-4">
-                        <p className="text-sm text-neutral mb-1">Average Monthly Gross Revenue</p>
+                        <p className="text-sm text-neutral mb-1">Estimated Monthly Gross Revenue</p>
                         <p className="text-2xl font-bold text-navy">{item.gross}</p>
                       </div>
                       <div className="rounded-lg bg-muted p-4">
-                        <p className="text-sm text-neutral mb-1">Typical Monthly Owner Profit</p>
+                        <p className="text-sm text-neutral mb-1">Estimated Monthly Owner Net Profit</p>
                         <p className="text-2xl font-bold text-navy">{item.profit}</p>
                       </div>
                     </div>
@@ -350,7 +623,7 @@ export default function CarrierAcceleratorProgram() {
                 ))}
               </div>
               <p className="mt-6 text-sm text-neutral">
-                Actual revenue and profitability vary based on freight market conditions, operating costs, driver performance, location, insurance, maintenance, broker acceptance, equipment downtime, and utilization. FreightSync does not guarantee revenue, profit, utilization, or investment returns.
+                FreightSync does not guarantee revenue. Trucking is an investment with real risks, fluctuating markets, insurance costs, driver variables, downtime, repairs, fuel costs, and operating discipline requirements.
               </p>
             </div>
           </div>
@@ -359,17 +632,38 @@ export default function CarrierAcceleratorProgram() {
 
       <section className="py-16 sm:py-24 bg-white">
         <Container>
-          <div className="max-w-3xl mb-10">
-            <h2 className="text-3xl sm:text-4xl font-bold text-navy mb-4">Investor ROI Planning</h2>
-            <p className="text-lg text-neutral">
-              Use this calculator to model a vehicle&apos;s potential monthly cash flow after major operating costs and FreightSync&apos;s management fee.
-            </p>
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <p className="text-sm font-semibold uppercase tracking-wide text-cyan mb-3">Fit check</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-navy mb-4">Who This Program Is Best For</h2>
           </div>
-          <CarrierRoiCalculator />
+          <div className="grid lg:grid-cols-2 gap-6">
+            <div className="rounded-xl border border-cyan/30 bg-cyan/5 p-6 sm:p-8">
+              <h3 className="text-2xl font-bold text-navy mb-5">Best fit</h3>
+              <ul className="space-y-3">
+                {bestFit.map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-neutral">
+                    <CheckCircle2 className="h-5 w-5 text-teal flex-shrink-0 mt-0.5" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="rounded-xl border border-border bg-muted p-6 sm:p-8">
+              <h3 className="text-2xl font-bold text-navy mb-5">Who This Program Is Not For</h3>
+              <ul className="space-y-3">
+                {notFit.map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-neutral">
+                    <XCircle className="h-5 w-5 text-neutral/60 flex-shrink-0 mt-0.5" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </Container>
       </section>
 
-      <section className="py-16 sm:py-24 bg-white">
+      <section className="py-16 sm:py-24 bg-muted">
         <Container>
           <div className="grid lg:grid-cols-[0.85fr_1.15fr] gap-10 items-start">
             <div>
@@ -380,7 +674,7 @@ export default function CarrierAcceleratorProgram() {
             </div>
             <div className="grid sm:grid-cols-2 gap-4">
               {requirements.map((requirement) => (
-                <div key={requirement} className="flex items-center gap-3 rounded-lg border border-border bg-muted p-4">
+                <div key={requirement} className="flex items-center gap-3 rounded-lg border border-border bg-white p-4">
                   <Landmark className="h-5 w-5 text-cyan flex-shrink-0" />
                   <span className="font-semibold text-navy">{requirement}</span>
                 </div>
@@ -390,30 +684,13 @@ export default function CarrierAcceleratorProgram() {
         </Container>
       </section>
 
-      <section className="py-16 bg-gradient-to-br from-navy to-secondary">
+      <section className="py-16 bg-white">
         <Container>
           <CTASection
-            title="Scale when your first unit is working."
-            body="Add more equipment later with reduced additional-vehicle onboarding fees and the same FreightSync operating support."
-            variant="dark"
+            title="See if your vehicle qualifies."
+            body="FreightSync can review your capital plan, vehicle type, insurance readiness, target market, and timeline before you commit to the next step."
+            primary="See If Your Vehicle Qualifies"
           />
-        </Container>
-      </section>
-
-      <section className="py-16 sm:py-24 bg-muted">
-        <Container>
-          <div className="grid lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            <div className="rounded-xl bg-white border border-border p-6 sm:p-8">
-              <h2 className="text-2xl font-bold text-navy mb-4">Additional Semi Trucks</h2>
-              <p className="text-4xl font-extrabold text-navy mb-2">$1,000</p>
-              <p className="text-neutral">Onboarding fee each</p>
-            </div>
-            <div className="rounded-xl bg-white border border-border p-6 sm:p-8">
-              <h2 className="text-2xl font-bold text-navy mb-4">Additional Sprinter Vans</h2>
-              <p className="text-4xl font-extrabold text-navy mb-2">$500</p>
-              <p className="text-neutral">Onboarding fee each</p>
-            </div>
-          </div>
         </Container>
       </section>
 
@@ -445,20 +722,31 @@ export default function CarrierAcceleratorProgram() {
               </div>
               <h2 className="text-3xl sm:text-4xl font-bold text-navy mb-4">Start Your FreightSync Partner Review</h2>
               <p className="text-lg text-neutral mb-6">
-                Share your equipment plans, authority status, and timeline. FreightSync will review your path and help identify the next steps toward launch.
+                Share your equipment plans, authority status, insurance readiness, capital plan, and timeline. FreightSync will review your path and help identify the next steps toward launch.
               </p>
               <div className="rounded-xl bg-gradient-to-br from-navy to-royal p-6 text-white">
-                <h3 className="text-xl font-bold text-white mb-3">Built to help you generate revenue faster</h3>
+                <h3 className="text-xl font-bold text-white mb-3">Built for ownership with operational support</h3>
                 <p className="text-white/85">
-                FreightSync combines vehicle launch guidance, insurance direction, freight operations, dispatching, recruiting assistance, compliance guidance, TMS access, weekly reporting, and settlement support in one program.
-              </p>
-              <p className="text-white/70 text-sm mt-4">
-                Participation does not guarantee revenue, profit, load availability, or investment performance.
-              </p>
-            </div>
+                  FreightSync combines freight operations, dispatching, recruiting assistance, compliance guidance, TMS access, weekly reporting, settlement tracking, and owner payout reporting in one program.
+                </p>
+              </div>
             </div>
             <div className="rounded-xl bg-white border border-border p-6 sm:p-8 shadow-lg">
               <CarrierAcceleratorForm />
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-12 bg-navy">
+        <Container>
+          <div className="grid lg:grid-cols-[0.7fr_1.3fr] gap-6 text-white">
+            <h2 className="text-2xl font-bold text-white">Program disclaimers</h2>
+            <div className="space-y-3 text-sm leading-relaxed text-white/75">
+              <p>FreightSync does not guarantee revenue, profit, loads, or payback timelines.</p>
+              <p>All financial examples are estimates for education and planning only.</p>
+              <p>Actual results depend on market demand, location, vehicle type, insurance, driver availability, repairs, fuel, maintenance, downtime, financing, and operating discipline.</p>
+              <p>Investors should review their own financial situation before purchasing or financing a vehicle.</p>
             </div>
           </div>
         </Container>
