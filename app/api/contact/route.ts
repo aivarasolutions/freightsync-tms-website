@@ -9,10 +9,15 @@ export async function POST(request: NextRequest) {
     }
     
     console.log('Contact form submission:', {
+      formType: body.formType,
       name: body.name,
       email: body.email,
       company: body.company,
+      phone: body.phone,
       fleetSize: body.fleetSize,
+      vehicleType: body.vehicleType,
+      vehicleCount: body.vehicleCount,
+      authorityStatus: body.authorityStatus,
       message: body.message,
       timestamp: new Date().toISOString()
     })

@@ -10,11 +10,8 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const navigation = [
-    { name: 'Services', href: '/features' },
-    { name: 'TMS Portal', href: '/integrations' },
-    { name: 'Solutions', href: '/solutions/last-mile' },
+    { name: 'Carrier Program', href: '/carrier-accelerator-program' },
     { name: 'Pricing', href: '/pricing' },
-    { name: 'Case Studies', href: '/case-studies/fleetco' },
     { name: 'Blog', href: '/blog' },
     { name: 'Owner Portal', href: 'https://portal.freightsynctms.com', external: true },
   ]
@@ -39,7 +36,7 @@ export function Header() {
             </Link>
           </div>
 
-          <div className="hidden lg:flex lg:items-center lg:space-x-5">
+          <div className="hidden lg:flex lg:items-center lg:space-x-4">
             {navigation.map((item) => (
               item.external ? (
                 <a
@@ -69,7 +66,7 @@ export function Header() {
             >
               Access Owner Dashboard
             </a>
-            <Button href="/contact" size="sm" variant="teal">
+            <Button href="/carrier-accelerator-program#consultation" size="sm" variant="teal">
               Get Started
             </Button>
           </div>
@@ -123,7 +120,7 @@ export function Header() {
               >
                 Access Owner Dashboard
               </a>
-              <Button href="/contact" className="w-full" variant="teal">
+              <Button href="/carrier-accelerator-program#consultation" className="w-full" variant="teal">
                 Get Started
               </Button>
             </div>

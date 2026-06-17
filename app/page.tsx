@@ -1,217 +1,234 @@
+import type { Metadata } from 'next'
 import Image from 'next/image'
+import { ROICalculator } from '@/components/ui/ROICalculator'
 import { Container } from '@/components/ui/Container'
 import { Button } from '@/components/ui/Button'
 import {
-  Truck, Clock, MapPin, Shield, CheckCircle2, Headphones, Settings,
-  LayoutDashboard, FileBarChart, Wallet, Receipt, Activity, Users,
-  Building2, Briefcase, Rocket, PhoneCall, ClipboardList, ArrowRight
+  ArrowRight,
+  BadgeDollarSign,
+  Banknote,
+  BarChart3,
+  BriefcaseBusiness,
+  Building2,
+  CheckCircle2,
+  ClipboardCheck,
+  FileCheck2,
+  Gauge,
+  Handshake,
+  Headphones,
+  LineChart,
+  ReceiptText,
+  ShieldCheck,
+  Truck,
+  UserPlus,
+  WalletCards,
+  Wrench,
+  XCircle,
 } from 'lucide-react'
 
-const coreServices = [
-  {
-    icon: Truck,
-    title: 'Less Than Truckload (LTL)',
-    description: 'Cost-effective freight movement for smaller loads that do not require a full truck.'
-  },
-  {
-    icon: Clock,
-    title: 'Next-Day Delivery',
-    description: 'Fast, reliable delivery solutions for time-sensitive shipments and growing businesses.'
-  },
-  {
-    icon: MapPin,
-    title: 'Real-Time Tracking',
-    description: 'Improved shipment visibility with live status updates, route monitoring, and operational oversight.'
-  },
-  {
-    icon: Shield,
-    title: 'Damage-Free Transport',
-    description: 'Professional handling, secure transport, and careful delivery processes designed to protect your cargo.'
-  },
-  {
-    icon: Headphones,
-    title: 'Dispatch & Load Coordination',
-    description: 'Round-the-clock dispatch support that keeps your drivers loaded, routed, and moving efficiently.'
-  },
-  {
-    icon: Settings,
-    title: 'Fleet Operations Support',
-    description: 'Operational guidance for compliance, maintenance scheduling, and day-to-day fleet performance.'
-  }
+export const metadata: Metadata = {
+  title: 'FreightSync | Managed Transportation Assets and Fleet Ownership',
+  description:
+    'Own transportation assets while FreightSync manages trucking operations, dispatch, reporting, settlements, and owner visibility through the Carrier Accelerator Program.',
+}
+
+const images = {
+  hero:
+    'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1800&q=85',
+  fleet:
+    'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1400&q=85',
+  control:
+    'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=85',
+  warehouse:
+    'https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1400&q=85',
+}
+
+const revenueExamples = [
+  { vehicle: 'Semi Truck', capital: '$60K-$95K', gross: '$22K-$28K', ownerNet: '$4K-$7K', payoff: '12-24 mo.' },
+  { vehicle: 'Sprinter Van', capital: '$35K-$55K', gross: '$8K-$15K', ownerNet: '$2K-$5K', payoff: '12-24 mo.' },
 ]
 
-const tmsFeatures = [
-  { icon: LayoutDashboard, label: 'Load and trip management' },
-  { icon: Wallet, label: 'Driver settlement tracking' },
-  { icon: Receipt, label: 'Expense and fuel reporting' },
-  { icon: Activity, label: 'Owner and vehicle performance dashboards' },
-  { icon: FileBarChart, label: 'Weekly settlement reports' },
-  { icon: Rocket, label: 'Future GPS and automation integrations' },
+const journey = ['Apply', 'Finance', 'Insurance', 'Vehicle Purchase', 'Launch', 'Revenue', 'Payoff', 'Fleet Expansion']
+
+const managedOps = [
+  { icon: Headphones, label: 'Dispatch and load coordination' },
+  { icon: UserPlus, label: 'Driver recruiting assistance' },
+  { icon: Handshake, label: 'Broker and carrier setup support' },
+  { icon: ClipboardCheck, label: 'Compliance and document guidance' },
+  { icon: ReceiptText, label: 'Settlement and expense visibility' },
+  { icon: BarChart3, label: 'Owner performance reporting' },
+  { icon: Wrench, label: 'Maintenance reserve planning' },
+  { icon: FileCheck2, label: 'Back-office operating support' },
 ]
 
-const whoWeHelp = [
-  { icon: Truck, label: 'Owner-operators' },
-  { icon: Briefcase, label: 'Small fleet owners' },
-  { icon: Headphones, label: 'Dispatch teams' },
-  { icon: Building2, label: '3PL providers' },
-  { icon: MapPin, label: 'Delivery companies' },
-  { icon: Rocket, label: 'Logistics startups' },
+const successScenarios = [
+  {
+    title: 'First Truck Payoff Path',
+    metric: '$5K/mo.',
+    description:
+      'An owner finances one semi truck, stabilizes utilization, and uses positive monthly owner net to build reserves while paying down the asset.',
+  },
+  {
+    title: 'Sprinter-to-Fleet Expansion',
+    metric: '1 to 3',
+    description:
+      'A van owner proves demand in one market, then adds vehicles only after reporting shows consistent revenue, driver coverage, and cash-flow discipline.',
+  },
+  {
+    title: 'Managed Fleet Portfolio',
+    metric: '5 assets',
+    description:
+      'A passive owner builds a small portfolio of transportation assets with FreightSync handling dispatch structure, reporting, and operating visibility.',
+  },
 ]
 
-const whyUs = [
-  { title: 'Built by logistics operators', description: 'We have lived the dispatch board, the settlements, and the late-night calls.' },
-  { title: 'Service + software in one place', description: 'Real freight expertise paired with a portal built for the same workflows.' },
-  { title: 'Clear reporting and settlements', description: 'Transparent numbers your drivers, owners, and accountants can trust.' },
-  { title: 'Designed for scaling fleets', description: 'Workflows that hold up whether you run 5 trucks or 500.' },
-  { title: 'Streamlined back-office', description: 'Reduce manual work in invoicing, expenses, and driver pay.' },
-]
+const comparison = {
+  alone: [
+    'Capital is deployed before dispatch, broker, driver, and settlement systems are mature',
+    'Owner must recruit drivers, chase paperwork, manage repairs, and monitor every operational exception',
+    'Revenue, expenses, reserves, and payoff progress are often tracked manually',
+    'Fleet growth depends on the owner personally building every process from scratch',
+  ],
+  managed: [
+    'Own the transportation asset while FreightSync supports the operating layer around it',
+    'Use dispatch, driver recruiting assistance, broker setup support, and settlement visibility',
+    'Review owner reporting for revenue, expenses, utilization, reserves, and asset payoff planning',
+    'Scale from one truck toward a managed fleet with a clearer operating and reporting structure',
+  ],
+}
 
-const howItWorks = [
-  { step: '1', title: 'Schedule a call', description: 'Tell us about your fleet, freight, and back-office headaches.' },
-  { step: '2', title: 'Review your operation', description: 'We map your current dispatch, reporting, and settlement flow.' },
-  { step: '3', title: 'Set up services or portal', description: 'Onboard logistics support, the TMS portal, or both.' },
-  { step: '4', title: 'Track loads & settlements', description: 'Run loads, expenses, owner reports, and driver pay in one place.' },
-]
+function Disclaimer() {
+  return (
+    <div className="h-full rounded-lg border border-cyan/20 bg-white/80 p-4 text-sm text-neutral shadow-sm backdrop-blur">
+      <p className="font-semibold text-navy">Financial disclaimer</p>
+      <p className="mt-1">
+        Examples are estimates for planning only. FreightSync does not guarantee revenue, profit, loads, utilization, owner payouts, or payback timelines.
+      </p>
+    </div>
+  )
+}
+
+function PortalPreview({ compact = false }: { compact?: boolean }) {
+  return (
+    <div className="h-full overflow-hidden rounded-xl border border-white/25 bg-white/90 shadow-2xl backdrop-blur">
+      <div className={`flex items-center justify-between border-b border-border bg-white/80 ${compact ? 'px-4 py-3' : 'px-5 py-4'}`}>
+        <div className="flex items-center gap-3">
+          <Image src="/freightsync-logo.png" alt="FreightSync TMS logo" width={44} height={44} className="h-9 w-auto" />
+          <div>
+            <p className="text-sm font-semibold text-cyan">Owner Portal</p>
+            <p className="text-xs text-neutral">Managed Asset FS-1042</p>
+          </div>
+        </div>
+        <div className="rounded-full bg-teal/10 px-3 py-1 text-xs font-bold text-teal">Active</div>
+      </div>
+      <div className={`grid ${compact ? 'gap-3 p-4' : 'gap-4 p-5'}`}>
+        <div className={`grid ${compact ? 'gap-3 sm:grid-cols-4' : 'gap-4 sm:grid-cols-2'}`}>
+          {[
+            ['Gross revenue', '$24,680'],
+            ['Owner net', '$5,920'],
+            ['Utilization', '91%'],
+            ['Payoff progress', '58%'],
+          ].map(([label, value]) => (
+            <div key={label} className={`rounded-lg border border-border bg-muted ${compact ? 'p-3' : 'p-4'}`}>
+              <p className="text-xs font-semibold uppercase tracking-wide text-neutral">{label}</p>
+              <p className={`${compact ? 'mt-1 text-xl' : 'mt-2 text-2xl'} font-extrabold text-navy`}>{value}</p>
+            </div>
+          ))}
+        </div>
+        <div className={`rounded-lg border border-border bg-white ${compact ? 'p-3' : 'p-4'}`}>
+          <div className="mb-3 flex items-center justify-between">
+            <p className="font-bold text-navy">Asset payoff tracker</p>
+            <Gauge className="h-5 w-5 text-cyan" />
+          </div>
+          <div className="h-3 rounded-full bg-muted">
+            <div className="h-3 w-[58%] rounded-full bg-gradient-to-r from-cyan to-teal" />
+          </div>
+          <p className="mt-3 text-sm text-neutral">$34,800 paid down toward vehicle ownership target</p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function SectionIntro({ eyebrow, title, body }: { eyebrow: string; title: string; body: string }) {
+  return (
+    <div className="max-w-3xl">
+      <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-cyan">{eyebrow}</p>
+      <h2 className="text-3xl font-extrabold leading-tight text-navy sm:text-4xl lg:text-5xl">{title}</h2>
+      <p className="mt-5 text-lg leading-relaxed text-neutral">{body}</p>
+    </div>
+  )
+}
 
 export default function Home() {
   return (
     <>
-      <section className="relative overflow-hidden bg-gradient-to-br from-navy via-royal to-secondary py-20 sm:py-28 lg:py-36">
-        <div className="absolute inset-0 opacity-20" aria-hidden="true">
-          <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="0.5"/>
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#grid)" />
-          </svg>
-        </div>
-        <div className="absolute top-1/4 -right-20 w-96 h-96 bg-cyan/20 rounded-full blur-3xl" aria-hidden="true"></div>
-        <div className="absolute bottom-1/4 -left-20 w-96 h-96 bg-teal/20 rounded-full blur-3xl" aria-hidden="true"></div>
-
+      <section className="relative overflow-hidden bg-navy">
+        <img src={images.hero} alt="Modern semi truck moving freight at sunrise" className="absolute inset-0 h-full w-full object-cover opacity-55" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/80 to-royal/45" />
         <Container>
-          <div className="max-w-5xl mx-auto text-center relative z-10">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-8 border border-white/20">
-              <Truck className="h-4 w-4 text-cyan" />
-              <span className="text-white/90 text-sm font-medium">Full-Service Logistics + TMS Technology</span>
-            </div>
-
-            <div className="flex justify-center mb-8">
-              <div className="bg-white rounded-2xl p-4 shadow-2xl ring-4 ring-white/20">
-                <Image
-                  src="/freightsync-logo.png"
-                  alt="FreightSync TMS logo"
-                  width={160}
-                  height={160}
-                  priority
-                  className="h-24 w-auto sm:h-28"
-                />
+          <div className="relative z-10 grid items-center gap-8 py-10 sm:py-12 lg:min-h-[520px] lg:grid-cols-[0.98fr_1.02fr] lg:gap-10 lg:py-14">
+            <div className="self-center">
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-cyan backdrop-blur">
+                <BriefcaseBusiness className="h-4 w-4" />
+                Transportation assets. Managed operations. Owner visibility.
               </div>
+              <h1 className="max-w-5xl text-4xl font-extrabold leading-[1.04] text-white sm:text-5xl lg:text-6xl">
+                You Own the Truck. FreightSync Runs the Business.
+              </h1>
+              <p className="mt-6 max-w-3xl text-xl leading-relaxed text-white/85">
+                Build a transportation asset portfolio without becoming the dispatcher, driver recruiter, back-office operator, and settlement analyst yourself.
+              </p>
+              <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+                <Button href="/carrier-accelerator-program#consultation" variant="teal" size="lg">
+                  Apply for Carrier Accelerator
+                </Button>
+                <Button href="#roi-calculator" variant="outline" size="lg" className="border-2 border-white text-white hover:bg-white hover:text-navy">
+                  Run ROI Calculator
+                </Button>
+              </div>
+              <p className="mt-5 text-sm font-medium text-white/70">
+                Built for owner-investors evaluating transportation assets, cash flow, and managed fleet growth.
+              </p>
             </div>
-
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 pb-2 leading-[1.15] text-white tracking-tight">
-              Freight<span className="text-cyan">Sync</span> TMS
-            </h1>
-            <p className="text-xl sm:text-2xl text-white mb-4 max-w-3xl mx-auto font-semibold">
-              Logistics Services + Transportation Management Software Built to Help Fleets Scale
-            </p>
-            <p className="text-base sm:text-lg text-white/85 mb-6 max-w-3xl mx-auto">
-              From dispatch and load tracking to driver settlements, reporting, and fleet operations, FreightSync TMS helps logistics companies streamline the back office and move freight with confidence.
-            </p>
-            <p className="text-sm font-medium text-cyan mb-10">
-              Charlotte, North Carolina | Serving logistics teams nationwide
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button href="/contact" variant="teal" size="lg">
-                Get Started Today
-              </Button>
-              <Button href="/integrations" variant="outline" size="lg" className="border-2 border-white text-white hover:bg-white hover:text-navy bg-transparent">
-                Explore TMS Portal
-              </Button>
+            <div className="self-center space-y-5">
+              <div className="rounded-xl border border-white/20 bg-white/10 p-4 shadow-2xl backdrop-blur-xl">
+                <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-cyan">Above-the-fold economics</p>
+                <div className="grid auto-rows-fr gap-3 sm:grid-cols-2">
+                  {revenueExamples.map((item) => (
+                    <div key={item.vehicle} className="flex h-full flex-col rounded-lg bg-white/90 p-4 shadow-lg">
+                      <p className="text-sm font-bold text-cyan">{item.vehicle}</p>
+                      <p className="mt-1 text-2xl font-extrabold text-navy">{item.ownerNet}</p>
+                      <p className="text-sm text-neutral">estimated monthly owner net</p>
+                      <div className="mt-auto grid grid-cols-2 gap-3 pt-3 text-sm">
+                        <div>
+                          <p className="text-neutral">Gross</p>
+                          <p className="font-bold text-navy">{item.gross}</p>
+                        </div>
+                        <div>
+                          <p className="text-neutral">Payoff</p>
+                          <p className="font-bold text-navy">{item.payoff}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <PortalPreview compact />
             </div>
           </div>
         </Container>
       </section>
 
-      <section className="py-16 sm:py-24 bg-white">
+      <section id="roi-calculator" className="bg-white py-14 sm:py-20">
         <Container>
-          <div className="text-center mb-12 max-w-3xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-bold text-navy mb-4">
-              Logistics Operations + TMS Technology in One System
-            </h2>
-            <p className="text-lg text-neutral">
-              FreightSync TMS combines real-world logistics operations with a technology platform built for dispatch, load management, driver settlements, reporting, invoicing, and fleet performance tracking.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            <div className="relative bg-gradient-to-br from-navy to-royal rounded-2xl p-8 text-white overflow-hidden shadow-xl">
-              <div className="relative z-10">
-                <div className="inline-flex items-center justify-center h-12 w-12 rounded-xl bg-cyan/30 mb-4">
-                  <Truck className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold mb-4 text-white">Logistics Services</h3>
-                <ul className="space-y-3">
-                  {['Dispatch support', 'Load coordination', 'Fleet operations', 'Driver communication', 'Delivery management'].map((item) => (
-                    <li key={item} className="flex items-center gap-3 text-white">
-                      <CheckCircle2 className="h-5 w-5 text-cyan flex-shrink-0" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-            <div className="relative bg-gradient-to-br from-cyan to-teal rounded-2xl p-8 text-white overflow-hidden">
-              <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
-              <div className="relative">
-                <div className="inline-flex items-center justify-center h-12 w-12 rounded-xl bg-white/20 backdrop-blur-sm mb-4">
-                  <LayoutDashboard className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold mb-4">TMS Portal</h3>
-                <ul className="space-y-3">
-                  {['Load and trip tracking', 'Expense management', 'Driver settlements', 'Owner reports', 'Performance dashboards'].map((item) => (
-                    <li key={item} className="flex items-center gap-3 text-white/95">
-                      <CheckCircle2 className="h-5 w-5 text-white flex-shrink-0" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div className="text-center mt-10">
-            <Button href="/contact" variant="primary" size="lg">
-              Request a Demo or Service Quote
-            </Button>
-          </div>
-        </Container>
-      </section>
-
-      <section className="py-16 sm:py-24 bg-muted">
-        <Container>
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-navy mb-4">
-              Our Core Delivery Services
-            </h2>
-            <p className="text-lg text-neutral max-w-2xl mx-auto">
-              A full-service logistics partner for freight, fleet, and dispatch operations.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {coreServices.map((service, idx) => (
-              <div key={idx} className="bg-white rounded-xl p-6 border border-border hover:border-cyan hover:shadow-lg transition-all group">
-                <div className="w-12 h-12 bg-gradient-to-br from-cyan/10 to-teal/10 rounded-lg flex items-center justify-center mb-4 group-hover:from-cyan/20 group-hover:to-teal/20 transition-colors">
-                  <service.icon className="h-6 w-6 text-cyan" />
-                </div>
-                <h3 className="text-lg font-bold text-navy mb-2">{service.title}</h3>
-                <p className="text-neutral text-sm">{service.description}</p>
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-12">
-            <Button href="/features" variant="outline">
-              Explore All Services
-            </Button>
+          <SectionIntro
+            eyebrow="ROI calculator"
+            title="Model the asset before you buy it."
+            body="Put the economics immediately in front of the owner: vehicle cost, monthly revenue, insurance, fuel, driver pay, FreightSync management fee, owner net, and estimated payoff path."
+          />
+          <div className="mt-10">
+            <ROICalculator />
           </div>
         </Container>
       </section>
@@ -268,219 +285,169 @@ export default function Home() {
         </Container>
       </section>
 
-      <section className="py-16 sm:py-24 bg-muted">
+      <section className="bg-muted py-14 sm:py-20">
         <Container>
-          <div className="max-w-6xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan/10 text-cyan text-sm font-semibold mb-4">
-                  <LayoutDashboard className="h-4 w-4" />
-                  TMS Software
-                </div>
-                <h2 className="text-3xl sm:text-4xl font-bold text-navy mb-6">
-                  Transportation Management Software Built for Growing Fleets
-                </h2>
-                <p className="text-lg text-neutral mb-6">
-                  FreightSync TMS gives logistics teams a centralized portal to manage loads, trips, expenses, driver payments, owner reporting, invoicing, and performance analytics.
+          <SectionIntro
+            eyebrow="Investment journey"
+            title="From application to fleet expansion."
+            body="FreightSync turns the messy path of trucking ownership into a visible sequence: capitalize the asset, launch the operation, monitor performance, and scale only when the numbers support it."
+          />
+          <div className="mt-10 grid auto-rows-fr gap-4 md:grid-cols-4">
+            {journey.map((step, index) => (
+              <div key={step} className="relative flex h-full flex-col rounded-xl border border-white/60 bg-white/80 p-5 shadow-lg backdrop-blur">
+                <p className="mb-6 flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-cyan to-teal text-sm font-extrabold text-white">
+                  {index + 1}
                 </p>
-                <ul className="space-y-3 mb-8">
-                  {tmsFeatures.map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-3">
-                      <div className="mt-0.5 h-6 w-6 rounded-md bg-gradient-to-br from-cyan to-teal flex items-center justify-center flex-shrink-0">
-                        <item.icon className="h-3.5 w-3.5 text-white" />
-                      </div>
-                      <span className="text-neutral">{item.label}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <Button href="https://portal.freightsynctms.com" variant="teal">
-                    Explore the TMS Portal
-                  </Button>
-                  <Button href="/features" variant="outline">
-                    View All Features
-                  </Button>
-                </div>
-              </div>
-
-              <div className="relative">
-                <div className="relative bg-gradient-to-br from-navy via-royal to-secondary rounded-2xl p-6 shadow-2xl overflow-hidden">
-                  <div className="absolute top-0 right-0 w-64 h-64 bg-cyan/20 rounded-full blur-3xl"></div>
-                  <div className="relative">
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="flex items-center gap-2">
-                        <Image
-                          src="/freightsync-logo.png"
-                          alt="FreightSync TMS logo"
-                          width={36}
-                          height={36}
-                          className="h-9 w-auto"
-                        />
-                        <span className="text-white font-semibold text-sm">FreightSync TMS Portal</span>
-                      </div>
-                      <div className="flex gap-1.5">
-                        <div className="w-2 h-2 rounded-full bg-red-400"></div>
-                        <div className="w-2 h-2 rounded-full bg-yellow-400"></div>
-                        <div className="w-2 h-2 rounded-full bg-green-400"></div>
-                      </div>
-                    </div>
-
-                    <div className="bg-white/5 backdrop-blur rounded-lg p-4 mb-3 border border-white/10">
-                      <div className="text-xs text-white/60 mb-1">Active Loads</div>
-                      <div className="text-3xl font-bold text-white">142</div>
-                      <div className="text-xs text-cyan mt-1">↑ 12% this week</div>
-                    </div>
-
-                    <div className="grid grid-cols-2 gap-3 mb-3">
-                      <div className="bg-white/5 backdrop-blur rounded-lg p-3 border border-white/10">
-                        <div className="text-xs text-white/60">Settlements</div>
-                        <div className="text-lg font-bold text-white">$84.2k</div>
-                      </div>
-                      <div className="bg-white/5 backdrop-blur rounded-lg p-3 border border-white/10">
-                        <div className="text-xs text-white/60">On-Time</div>
-                        <div className="text-lg font-bold text-white">98.4%</div>
-                      </div>
-                    </div>
-
-                    <div className="bg-white/5 backdrop-blur rounded-lg p-3 border border-white/10">
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="text-xs text-white/60">Fleet Performance</span>
-                        <Activity className="h-3.5 w-3.5 text-cyan" />
-                      </div>
-                      <div className="flex items-end gap-1 h-12">
-                        {[40, 65, 50, 75, 60, 85, 70, 90].map((h, i) => (
-                          <div key={i} className="flex-1 bg-gradient-to-t from-cyan to-teal rounded-sm" style={{ height: `${h}%` }}></div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      <section className="py-16 sm:py-24 bg-muted">
-        <Container>
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-navy mb-4">Who We Help</h2>
-            <p className="text-lg text-neutral max-w-2xl mx-auto">
-              Built for the operators running today&apos;s freight and fleet businesses.
-            </p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-5xl mx-auto">
-            {whoWeHelp.map((item, idx) => (
-              <div key={idx} className="bg-white rounded-xl p-5 text-center border border-border hover:border-cyan transition-colors">
-                <div className="w-10 h-10 mx-auto mb-3 rounded-lg bg-gradient-to-br from-cyan/10 to-teal/10 flex items-center justify-center">
-                  <item.icon className="h-5 w-5 text-cyan" />
-                </div>
-                <div className="text-sm font-semibold text-navy">{item.label}</div>
+                <h3 className="text-xl font-bold text-navy">{step}</h3>
+                {index < journey.length - 1 && <ArrowRight className="absolute right-5 top-6 hidden h-5 w-5 text-cyan md:block" />}
               </div>
             ))}
           </div>
         </Container>
       </section>
 
-      <section className="py-16 sm:py-24 bg-white">
+      <section className="bg-white py-14 sm:py-20">
         <Container>
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-navy mb-4">Why FreightSync TMS</h2>
-            <p className="text-lg text-neutral max-w-2xl mx-auto">
-              Real logistics expertise plus the software to back it up.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {whyUs.map((item, idx) => (
-              <div key={idx} className="bg-muted rounded-xl p-6 border border-border hover:border-cyan transition-colors">
-                <div className="w-10 h-10 mb-4 rounded-lg bg-gradient-to-br from-navy to-royal flex items-center justify-center">
-                  <CheckCircle2 className="h-5 w-5 text-cyan" />
-                </div>
-                <h3 className="text-lg font-bold text-navy mb-2">{item.title}</h3>
-                <p className="text-neutral text-sm">{item.description}</p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      <section className="py-16 sm:py-24 bg-gradient-to-br from-muted to-white">
-        <Container>
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-navy mb-4">How It Works</h2>
-            <p className="text-lg text-neutral max-w-2xl mx-auto">
-              A simple path from first call to running freight in the FreightSync TMS.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {howItWorks.map((item, idx) => {
-              const Icon = [PhoneCall, ClipboardList, Settings, Activity][idx]
-              return (
-                <div key={idx} className="relative bg-white rounded-xl p-6 border border-border">
-                  <div className="absolute -top-3 -left-3 w-10 h-10 rounded-full bg-gradient-to-br from-cyan to-teal text-white flex items-center justify-center font-bold shadow-md">
-                    {item.step}
+          <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+            <div>
+              <SectionIntro
+                eyebrow="Managed fleet operator"
+                title="FreightSync manages the business layer around the asset."
+                body="The opportunity is not just truck ownership. It is ownership with dispatch structure, driver support, broker coordination, settlement visibility, and reporting discipline."
+              />
+              <div className="mt-8 grid auto-rows-fr gap-4 sm:grid-cols-2">
+                {managedOps.map((item) => (
+                  <div key={item.label} className="h-full rounded-lg border border-border bg-white p-5 shadow-sm">
+                    <item.icon className="mb-3 h-6 w-6 text-cyan" />
+                    <h3 className="font-bold text-navy">{item.label}</h3>
                   </div>
-                  <Icon className="h-8 w-8 text-cyan mb-4 mt-2" />
-                  <h3 className="text-lg font-bold text-navy mb-2">{item.title}</h3>
-                  <p className="text-neutral text-sm">{item.description}</p>
+                ))}
+              </div>
+            </div>
+            <div className="grid gap-5">
+              <img src={images.control} alt="Logistics operations control center" className="h-[320px] w-full rounded-xl object-cover shadow-2xl" />
+              <div className="grid gap-5 sm:grid-cols-2">
+                <img src={images.fleet} alt="Managed transportation fleet on the road" className="h-52 w-full rounded-xl object-cover shadow-xl" />
+                <img src={images.warehouse} alt="Freight movement in a warehouse" className="h-52 w-full rounded-xl object-cover shadow-xl" />
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-gradient-to-br from-navy to-royal py-14 sm:py-20">
+        <Container>
+          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+            <div>
+              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-cyan">Ownership success scenarios</p>
+              <h2 className="text-4xl font-extrabold leading-tight text-white sm:text-5xl">Build cash flow, then build the fleet.</h2>
+              <p className="mt-5 text-lg leading-relaxed text-white/80">
+                These scenarios show the strategic arc: start with one transportation asset, create operating visibility, build reserves, pursue payoff, then expand from a stronger base.
+              </p>
+            </div>
+            <div className="grid auto-rows-fr gap-5 md:grid-cols-3">
+              {successScenarios.map((scenario) => (
+                <div key={scenario.title} className="flex h-full flex-col rounded-xl border border-white/20 bg-white/10 p-6 text-white shadow-2xl backdrop-blur">
+                  <p className="text-4xl font-extrabold text-cyan">{scenario.metric}</p>
+                  <h3 className="mt-5 text-xl font-bold text-white">{scenario.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-white/75">{scenario.description}</p>
                 </div>
-              )
-            })}
-          </div>
-        </Container>
-      </section>
-
-      <section className="py-16 sm:py-24 bg-white">
-        <Container>
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-navy mb-4">
-              What Our Customers Say
-            </h2>
-          </div>
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-gradient-to-br from-muted to-white rounded-2xl p-8 sm:p-12 border border-border shadow-sm">
-              <blockquote className="text-xl sm:text-2xl text-neutral italic mb-6">
-                &ldquo;FreightSync gave us real-time visibility and cut our invoicing time from days to hours. We couldn&apos;t have scaled this fast without it.&rdquo;
-              </blockquote>
-              <div className="text-navy font-semibold">Jordan A.</div>
-              <div className="text-neutral text-sm">Ops Director, FleetCo</div>
+              ))}
             </div>
           </div>
         </Container>
       </section>
 
-      <section className="relative py-16 sm:py-24 bg-gradient-to-br from-navy via-royal to-secondary text-white overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-cyan/20 rounded-full blur-3xl" aria-hidden="true"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-teal/20 rounded-full blur-3xl" aria-hidden="true"></div>
+      <section className="bg-white py-14 sm:py-20">
         <Container>
-          <div className="max-w-4xl mx-auto text-center relative z-10">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-white">
-              Ready to Streamline Your Freight Operations?
-            </h2>
-            <p className="text-lg sm:text-xl text-white/90 mb-8 max-w-3xl mx-auto">
-              Whether you need logistics support, dispatch systems, fleet reporting, or a full TMS portal, FreightSync TMS is built to help your operation scale.
+          <div className="mx-auto mb-12 max-w-4xl text-center">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-cyan">Why FreightSync</p>
+            <h2 className="text-4xl font-extrabold leading-tight text-navy sm:text-5xl">Owner Alone vs FreightSync Managed</h2>
+            <p className="mt-5 text-lg text-neutral">
+              FreightSync is built for owners who want asset ownership and long-term wealth-building potential without building every operating system alone.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-              <Button href="/contact" variant="teal" size="lg">
-                Get Started Today
-              </Button>
-              <Button href="/contact" variant="outline" size="lg" className="border-2 border-white text-white hover:bg-white hover:text-navy bg-transparent">
-                Request a TMS Demo
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
+          </div>
+          <div className="grid auto-rows-fr gap-6 lg:grid-cols-2">
+            <div className="h-full rounded-xl border border-border bg-muted p-7 shadow-sm">
+              <h3 className="mb-6 text-2xl font-bold text-navy">Owner Alone</h3>
+              <div className="space-y-4">
+                {comparison.alone.map((item) => (
+                  <div key={item} className="flex items-start gap-3 text-neutral">
+                    <XCircle className="mt-0.5 h-5 w-5 flex-shrink-0 text-neutral/60" />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="grid sm:grid-cols-3 gap-4 max-w-3xl mx-auto text-sm">
-              <a href="tel:281-310-1114" className="flex items-center justify-center gap-2 bg-white/10 backdrop-blur px-4 py-3 rounded-lg border border-white/20 hover:bg-white/20 transition-colors">
-                <PhoneCall className="h-4 w-4 text-cyan" />
-                <span className="text-white">281-310-1114</span>
-              </a>
-              <a href="mailto:Admin@FreightSyncTMS.com" className="flex items-center justify-center gap-2 bg-white/10 backdrop-blur px-4 py-3 rounded-lg border border-white/20 hover:bg-white/20 transition-colors">
-                <Users className="h-4 w-4 text-cyan" />
-                <span className="text-white">Admin@FreightSyncTMS.com</span>
-              </a>
-              <div className="flex items-center justify-center gap-2 bg-white/10 backdrop-blur px-4 py-3 rounded-lg border border-white/20">
-                <MapPin className="h-4 w-4 text-cyan" />
-                <span className="text-white">Charlotte, NC</span>
+            <div className="h-full rounded-xl border border-cyan/30 bg-gradient-to-br from-white to-cyan/5 p-7 shadow-2xl">
+              <h3 className="mb-6 text-2xl font-bold text-navy">FreightSync Managed</h3>
+              <div className="space-y-4">
+                {comparison.managed.map((item) => (
+                  <div key={item} className="flex items-start gap-3 text-neutral">
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-cyan" />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-muted py-14 sm:py-20">
+        <Container>
+          <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+            <div>
+              <SectionIntro
+                eyebrow="Owner portal visibility"
+                title="Reporting built around assets, cash flow, and payoff."
+                body="Real Owner Portal screenshots were not present in the available project assets, so this section keeps the portal promise clear while using the existing FreightSync brand and live data structure."
+              />
+              <div className="mt-8">
+                <Disclaimer />
+              </div>
+            </div>
+            <PortalPreview />
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-navy py-14 sm:py-20">
+        <Container>
+          <div className="grid gap-10 text-white lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+            <div>
+              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-cyan">Carrier Accelerator Program</p>
+              <h2 className="text-4xl font-extrabold leading-tight text-white sm:text-5xl">Start with one vehicle. Build toward transportation wealth.</h2>
+              <p className="mt-5 text-lg text-white/80">
+                FreightSync helps owners evaluate the asset, launch the operation, track the numbers, and decide when the next vehicle makes sense.
+              </p>
+            </div>
+            <div className="rounded-xl border border-white/20 bg-white/10 p-7 shadow-2xl backdrop-blur">
+              <div className="grid auto-rows-fr gap-4 sm:grid-cols-3">
+                {[
+                  [Banknote, 'Cash flow', 'Plan monthly owner net'],
+                  [Truck, 'Fleet ownership', 'Scale assets deliberately'],
+                  [LineChart, 'Payoff path', 'Track long-term value'],
+                ].map(([Icon, title, body]) => (
+                  <div key={title as string} className="h-full rounded-lg bg-white p-5 text-navy shadow-lg">
+                    <Icon className="mb-4 h-7 w-7 text-cyan" />
+                    <h3 className="font-bold text-navy">{title as string}</h3>
+                    <p className="mt-2 text-sm text-neutral">{body as string}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-7 flex flex-col gap-4 sm:flex-row">
+                <Button href="/carrier-accelerator-program#consultation" variant="teal">
+                  Request an Investment Review
+                </Button>
+                <a
+                  href="https://portal.freightsynctms.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-md border-2 border-white px-6 py-3 font-semibold text-white transition-all hover:bg-white hover:text-navy"
+                >
+                  View Owner Portal
+                </a>
               </div>
             </div>
           </div>
