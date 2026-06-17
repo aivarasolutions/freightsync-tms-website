@@ -2,11 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+html, body {
+  height: 100%;
+}
+
 body {
   background-color: white;
   color: #4a5568;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {

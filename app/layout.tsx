@@ -71,7 +71,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Header />
-        <main>{children}</main>
+        <main className="flex-1">{children}</main>
         <Footer />
         <script src="https://freight-sync-tms-bot.replit.app/widget.js" async></script>
       </body>

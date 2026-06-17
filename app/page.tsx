@@ -216,7 +216,59 @@ export default function Home() {
         </Container>
       </section>
 
+      {/* Fleet Showcase */}
       <section className="py-16 sm:py-24 bg-white">
+        <Container>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-navy mb-4">
+              Our Fleet in Operation
+            </h2>
+            <p className="text-lg text-neutral max-w-2xl mx-auto">
+              From last-mile sprinter vans to LTL box trucks and long-haul 18-wheelers — we support every class of freight, moving every day.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="group relative rounded-2xl overflow-hidden shadow-lg aspect-[4/3]">
+              <img
+                src="/fleet-box-truck.jpg"
+                alt="Box trucks moving freight for FreightSync TMS operations"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/20 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 p-5">
+                <span className="inline-block bg-cyan text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-2">Box Trucks</span>
+                <p className="text-white font-semibold text-lg leading-tight">LTL & Local Freight Delivery</p>
+              </div>
+            </div>
+            <div className="group relative rounded-2xl overflow-hidden shadow-lg aspect-[4/3]">
+              <img
+                src="/fleet-sprinter-van.jpg"
+                alt="Mercedes-Benz Sprinter vans for last-mile delivery"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/20 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 p-5">
+                <span className="inline-block bg-teal text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-2">Sprinter Vans</span>
+                <p className="text-white font-semibold text-lg leading-tight">Last-Mile & Next-Day Runs</p>
+              </div>
+            </div>
+            <div className="group relative rounded-2xl overflow-hidden shadow-lg aspect-[4/3]">
+              <img
+                src="/fleet-18-wheeler.jpg"
+                alt="18-wheeler semi trucks for long-haul freight operations"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/20 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 p-5">
+                <span className="inline-block bg-royal text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-2">18-Wheelers</span>
+                <p className="text-white font-semibold text-lg leading-tight">Long-Haul & FTL Operations</p>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-16 sm:py-24 bg-muted">
         <Container>
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
