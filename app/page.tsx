@@ -99,7 +99,7 @@ const comparison = {
 
 function Disclaimer() {
   return (
-    <div className="rounded-lg border border-cyan/20 bg-white/80 p-4 text-sm text-neutral shadow-sm backdrop-blur">
+    <div className="h-full rounded-lg border border-cyan/20 bg-white/80 p-4 text-sm text-neutral shadow-sm backdrop-blur">
       <p className="font-semibold text-navy">Financial disclaimer</p>
       <p className="mt-1">
         Examples are estimates for planning only. FreightSync does not guarantee revenue, profit, loads, utilization, owner payouts, or payback timelines.
@@ -108,10 +108,10 @@ function Disclaimer() {
   )
 }
 
-function PortalPreview() {
+function PortalPreview({ compact = false }: { compact?: boolean }) {
   return (
-    <div className="overflow-hidden rounded-xl border border-white/25 bg-white/90 shadow-2xl backdrop-blur">
-      <div className="flex items-center justify-between border-b border-border bg-white/80 px-5 py-4">
+    <div className="h-full overflow-hidden rounded-xl border border-white/25 bg-white/90 shadow-2xl backdrop-blur">
+      <div className={`flex items-center justify-between border-b border-border bg-white/80 ${compact ? 'px-4 py-3' : 'px-5 py-4'}`}>
         <div className="flex items-center gap-3">
           <Image src="/freightsync-logo.png" alt="FreightSync TMS logo" width={44} height={44} className="h-9 w-auto" />
           <div>
@@ -121,21 +121,21 @@ function PortalPreview() {
         </div>
         <div className="rounded-full bg-teal/10 px-3 py-1 text-xs font-bold text-teal">Active</div>
       </div>
-      <div className="grid gap-4 p-5">
-        <div className="grid grid-cols-2 gap-4">
+      <div className={`grid ${compact ? 'gap-3 p-4' : 'gap-4 p-5'}`}>
+        <div className={`grid ${compact ? 'gap-3 sm:grid-cols-4' : 'gap-4 sm:grid-cols-2'}`}>
           {[
             ['Gross revenue', '$24,680'],
             ['Owner net', '$5,920'],
             ['Utilization', '91%'],
             ['Payoff progress', '58%'],
           ].map(([label, value]) => (
-            <div key={label} className="rounded-lg border border-border bg-muted p-4">
+            <div key={label} className={`rounded-lg border border-border bg-muted ${compact ? 'p-3' : 'p-4'}`}>
               <p className="text-xs font-semibold uppercase tracking-wide text-neutral">{label}</p>
-              <p className="mt-2 text-2xl font-extrabold text-navy">{value}</p>
+              <p className={`${compact ? 'mt-1 text-xl' : 'mt-2 text-2xl'} font-extrabold text-navy`}>{value}</p>
             </div>
           ))}
         </div>
-        <div className="rounded-lg border border-border bg-white p-4">
+        <div className={`rounded-lg border border-border bg-white ${compact ? 'p-3' : 'p-4'}`}>
           <div className="mb-3 flex items-center justify-between">
             <p className="font-bold text-navy">Asset payoff tracker</p>
             <Gauge className="h-5 w-5 text-cyan" />
@@ -152,9 +152,9 @@ function PortalPreview() {
 
 function SectionIntro({ eyebrow, title, body }: { eyebrow: string; title: string; body: string }) {
   return (
-    <div className="max-w-4xl">
+    <div className="max-w-3xl">
       <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-cyan">{eyebrow}</p>
-      <h2 className="text-4xl font-extrabold leading-tight text-navy sm:text-5xl">{title}</h2>
+      <h2 className="text-3xl font-extrabold leading-tight text-navy sm:text-4xl lg:text-5xl">{title}</h2>
       <p className="mt-5 text-lg leading-relaxed text-neutral">{body}</p>
     </div>
   )
@@ -167,13 +167,13 @@ export default function Home() {
         <img src={images.hero} alt="Modern semi truck moving freight at sunrise" className="absolute inset-0 h-full w-full object-cover opacity-55" />
         <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/80 to-royal/45" />
         <Container>
-          <div className="relative z-10 grid min-h-[680px] items-center gap-8 py-14 lg:grid-cols-[0.98fr_1.02fr] lg:py-16">
-            <div>
+          <div className="relative z-10 grid items-center gap-8 py-10 sm:py-12 lg:min-h-[520px] lg:grid-cols-[0.98fr_1.02fr] lg:gap-10 lg:py-14">
+            <div className="self-center">
               <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-cyan backdrop-blur">
                 <BriefcaseBusiness className="h-4 w-4" />
                 Transportation assets. Managed operations. Owner visibility.
               </div>
-              <h1 className="max-w-5xl text-5xl font-extrabold leading-[1.02] text-white sm:text-6xl lg:text-7xl">
+              <h1 className="max-w-5xl text-4xl font-extrabold leading-[1.04] text-white sm:text-5xl lg:text-6xl">
                 You Own the Truck. FreightSync Runs the Business.
               </h1>
               <p className="mt-6 max-w-3xl text-xl leading-relaxed text-white/85">
@@ -187,17 +187,20 @@ export default function Home() {
                   Run ROI Calculator
                 </Button>
               </div>
+              <p className="mt-5 text-sm font-medium text-white/70">
+                Built for owner-investors evaluating transportation assets, cash flow, and managed fleet growth.
+              </p>
             </div>
-            <div className="space-y-5">
-              <div className="rounded-xl border border-white/20 bg-white/10 p-5 shadow-2xl backdrop-blur-xl">
-                <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-cyan">Above-the-fold economics</p>
-                <div className="grid gap-4 sm:grid-cols-2">
+            <div className="self-center space-y-5">
+              <div className="rounded-xl border border-white/20 bg-white/10 p-4 shadow-2xl backdrop-blur-xl">
+                <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-cyan">Above-the-fold economics</p>
+                <div className="grid auto-rows-fr gap-3 sm:grid-cols-2">
                   {revenueExamples.map((item) => (
-                    <div key={item.vehicle} className="rounded-lg bg-white/90 p-5 shadow-lg">
+                    <div key={item.vehicle} className="flex h-full flex-col rounded-lg bg-white/90 p-4 shadow-lg">
                       <p className="text-sm font-bold text-cyan">{item.vehicle}</p>
-                      <p className="mt-2 text-3xl font-extrabold text-navy">{item.ownerNet}</p>
+                      <p className="mt-1 text-2xl font-extrabold text-navy">{item.ownerNet}</p>
                       <p className="text-sm text-neutral">estimated monthly owner net</p>
-                      <div className="mt-4 grid grid-cols-2 gap-3 text-sm">
+                      <div className="mt-auto grid grid-cols-2 gap-3 pt-3 text-sm">
                         <div>
                           <p className="text-neutral">Gross</p>
                           <p className="font-bold text-navy">{item.gross}</p>
@@ -211,13 +214,13 @@ export default function Home() {
                   ))}
                 </div>
               </div>
-              <PortalPreview />
+              <PortalPreview compact />
             </div>
           </div>
         </Container>
       </section>
 
-      <section id="roi-calculator" className="bg-white py-16 sm:py-20">
+      <section id="roi-calculator" className="bg-white py-14 sm:py-20">
         <Container>
           <SectionIntro
             eyebrow="ROI calculator"
@@ -230,16 +233,16 @@ export default function Home() {
         </Container>
       </section>
 
-      <section className="bg-muted py-16 sm:py-24">
+      <section className="bg-muted py-14 sm:py-20">
         <Container>
           <SectionIntro
             eyebrow="Investment journey"
             title="From application to fleet expansion."
             body="FreightSync turns the messy path of trucking ownership into a visible sequence: capitalize the asset, launch the operation, monitor performance, and scale only when the numbers support it."
           />
-          <div className="mt-12 grid gap-4 md:grid-cols-4">
+          <div className="mt-10 grid auto-rows-fr gap-4 md:grid-cols-4">
             {journey.map((step, index) => (
-              <div key={step} className="relative rounded-xl border border-white/60 bg-white/80 p-5 shadow-lg backdrop-blur">
+              <div key={step} className="relative flex h-full flex-col rounded-xl border border-white/60 bg-white/80 p-5 shadow-lg backdrop-blur">
                 <p className="mb-6 flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-cyan to-teal text-sm font-extrabold text-white">
                   {index + 1}
                 </p>
@@ -251,7 +254,7 @@ export default function Home() {
         </Container>
       </section>
 
-      <section className="bg-white py-16 sm:py-24">
+      <section className="bg-white py-14 sm:py-20">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
             <div>
@@ -260,9 +263,9 @@ export default function Home() {
                 title="FreightSync manages the business layer around the asset."
                 body="The opportunity is not just truck ownership. It is ownership with dispatch structure, driver support, broker coordination, settlement visibility, and reporting discipline."
               />
-              <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              <div className="mt-8 grid auto-rows-fr gap-4 sm:grid-cols-2">
                 {managedOps.map((item) => (
-                  <div key={item.label} className="rounded-lg border border-border bg-white p-5 shadow-sm">
+                  <div key={item.label} className="h-full rounded-lg border border-border bg-white p-5 shadow-sm">
                     <item.icon className="mb-3 h-6 w-6 text-cyan" />
                     <h3 className="font-bold text-navy">{item.label}</h3>
                   </div>
@@ -280,7 +283,7 @@ export default function Home() {
         </Container>
       </section>
 
-      <section className="bg-gradient-to-br from-navy to-royal py-16 sm:py-24">
+      <section className="bg-gradient-to-br from-navy to-royal py-14 sm:py-20">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
             <div>
@@ -290,9 +293,9 @@ export default function Home() {
                 These scenarios show the strategic arc: start with one transportation asset, create operating visibility, build reserves, pursue payoff, then expand from a stronger base.
               </p>
             </div>
-            <div className="grid gap-5 md:grid-cols-3">
+            <div className="grid auto-rows-fr gap-5 md:grid-cols-3">
               {successScenarios.map((scenario) => (
-                <div key={scenario.title} className="rounded-xl border border-white/20 bg-white/10 p-6 text-white shadow-2xl backdrop-blur">
+                <div key={scenario.title} className="flex h-full flex-col rounded-xl border border-white/20 bg-white/10 p-6 text-white shadow-2xl backdrop-blur">
                   <p className="text-4xl font-extrabold text-cyan">{scenario.metric}</p>
                   <h3 className="mt-5 text-xl font-bold text-white">{scenario.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-white/75">{scenario.description}</p>
@@ -303,7 +306,7 @@ export default function Home() {
         </Container>
       </section>
 
-      <section className="bg-white py-16 sm:py-24">
+      <section className="bg-white py-14 sm:py-20">
         <Container>
           <div className="mx-auto mb-12 max-w-4xl text-center">
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-cyan">Why FreightSync</p>
@@ -312,8 +315,8 @@ export default function Home() {
               FreightSync is built for owners who want asset ownership and long-term wealth-building potential without building every operating system alone.
             </p>
           </div>
-          <div className="grid gap-6 lg:grid-cols-2">
-            <div className="rounded-xl border border-border bg-muted p-7 shadow-sm">
+          <div className="grid auto-rows-fr gap-6 lg:grid-cols-2">
+            <div className="h-full rounded-xl border border-border bg-muted p-7 shadow-sm">
               <h3 className="mb-6 text-2xl font-bold text-navy">Owner Alone</h3>
               <div className="space-y-4">
                 {comparison.alone.map((item) => (
@@ -324,7 +327,7 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            <div className="rounded-xl border border-cyan/30 bg-gradient-to-br from-white to-cyan/5 p-7 shadow-2xl">
+            <div className="h-full rounded-xl border border-cyan/30 bg-gradient-to-br from-white to-cyan/5 p-7 shadow-2xl">
               <h3 className="mb-6 text-2xl font-bold text-navy">FreightSync Managed</h3>
               <div className="space-y-4">
                 {comparison.managed.map((item) => (
@@ -339,7 +342,7 @@ export default function Home() {
         </Container>
       </section>
 
-      <section className="bg-muted py-16 sm:py-24">
+      <section className="bg-muted py-14 sm:py-20">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <div>
@@ -357,7 +360,7 @@ export default function Home() {
         </Container>
       </section>
 
-      <section className="bg-navy py-16 sm:py-24">
+      <section className="bg-navy py-14 sm:py-20">
         <Container>
           <div className="grid gap-10 text-white lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div>
@@ -368,13 +371,13 @@ export default function Home() {
               </p>
             </div>
             <div className="rounded-xl border border-white/20 bg-white/10 p-7 shadow-2xl backdrop-blur">
-              <div className="grid gap-4 sm:grid-cols-3">
+              <div className="grid auto-rows-fr gap-4 sm:grid-cols-3">
                 {[
                   [Banknote, 'Cash flow', 'Plan monthly owner net'],
                   [Truck, 'Fleet ownership', 'Scale assets deliberately'],
                   [LineChart, 'Payoff path', 'Track long-term value'],
                 ].map(([Icon, title, body]) => (
-                  <div key={title as string} className="rounded-lg bg-white p-5 text-navy shadow-lg">
+                  <div key={title as string} className="h-full rounded-lg bg-white p-5 text-navy shadow-lg">
                     <Icon className="mb-4 h-7 w-7 text-cyan" />
                     <h3 className="font-bold text-navy">{title as string}</h3>
                     <p className="mt-2 text-sm text-neutral">{body as string}</p>
