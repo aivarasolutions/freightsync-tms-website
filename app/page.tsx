@@ -35,9 +35,9 @@ export const metadata: Metadata = {
 const images = {
   hero:
     'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1800&q=85',
-  fleet: '/ops-semi-truck.jpg',
-  control: '/ops-sprinter-van.jpg',
-  warehouse: '/ops-box-truck.jpg',
+  fleet: '/scene-18-wheeler.png',
+  control: '/scene-sprinter-van.png',
+  warehouse: '/scene-box-truck.png',
 }
 
 const revenueExamples = [

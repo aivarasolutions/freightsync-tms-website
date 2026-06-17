@@ -1,0 +1,20 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "gXV9QQRunSsdWOEdoYU82"
+uri = "file://public/scene-box-truck.png"
+type = "image"
+title = "box truck delivery scene"
+
+[[generated]]
+id = "bEVFgEXQPPP_pt1YLp38R"
+uri = "file://public/scene-sprinter-van.png"
+type = "image"
+title = "sprinter van loading delivery"
+
+[[generated]]
+id = "IhDZ5I6nTRKCYbK9dAVEe"
+uri = "file://public/scene-18-wheeler.png"
+type = "image"
+title = "18 wheeler vendor payment handshake"
