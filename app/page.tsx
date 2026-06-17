@@ -35,12 +35,9 @@ export const metadata: Metadata = {
 const images = {
   hero:
     'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1800&q=85',
-  fleet:
-    'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1400&q=85',
-  control:
-    'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=85',
-  warehouse:
-    'https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1400&q=85',
+  fleet: '/ops-semi-truck.jpg',
+  control: '/ops-sprinter-van.jpg',
+  warehouse: '/ops-box-truck.jpg',
 }
 
 const revenueExamples = [
