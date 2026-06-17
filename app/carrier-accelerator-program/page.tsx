@@ -308,13 +308,13 @@ export default function CarrierAcceleratorProgram() {
         <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/85 to-royal/45" />
 
         <Container>
-          <div className="relative z-10 grid min-h-[640px] gap-10 py-14 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:py-16">
-            <div>
+          <div className="relative z-10 grid items-center gap-8 py-10 sm:py-12 lg:min-h-[520px] lg:grid-cols-[1.02fr_0.98fr] lg:gap-10 lg:py-14">
+            <div className="self-center">
               <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-cyan mb-6">
                 <Truck className="h-4 w-4" />
                 Managed fleet ownership program
               </div>
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-[1.02] text-white mb-6">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.04] text-white mb-6">
                 Own Transportation Assets. Build Cash Flow. Scale a Managed Fleet.
               </h1>
               <p className="text-lg sm:text-xl text-white/85 max-w-3xl mb-8">
@@ -328,22 +328,25 @@ export default function CarrierAcceleratorProgram() {
                   Run ROI Calculator
                 </Button>
               </div>
+              <p className="mt-5 text-sm font-medium text-white/70">
+                For owners who want asset ownership, operating support, and disciplined fleet growth.
+              </p>
             </div>
 
-            <div className="rounded-xl border border-white/20 bg-white/10 p-5 shadow-2xl backdrop-blur-xl">
-              <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-cyan">Revenue examples above the fold</p>
-              <div className="grid gap-4">
+            <div className="self-center rounded-xl border border-white/20 bg-white/10 p-4 shadow-2xl backdrop-blur-xl">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-cyan">Revenue examples above the fold</p>
+              <div className="grid auto-rows-fr gap-3 lg:grid-cols-2">
                 {roiExamples.map((example) => (
-                  <div key={example.title} className="rounded-lg bg-white/90 p-5 shadow-lg">
-                    <div className="mb-4 flex items-center gap-3">
+                  <div key={example.title} className="flex h-full flex-col rounded-lg bg-white/90 p-4 shadow-lg">
+                    <div className="mb-3 flex items-center gap-3">
                       <example.icon className="h-6 w-6 text-cyan" />
-                      <h2 className="text-xl font-bold text-navy">{example.title}</h2>
+                      <h2 className="text-lg font-bold leading-tight text-navy">{example.title}</h2>
                     </div>
-                    <div className="grid sm:grid-cols-2 gap-3">
+                    <div className="mt-auto grid gap-3">
                       {example.stats.slice(3).map(([label, value]) => (
-                        <div key={label} className="rounded-lg bg-muted p-4">
+                        <div key={label} className="rounded-lg bg-muted p-3">
                           <p className="text-xs font-semibold uppercase tracking-wide text-neutral">{label.replace('Estimated ', '')}</p>
-                          <p className="mt-1 text-2xl font-extrabold text-navy">{value}</p>
+                          <p className="mt-1 text-xl font-extrabold text-navy">{value}</p>
                         </div>
                       ))}
                     </div>
@@ -355,11 +358,11 @@ export default function CarrierAcceleratorProgram() {
         </Container>
       </section>
 
-      <section id="roi-calculator" className="py-16 sm:py-20 bg-white">
+      <section id="roi-calculator" className="py-14 sm:py-20 bg-white">
         <Container>
           <div className="max-w-4xl mb-10">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-cyan mb-3">ROI calculator</p>
-            <h2 className="text-4xl sm:text-5xl font-extrabold leading-tight text-navy mb-4">Model the vehicle before you deploy capital.</h2>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight text-navy mb-4">Model the vehicle before you deploy capital.</h2>
             <p className="text-lg text-neutral">
               Adjust vehicle cost, gross revenue, operating expenses, and FreightSync&apos;s management fee to estimate monthly owner net and payoff timing.
             </p>
@@ -368,18 +371,18 @@ export default function CarrierAcceleratorProgram() {
         </Container>
       </section>
 
-      <section className="py-16 sm:py-24 bg-muted">
+      <section className="py-14 sm:py-20 bg-muted">
         <Container>
           <div className="max-w-4xl mb-12">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-cyan mb-3">Investment journey</p>
-            <h2 className="text-4xl sm:text-5xl font-extrabold leading-tight text-navy mb-4">A clear path from application to fleet expansion.</h2>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight text-navy mb-4">A clear path from application to fleet expansion.</h2>
             <p className="text-lg text-neutral">
               FreightSync frames ownership as an asset-building sequence: qualify, finance, insure, purchase, launch, generate revenue, pursue payoff, and expand carefully.
             </p>
           </div>
-          <div className="grid md:grid-cols-4 gap-4">
+          <div className="grid auto-rows-fr md:grid-cols-4 gap-4">
             {investmentJourney.map((step, index) => (
-              <div key={step} className="relative rounded-xl border border-white/60 bg-white/80 p-5 shadow-lg backdrop-blur">
+              <div key={step} className="relative flex h-full flex-col rounded-xl border border-white/60 bg-white/80 p-5 shadow-lg backdrop-blur">
                 <p className="mb-6 flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-cyan to-teal text-sm font-extrabold text-white">
                   {index + 1}
                 </p>
@@ -391,12 +394,12 @@ export default function CarrierAcceleratorProgram() {
         </Container>
       </section>
 
-      <section id="investment" className="py-16 sm:py-24 bg-white">
+      <section id="investment" className="py-14 sm:py-20 bg-white">
         <Container>
           <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-10 items-center">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-cyan mb-3">Asset ownership strategy</p>
-              <h2 className="text-4xl sm:text-5xl font-extrabold leading-tight text-navy mb-4">Turn a vehicle into a managed revenue-producing asset.</h2>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight text-navy mb-4">Turn a vehicle into a managed revenue-producing asset.</h2>
               <p className="text-lg text-neutral mb-6">
                 The program is built for people who want trucking exposure through ownership, cash-flow visibility, payoff planning, and long-term fleet growth instead of buying software and managing every operating detail alone.
               </p>
@@ -415,12 +418,12 @@ export default function CarrierAcceleratorProgram() {
             </div>
             <div className="grid gap-5">
               <img src={images.fleet} alt="Managed sprinter and truck fleet movement" className="h-[330px] w-full rounded-xl object-cover shadow-2xl" />
-              <div className="grid sm:grid-cols-2 gap-5">
+              <div className="grid auto-rows-fr sm:grid-cols-2 gap-5">
                 {[
                   ['Transportation assets', 'Own the vehicle and build equity as the operation matures.'],
                   ['Cash-flow visibility', 'Track gross revenue, costs, settlements, owner net, and reserves.'],
                 ].map(([title, body]) => (
-                  <div key={title} className="rounded-xl border border-border bg-muted p-5">
+                  <div key={title} className="h-full rounded-xl border border-border bg-muted p-5">
                     <h3 className="font-bold text-navy mb-2">{title}</h3>
                     <p className="text-sm text-neutral">{body}</p>
                   </div>
@@ -434,7 +437,7 @@ export default function CarrierAcceleratorProgram() {
         </Container>
       </section>
 
-      <section className="py-16 sm:py-24 bg-muted">
+      <section className="py-14 sm:py-20 bg-muted">
         <Container>
           <div className="text-center max-w-3xl mx-auto mb-12">
             <p className="text-sm font-semibold uppercase tracking-wide text-cyan mb-3">Investment examples</p>
@@ -443,9 +446,9 @@ export default function CarrierAcceleratorProgram() {
               Compare two common entry points. Gross revenue is not owner profit; owner profit is what remains after operating costs and FreightSync management fees.
             </p>
           </div>
-          <div className="grid lg:grid-cols-2 gap-6">
+          <div className="grid auto-rows-fr lg:grid-cols-2 gap-6">
             {roiExamples.map((example) => (
-              <div key={example.title} className="rounded-xl border border-border bg-white p-6 sm:p-8 shadow-lg">
+              <div key={example.title} className="flex h-full flex-col rounded-xl border border-border bg-white p-6 sm:p-8 shadow-lg">
                 <div className="mb-6 flex items-center gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-cyan/10">
                     <example.icon className="h-6 w-6 text-cyan" />
@@ -460,26 +463,26 @@ export default function CarrierAcceleratorProgram() {
                     </div>
                   ))}
                 </div>
-                <p className="mt-6 text-sm leading-relaxed text-neutral">{example.note}</p>
+                <p className="mt-auto pt-6 text-sm leading-relaxed text-neutral">{example.note}</p>
               </div>
             ))}
           </div>
         </Container>
       </section>
 
-      <section className="py-16 sm:py-24 bg-white">
+      <section className="py-14 sm:py-20 bg-white">
         <Container>
           <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-10 items-center">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-cyan mb-3">Managed operating layer</p>
-              <h2 className="text-4xl sm:text-5xl font-extrabold leading-tight text-navy mb-4">You own the asset. FreightSync runs the operating system around it.</h2>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight text-navy mb-4">You own the asset. FreightSync runs the operating system around it.</h2>
               <p className="text-lg text-neutral">
                 FreightSync is designed for investors and owners who want trucking income without managing dispatch, drivers, brokers, paperwork, and daily operations themselves.
               </p>
               <img src={images.control} alt="Logistics control center for managed fleet operations" className="mt-8 h-72 w-full rounded-xl object-cover shadow-2xl" />
             </div>
-            <div className="grid md:grid-cols-2 gap-5">
-              <div className="rounded-xl border border-border bg-white/80 p-6 shadow-lg backdrop-blur">
+            <div className="grid auto-rows-fr md:grid-cols-2 gap-5">
+              <div className="h-full rounded-xl border border-border bg-white/80 p-6 shadow-lg backdrop-blur">
                 <h3 className="text-xl font-bold text-navy mb-4">Investor responsibilities</h3>
                 <ul className="space-y-3">
                   {investorResponsibilities.map((item) => (
@@ -490,7 +493,7 @@ export default function CarrierAcceleratorProgram() {
                   ))}
                 </ul>
               </div>
-              <div className="rounded-xl border border-cyan/30 bg-gradient-to-br from-white to-cyan/5 p-6 shadow-2xl">
+              <div className="h-full rounded-xl border border-cyan/30 bg-gradient-to-br from-white to-cyan/5 p-6 shadow-2xl">
                 <h3 className="text-xl font-bold text-navy mb-4">FreightSync responsibilities</h3>
                 <ul className="space-y-3">
                   {freightSyncResponsibilities.map((item) => (
@@ -506,7 +509,7 @@ export default function CarrierAcceleratorProgram() {
         </Container>
       </section>
 
-      <section className="py-16 bg-gradient-to-br from-navy to-secondary">
+      <section className="py-14 bg-gradient-to-br from-navy to-secondary">
         <Container>
           <CTASection
             title="Ready to review your first vehicle?"
@@ -516,19 +519,19 @@ export default function CarrierAcceleratorProgram() {
         </Container>
       </section>
 
-      <section className="py-16 sm:py-24 bg-white">
+      <section className="py-14 sm:py-20 bg-white">
         <Container>
           <div className="grid lg:grid-cols-[0.85fr_1.15fr] gap-10 items-start">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-cyan mb-3">Ownership success scenarios</p>
-              <h2 className="text-4xl sm:text-5xl font-extrabold leading-tight text-navy mb-4">Build cash flow, then build the fleet.</h2>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight text-navy mb-4">Build cash flow, then build the fleet.</h2>
               <p className="text-lg text-neutral">
                 The program is positioned around asset ownership, operating visibility, reserves, payoff, and disciplined expansion.
               </p>
             </div>
-            <div className="grid md:grid-cols-3 gap-5">
+            <div className="grid auto-rows-fr md:grid-cols-3 gap-5">
               {successScenarios.map((scenario) => (
-                <div key={scenario.title} className="rounded-xl border border-border bg-gradient-to-br from-white to-muted p-6 shadow-xl">
+                <div key={scenario.title} className="flex h-full flex-col rounded-xl border border-border bg-gradient-to-br from-white to-muted p-6 shadow-xl">
                   <p className="text-4xl font-extrabold text-cyan">{scenario.stat}</p>
                   <h3 className="mt-5 text-xl font-bold text-navy">{scenario.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-neutral">{scenario.body}</p>
@@ -539,7 +542,7 @@ export default function CarrierAcceleratorProgram() {
         </Container>
       </section>
 
-      <section id="program-options" className="py-16 sm:py-24 bg-muted">
+      <section id="program-options" className="py-14 sm:py-20 bg-muted">
         <Container>
           <div className="text-center max-w-3xl mx-auto mb-12">
             <p className="text-sm font-semibold uppercase tracking-wide text-cyan mb-3">Program pricing</p>
@@ -548,9 +551,9 @@ export default function CarrierAcceleratorProgram() {
               Keep the current setup clear: onboarding covers launch support, while FreightSync earns a management fee tied to gross revenue.
             </p>
           </div>
-          <div className="grid lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          <div className="grid auto-rows-fr lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
             {programOptions.map((option) => (
-              <div key={option.title} className="rounded-xl bg-white border border-border p-6 sm:p-8 shadow-lg">
+              <div key={option.title} className="h-full rounded-xl bg-white border border-border p-6 sm:p-8 shadow-lg">
                 <div className="flex items-center gap-4 mb-6">
                   <div className="h-12 w-12 rounded-lg bg-cyan/10 flex items-center justify-center">
                     <option.icon className="h-6 w-6 text-cyan" />
@@ -581,7 +584,7 @@ export default function CarrierAcceleratorProgram() {
         </Container>
       </section>
 
-      <section className="py-16 sm:py-24 bg-muted">
+      <section className="py-14 sm:py-20 bg-muted">
         <Container>
           <div className="grid lg:grid-cols-[0.85fr_1.15fr] gap-10">
             <div>
@@ -591,9 +594,9 @@ export default function CarrierAcceleratorProgram() {
                 The objective is not just to run loads. The objective is to stabilize the operation, reduce the debt burden, and build repeatable cash flow from an owned asset.
               </p>
             </div>
-            <div className="grid md:grid-cols-3 gap-5">
+            <div className="grid auto-rows-fr md:grid-cols-3 gap-5">
               {payoffPath.map((phase) => (
-                <div key={phase.year} className="rounded-xl border border-border bg-white p-6 shadow-sm">
+                <div key={phase.year} className="h-full rounded-xl border border-border bg-white p-6 shadow-sm">
                   <h3 className="text-xl font-bold text-navy mb-4">{phase.year}</h3>
                   <ul className="space-y-3">
                     {phase.items.map((item) => (
@@ -610,17 +613,17 @@ export default function CarrierAcceleratorProgram() {
         </Container>
       </section>
 
-      <section className="py-16 sm:py-24 bg-white">
+      <section className="py-14 sm:py-20 bg-white">
         <Container>
           <div className="text-center max-w-3xl mx-auto mb-12">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-cyan mb-3">Why FreightSync</p>
-            <h2 className="text-4xl sm:text-5xl font-extrabold leading-tight text-navy mb-4">Owner Alone vs FreightSync Managed</h2>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight text-navy mb-4">Owner Alone vs FreightSync Managed</h2>
             <p className="text-lg text-neutral">
               Trucking requires more than buying a vehicle. FreightSync gives owners a managed operating structure instead of forcing them to build every workflow from scratch.
             </p>
           </div>
-          <div className="grid lg:grid-cols-2 gap-6">
-            <div className="rounded-xl border border-border bg-muted p-6 sm:p-8">
+          <div className="grid auto-rows-fr lg:grid-cols-2 gap-6">
+            <div className="h-full rounded-xl border border-border bg-muted p-6 sm:p-8">
               <h3 className="text-2xl font-bold text-navy mb-5">Owner Alone</h3>
               <ul className="space-y-3">
                 {comparison.alone.map((item) => (
@@ -631,7 +634,7 @@ export default function CarrierAcceleratorProgram() {
                 ))}
               </ul>
             </div>
-            <div className="rounded-xl border border-cyan/30 bg-gradient-to-br from-white to-cyan/5 p-6 sm:p-8 shadow-2xl">
+            <div className="h-full rounded-xl border border-cyan/30 bg-gradient-to-br from-white to-cyan/5 p-6 sm:p-8 shadow-2xl">
               <h3 className="text-2xl font-bold text-navy mb-5">FreightSync Managed</h3>
               <ul className="space-y-3">
                 {comparison.freightSync.map((item) => (
@@ -646,18 +649,18 @@ export default function CarrierAcceleratorProgram() {
         </Container>
       </section>
 
-      <section className="py-16 sm:py-24 bg-muted">
+      <section className="py-14 sm:py-20 bg-muted">
         <Container>
           <div className="grid lg:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-4xl sm:text-5xl font-extrabold leading-tight text-navy mb-4">Recommended Transportation Assets</h2>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight text-navy mb-4">Recommended Transportation Assets</h2>
               <p className="text-lg text-neutral mb-8">
                 FreightSync recommends equipment with broad acceptance, stronger service access, and practical operating economics.
               </p>
               <img src={images.freight} alt="Freight movement and warehouse operations" className="mb-8 h-64 w-full rounded-xl object-cover shadow-2xl" />
               <div className="space-y-6">
                 {vehicles.map((vehicle) => (
-                  <div key={vehicle.type} className="rounded-xl bg-white border border-border p-6">
+                  <div key={vehicle.type} className="rounded-xl bg-white border border-border p-6 shadow-sm">
                     <p className="text-sm font-semibold text-cyan mb-1">{vehicle.type}</p>
                     <h3 className="text-xl font-bold text-navy mb-4">Recommended: {vehicle.recommended}</h3>
                     <ul className="space-y-2">
@@ -703,14 +706,14 @@ export default function CarrierAcceleratorProgram() {
         </Container>
       </section>
 
-      <section className="py-16 sm:py-24 bg-white">
+      <section className="py-14 sm:py-20 bg-white">
         <Container>
           <div className="text-center max-w-3xl mx-auto mb-12">
             <p className="text-sm font-semibold uppercase tracking-wide text-cyan mb-3">Fit check</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-navy mb-4">Who This Program Is Best For</h2>
           </div>
-          <div className="grid lg:grid-cols-2 gap-6">
-            <div className="rounded-xl border border-cyan/30 bg-cyan/5 p-6 sm:p-8">
+          <div className="grid auto-rows-fr lg:grid-cols-2 gap-6">
+            <div className="h-full rounded-xl border border-cyan/30 bg-cyan/5 p-6 sm:p-8">
               <h3 className="text-2xl font-bold text-navy mb-5">Best fit</h3>
               <ul className="space-y-3">
                 {bestFit.map((item) => (
@@ -721,7 +724,7 @@ export default function CarrierAcceleratorProgram() {
                 ))}
               </ul>
             </div>
-            <div className="rounded-xl border border-border bg-muted p-6 sm:p-8">
+            <div className="h-full rounded-xl border border-border bg-muted p-6 sm:p-8">
               <h3 className="text-2xl font-bold text-navy mb-5">Who This Program Is Not For</h3>
               <ul className="space-y-3">
                 {notFit.map((item) => (
@@ -736,7 +739,7 @@ export default function CarrierAcceleratorProgram() {
         </Container>
       </section>
 
-      <section className="py-16 sm:py-24 bg-muted">
+      <section className="py-14 sm:py-20 bg-muted">
         <Container>
           <div className="grid lg:grid-cols-[0.85fr_1.15fr] gap-10 items-start">
             <div>
@@ -745,9 +748,9 @@ export default function CarrierAcceleratorProgram() {
                 FreightSync helps review documentation and operational readiness before launch.
               </p>
             </div>
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="grid auto-rows-fr sm:grid-cols-2 gap-4">
               {requirements.map((requirement) => (
-                <div key={requirement} className="flex items-center gap-3 rounded-lg border border-border bg-white p-4">
+                <div key={requirement} className="flex h-full items-center gap-3 rounded-lg border border-border bg-white p-4">
                   <Landmark className="h-5 w-5 text-cyan flex-shrink-0" />
                   <span className="font-semibold text-navy">{requirement}</span>
                 </div>
@@ -757,7 +760,7 @@ export default function CarrierAcceleratorProgram() {
         </Container>
       </section>
 
-      <section className="py-16 bg-white">
+      <section className="py-14 bg-white">
         <Container>
           <CTASection
             title="See if your vehicle qualifies."
@@ -767,7 +770,7 @@ export default function CarrierAcceleratorProgram() {
         </Container>
       </section>
 
-      <section className="py-16 sm:py-24 bg-white">
+      <section className="py-14 sm:py-20 bg-white">
         <Container>
           <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-10">
             <div>
@@ -785,7 +788,7 @@ export default function CarrierAcceleratorProgram() {
         </Container>
       </section>
 
-      <section id="consultation" className="py-16 sm:py-24 bg-muted">
+      <section id="consultation" className="py-14 sm:py-20 bg-muted">
         <Container>
           <div className="grid lg:grid-cols-[0.85fr_1.15fr] gap-10 items-start">
             <div>
