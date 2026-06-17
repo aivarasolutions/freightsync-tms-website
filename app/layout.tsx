@@ -5,20 +5,20 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: {
-    default: 'FreightSync TMS | Logistics Services & Transportation Management Software',
+    default: 'FreightSync TMS | Vehicle Ownership & Managed Trucking Operations',
     template: '%s | FreightSync TMS'
   },
-  description: 'FreightSync TMS provides logistics services and transportation management software for dispatch, fleet operations, load tracking, driver settlements, reporting, and growing logistics companies.',
+  description: 'FreightSync helps investors and owner-partners buy or finance trucking vehicles, navigate insurance and onboarding, and operate through managed dispatch, reporting, and trucking operations support.',
   keywords: [
-    'transportation management system',
-    'logistics services',
-    'fleet management',
-    'dispatch software',
-    'load tracking',
-    'driver settlements',
+    'trucking investment',
+    'carrier accelerator program',
+    'managed trucking operations',
+    'vehicle ownership',
     'freight operations',
-    'Charlotte logistics company',
-    'TMS portal',
+    'owner portal',
+    'dispatch support',
+    'trucking investors',
+    'FreightSync TMS',
   ],
   authors: [{ name: 'FreightSync TMS' }],
   metadataBase: new URL('https://www.freightsynctms.com'),
@@ -38,14 +38,14 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://www.freightsynctms.com',
     siteName: 'FreightSync TMS',
-    title: 'FreightSync TMS | Logistics Services & Transportation Management Software',
-    description: 'Logistics services and TMS software for dispatch, fleet operations, load tracking, driver settlements, and reporting.',
+    title: 'FreightSync TMS | Vehicle Ownership & Managed Trucking Operations',
+    description: 'Vehicle ownership guidance and managed trucking operations for investors and owner-partners.',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'FreightSync TMS — Logistics Services + Transportation Management Software',
+        alt: 'FreightSync TMS - Vehicle ownership and managed trucking operations',
         type: 'image/png',
       },
     ],
@@ -53,8 +53,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@FreightSyncTMS',
-    title: 'FreightSync TMS | Logistics Services & TMS Software',
-    description: 'Logistics services and TMS software for dispatch, fleet operations, load tracking, and driver settlements.',
+    title: 'FreightSync TMS | Managed Trucking Operations',
+    description: 'Vehicle ownership guidance, owner reporting, and managed trucking operations.',
     images: ['/og-image.png'],
   },
   other: {

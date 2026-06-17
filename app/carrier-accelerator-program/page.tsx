@@ -3,6 +3,7 @@ import { Container } from '@/components/ui/Container'
 import { Button } from '@/components/ui/Button'
 import { FAQ } from '@/components/ui/FAQ'
 import { CarrierAcceleratorForm } from '@/components/ui/CarrierAcceleratorForm'
+import { CarrierRoiCalculator } from '@/components/ui/CarrierRoiCalculator'
 import {
   ArrowRight,
   Banknote,
@@ -24,15 +25,15 @@ import {
 
 export const metadata: Metadata = {
   title: 'Carrier Accelerator Program',
-  description: 'Launch and grow a trucking business with FreightSync dispatching, operations support, driver recruiting, compliance guidance, reporting, and carrier management systems.',
+  description: 'Own the vehicle while FreightSync helps manage the trucking operation with vehicle guidance, insurance direction, onboarding, dispatch, driver recruiting support, reporting, and operations.',
 }
 
 const steps = [
-  'Purchase or finance your truck or van.',
-  'Obtain commercial insurance in your company name.',
-  'Complete FreightSync onboarding and compliance review.',
-  'FreightSync assists with driver recruiting and operational setup.',
-  'Start receiving dispatched loads and weekly reporting.',
+  'Choose a semi truck or Sprinter van purchase or financing path.',
+  'Obtain commercial insurance in your company name with coverage guidance.',
+  'Complete FreightSync onboarding, broker setup, and compliance review.',
+  'FreightSync supports driver recruiting and operational setup.',
+  'FreightSync manages dispatch, reporting, settlements, and operations.',
 ]
 
 const programOptions = [
@@ -97,7 +98,7 @@ const requirements = ['LLC', 'EIN', 'Business Bank Account', 'Commercial Insuran
 const faqs = [
   {
     question: 'Why partner with FreightSync?',
-    answer: 'FreightSync gives investors and owner-operators access to established freight operations, dispatching, reporting, settlement support, carrier management workflows, and practical guidance that can shorten the path from equipment purchase to revenue.',
+    answer: 'FreightSync gives investors and owner-operators access to managed freight operations, dispatching, reporting, settlement support, carrier management workflows, and practical guidance that can shorten the path from equipment purchase to operating readiness.',
   },
   {
     question: 'How long does onboarding take?',
@@ -171,16 +172,16 @@ export default function CarrierAcceleratorProgram() {
                 FreightSync Carrier Accelerator Program
               </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.12] text-white mb-6">
-                Launch Your Trucking Business Faster
+                Own the Vehicle. FreightSync Runs the Operation.
               </h1>
               <p className="text-lg sm:text-xl text-white/85 max-w-3xl mb-8">
-                Partner with FreightSync and gain access to professional dispatching, operational support, driver recruiting, compliance guidance, and our proven carrier management systems.
+                Build a trucking asset with guidance on vehicle selection, insurance direction, onboarding, dispatch, driver recruiting support, owner reporting, and managed day-to-day operations.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button href="#consultation" variant="teal" size="lg">
                   Schedule a Consultation
                 </Button>
-                <Button href="#program-options" variant="outline" size="lg" className="border-2 border-white text-white hover:bg-white hover:text-navy">
+                <Button href="/contact" variant="outline" size="lg" className="border-2 border-white text-white hover:bg-white hover:text-navy">
                   Become a FreightSync Partner
                 </Button>
               </div>
@@ -189,10 +190,10 @@ export default function CarrierAcceleratorProgram() {
             <div className="bg-white rounded-xl p-6 sm:p-8 shadow-2xl border border-white/20">
               <div className="grid grid-cols-2 gap-4 mb-6">
                 {[
-                  ['Dispatch', 'Load sourcing'],
+                  ['You own', 'The vehicle asset'],
                   ['Recruiting', 'Driver support'],
-                  ['Compliance', 'Broker setup'],
-                  ['Reporting', 'Settlements'],
+                  ['We manage', 'Operations and dispatch'],
+                  ['Visibility', 'Reports and settlements'],
                 ].map(([title, body]) => (
                   <div key={title} className="rounded-lg bg-muted p-4">
                     <div className="text-sm font-bold text-navy">{title}</div>
@@ -202,7 +203,7 @@ export default function CarrierAcceleratorProgram() {
               </div>
               <div className="rounded-lg bg-gradient-to-r from-cyan to-teal p-5 text-white">
                 <p className="text-sm font-semibold text-white/80 mb-1">Built for</p>
-                <p className="text-2xl font-bold">Investors, owner-operators, and small fleet builders</p>
+                <p className="text-2xl font-bold">Investors seeking trucking asset ownership without daily operations</p>
               </div>
             </div>
           </div>
@@ -214,7 +215,7 @@ export default function CarrierAcceleratorProgram() {
           <div className="max-w-3xl mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-navy mb-4">How It Works</h2>
             <p className="text-lg text-neutral">
-              FreightSync helps structure the operational path from equipment ownership to dispatched loads, reporting, and growth.
+              FreightSync helps structure the path from asset ownership to insured, onboarded, dispatched, and reported trucking operations.
             </p>
           </div>
           <div className="grid md:grid-cols-5 gap-4">
@@ -274,7 +275,7 @@ export default function CarrierAcceleratorProgram() {
         <Container>
           <CTASection
             title="Ready to turn equipment into an operating business?"
-            body="FreightSync brings dispatch, recruiting support, compliance guidance, technology, and back-office structure together so partners can focus on ownership and growth."
+            body="FreightSync brings vehicle guidance, insurance direction, dispatch, recruiting support, compliance guidance, technology, and back-office structure together so partners can focus on ownership and growth."
           />
         </Container>
       </section>
@@ -284,7 +285,7 @@ export default function CarrierAcceleratorProgram() {
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-navy mb-4">What's Included</h2>
             <p className="text-lg text-neutral">
-              A full-service carrier management foundation for launching, operating, and scaling with clearer systems.
+              A full-service carrier management foundation for investors who want to own the asset while FreightSync manages the operating workflow.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -306,7 +307,7 @@ export default function CarrierAcceleratorProgram() {
             <div>
               <h2 className="text-3xl sm:text-4xl font-bold text-navy mb-4">Recommended Vehicles</h2>
               <p className="text-lg text-neutral mb-8">
-                FreightSync recommends equipment with broad acceptance, stronger service access, and practical operating economics.
+                FreightSync helps partners evaluate equipment with broad broker acceptance, stronger service access, resale considerations, and practical operating economics.
               </p>
               <div className="space-y-6">
                 {vehicles.map((vehicle) => (
@@ -329,7 +330,7 @@ export default function CarrierAcceleratorProgram() {
             <div>
               <h2 className="text-3xl sm:text-4xl font-bold text-navy mb-4">Revenue Expectations</h2>
               <p className="text-lg text-neutral mb-8">
-                Revenue ranges give prospective partners a practical starting point for planning.
+                Revenue ranges give prospective partners a practical starting point for planning, not a guarantee.
               </p>
               <div className="space-y-6">
                 {revenue.map((item) => (
@@ -349,10 +350,22 @@ export default function CarrierAcceleratorProgram() {
                 ))}
               </div>
               <p className="mt-6 text-sm text-neutral">
-                Actual revenue and profitability vary based on freight market conditions, operating costs, driver performance, location, and utilization.
+                Actual revenue and profitability vary based on freight market conditions, operating costs, driver performance, location, insurance, maintenance, broker acceptance, equipment downtime, and utilization. FreightSync does not guarantee revenue, profit, utilization, or investment returns.
               </p>
             </div>
           </div>
+        </Container>
+      </section>
+
+      <section className="py-16 sm:py-24 bg-white">
+        <Container>
+          <div className="max-w-3xl mb-10">
+            <h2 className="text-3xl sm:text-4xl font-bold text-navy mb-4">Investor ROI Planning</h2>
+            <p className="text-lg text-neutral">
+              Use this calculator to model a vehicle&apos;s potential monthly cash flow after major operating costs and FreightSync&apos;s management fee.
+            </p>
+          </div>
+          <CarrierRoiCalculator />
         </Container>
       </section>
 
@@ -437,9 +450,12 @@ export default function CarrierAcceleratorProgram() {
               <div className="rounded-xl bg-gradient-to-br from-navy to-royal p-6 text-white">
                 <h3 className="text-xl font-bold text-white mb-3">Built to help you generate revenue faster</h3>
                 <p className="text-white/85">
-                  FreightSync combines freight operations, dispatching, recruiting assistance, compliance guidance, TMS access, weekly reporting, and settlement support in one program.
-                </p>
-              </div>
+                FreightSync combines vehicle launch guidance, insurance direction, freight operations, dispatching, recruiting assistance, compliance guidance, TMS access, weekly reporting, and settlement support in one program.
+              </p>
+              <p className="text-white/70 text-sm mt-4">
+                Participation does not guarantee revenue, profit, load availability, or investment performance.
+              </p>
+            </div>
             </div>
             <div className="rounded-xl bg-white border border-border p-6 sm:p-8 shadow-lg">
               <CarrierAcceleratorForm />
