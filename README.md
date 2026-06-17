@@ -62,20 +62,29 @@ npm run build
 npm run start
 ```
 
-## 🌐 Pages
+## 🌐 Public Pages
 
-- `/` - Home page with hero, features, stats, testimonials
-- `/features` - All features overview
-- `/solutions/last-mile` - Last-mile delivery solution
-- `/solutions/3pl` - 3PL provider solution
-- `/solutions/retail` - Retail delivery solution
-- `/integrations` - Integrations & API info
-- `/pricing` - Pricing plans with FAQ
-- `/case-studies/fleetco` - FleetCo case study
+- `/` - Investor-focused home page for vehicle ownership and managed trucking operations
+- `/carrier-accelerator-program` - Primary conversion page with consultation form and owner cash flow planner
+- `/pricing` - Program pricing
 - `/about` - About us & company values
-- `/blog` - Blog index
-- `/blog/how-to-choose-a-tms` - Featured article
-- `/contact` - Contact form
+- `/blog` - FreightSync Transportation Market Brief
+- `/contact` - General contact form
+
+Legacy SaaS/TMS marketing routes still exist for historical URLs, but they are intentionally hidden from the header, footer, and sitemap.
+
+## 📰 Market Brief Automation
+
+The `/blog` page currently uses static, evergreen cards labeled `FreightSync Insight`. It does not display fake live news.
+
+Future daily transportation news automation can be enabled with either:
+
+```env
+NEWS_API_KEY=your_news_provider_key
+# or RSS feed source configuration, depending on the selected provider
+```
+
+When live news is unavailable, the page falls back to the static Market Brief layout with clear labels and no simulated source/date data.
 
 ## 🎨 Design System
 

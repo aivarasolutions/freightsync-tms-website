@@ -5,25 +5,21 @@ import { Phone, Mail, Globe, MapPin } from 'lucide-react'
 
 export function Footer() {
   const navigation = {
-    services: [
-      { name: 'LTL Freight', href: '/features' },
-      { name: 'Next-Day Delivery', href: '/features' },
-      { name: 'Dispatch Support', href: '/features' },
-      { name: 'Fleet Operations', href: '/features' },
+    program: [
       { name: 'Carrier Accelerator Program', href: '/carrier-accelerator-program' },
-      { name: 'Real-Time Tracking', href: '/features' },
+      { name: 'Vehicle Ownership', href: '/carrier-accelerator-program#program-options' },
+      { name: 'Consultation Form', href: '/carrier-accelerator-program#consultation' },
+      { name: 'Pricing', href: '/pricing' },
     ],
-    platform: [
-      { name: 'Load Management', href: '/integrations' },
-      { name: 'Driver Settlements', href: '/integrations' },
-      { name: 'Expense Tracking', href: '/integrations' },
-      { name: 'Owner Reports', href: '/integrations' },
-      { name: 'Performance Dashboards', href: '/integrations' },
+    operations: [
+      { name: 'Managed Trucking Operations', href: '/carrier-accelerator-program#consultation' },
+      { name: 'Dispatch & Load Sourcing', href: '/carrier-accelerator-program#consultation' },
+      { name: 'Driver Recruiting Support', href: '/carrier-accelerator-program#consultation' },
+      { name: 'Owner Reporting', href: 'https://portal.freightsynctms.com', external: true },
+      { name: 'Access Owner Dashboard', href: 'https://portal.freightsynctms.com', external: true },
     ],
     company: [
       { name: 'About', href: '/about' },
-      { name: 'Pricing', href: '/pricing' },
-      { name: 'Case Studies', href: '/case-studies/fleetco' },
       { name: 'Blog', href: '/blog' },
       { name: 'Contact', href: '/contact' },
     ],
@@ -45,7 +41,7 @@ export function Footer() {
               <span className="text-base font-bold text-navy">FreightSync TMS</span>
             </div>
             <p className="text-sm text-gray-300 mb-4">
-              Logistics services and transportation management software for growing fleets, dispatch teams, and delivery operations.
+              Vehicle ownership guidance, managed trucking operations, and FreightSync TMS visibility for investors and owner-partners building transportation assets.
             </p>
             <div className="space-y-2 text-sm">
               <a href="tel:281-310-1114" className="flex items-center gap-2 hover:text-white transition-colors">
@@ -67,9 +63,9 @@ export function Footer() {
             </div>
           </div>
           <div>
-            <h3 className="font-semibold text-white mb-4">Services</h3>
+            <h3 className="font-semibold text-white mb-4">Carrier Program</h3>
             <ul className="space-y-2 text-sm">
-              {navigation.services.map((item) => (
+              {navigation.program.map((item) => (
                 <li key={item.name}>
                   <Link href={item.href} className="hover:text-white transition-colors">
                     {item.name}
@@ -79,13 +75,19 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="font-semibold text-white mb-4">TMS Platform</h3>
+            <h3 className="font-semibold text-white mb-4">Owner Operations</h3>
             <ul className="space-y-2 text-sm">
-              {navigation.platform.map((item) => (
+              {navigation.operations.map((item) => (
                 <li key={item.name}>
-                  <Link href={item.href} className="hover:text-white transition-colors">
-                    {item.name}
-                  </Link>
+                  {'external' in item && item.external ? (
+                    <a href={item.href} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                      {item.name}
+                    </a>
+                  ) : (
+                    <Link href={item.href} className="hover:text-white transition-colors">
+                      {item.name}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
