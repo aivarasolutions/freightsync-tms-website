@@ -1,0 +1,907 @@
+Update the existing FreightSync TMS website and application to add a new service division called:
+
+FREIGHTSYNC CARRIER NETWORK
+
+IMPORTANT:
+Use the existing FreightSync branding, logo, colors, typography, navigation style, components, buttons, cards, spacing, responsiveness, database structure, authentication system, admin dashboard, and overall UI/UX already inside this Replit project.
+
+Do not redesign the FreightSync logo.
+Do not replace the existing FreightSync TMS functionality.
+This is an expansion of the existing FreightSync platform.
+
+GOAL
+
+FreightSync should now be positioned as both:
+
+1. A Transportation Management System
+2. A carrier support and transportation network connecting:
+   Vehicle owners
+   Owner operators
+   Drivers
+   Fleet owners
+   Dispatchers
+
+FreightSync should act as the technology and operational bridge connecting these parties while providing dispatch support, fleet tools, document management, load organization, onboarding, settlements, and operational support.
+
+==================================================
+HOMEPAGE
+==================================================
+
+Add a new prominent section to the homepage titled:
+
+FreightSync Carrier Network
+
+Headline:
+
+Keep Your Vehicle Moving. Grow Your Transportation Business.
+
+Subheadline:
+
+Whether you own a cargo van, Sprinter, box truck, hotshot, straight truck, or fleet, FreightSync gives you the technology, dispatch support, and network you need to operate more efficiently.
+
+Add CTA buttons:
+
+Get Started
+Join the Carrier Network
+View Services
+
+Then add three service cards.
+
+--------------------------------------------------
+1. FREIGHTSYNC CONNECT
+--------------------------------------------------
+
+Headline:
+Get Connected. Stay Organized.
+
+Description:
+
+FreightSync Connect gives independent drivers, vehicle owners, and small fleets access to the FreightSync network and TMS tools needed to organize their transportation business.
+
+Features:
+
+FreightSync TMS access
+Driver profile
+Vehicle profile
+Document storage
+Availability management
+Load tracking
+Dispatcher network access
+Driver and vehicle matching opportunities
+Digital document uploads
+BOL and POD storage
+Revenue tracking
+FreightSync Carrier Network profile
+
+Pricing:
+
+Starting at $49/month
+
+Include:
+
+First month FREE
+No setup fee
+No fee to cancel
+Cancel anytime
+
+CTA:
+Join FreightSync Connect
+
+--------------------------------------------------
+2. FREIGHTSYNC DISPATCH
+--------------------------------------------------
+
+Headline:
+You Drive. We Help Keep You Moving.
+
+Description:
+
+Designed for owner operators and independent carriers who want FreightSync to help manage the dispatching side of their transportation business.
+
+Features:
+
+Everything in FreightSync Connect
+Active dispatch support
+Load searching
+Load opportunity matching
+Rate negotiation assistance
+Broker communication
+Load setup
+Pickup and delivery coordination
+Dispatch documentation
+Rate confirmation organization
+BOL and POD management
+Load tracking
+Revenue tracking
+Settlement reporting
+
+Pricing:
+
+$49/month + 5% of completed load revenue
+
+IMPORTANT:
+
+The 5% should only apply to loads that FreightSync dispatches or directly assists with.
+
+Do not imply that FreightSync receives 5% of unrelated freight booked independently by the carrier.
+
+Include:
+
+First month subscription FREE
+No setup fee
+No long-term contract
+No cancellation fee
+Cancel anytime
+
+CTA:
+Get Dispatch Support
+
+Also include this marketing statement:
+
+We succeed when you succeed. FreightSync's dispatch fee is tied directly to the freight we help you move.
+
+--------------------------------------------------
+3. FREIGHTSYNC FLEET MANAGEMENT
+--------------------------------------------------
+
+Headline:
+Run Your Fleet Without Running Every Detail Yourself.
+
+Description:
+
+FreightSync Fleet Management is for vehicle owners and small fleets that need more than dispatching.
+
+FreightSync helps coordinate vehicles, drivers, freight, paperwork, reporting, and day-to-day transportation operations through one platform.
+
+Features:
+
+Everything in FreightSync Dispatch
+Driver coordination
+Vehicle management
+Driver and vehicle matching
+Load assignment
+Driver scheduling
+Fleet availability management
+Document management
+Insurance and document tracking
+Pickup and delivery monitoring
+BOL/POD management
+Driver settlements
+Owner settlements
+Revenue reporting
+Vehicle-level performance tracking
+Driver-level performance tracking
+Fleet dashboard
+Operations support
+
+Pricing:
+
+Starting at $49/month + 8% of FreightSync-managed load revenue
+
+Display:
+
+Custom pricing available for larger fleets.
+
+Include:
+
+First month subscription FREE
+No setup fee
+No cancellation fee
+Cancel anytime
+
+CTA:
+Request Fleet Management
+
+==================================================
+SERVICE COMPARISON
+==================================================
+
+Create a comparison table showing:
+
+Feature
+FreightSync Connect
+FreightSync Dispatch
+FreightSync Fleet Management
+
+Compare:
+
+TMS Access
+Driver Profile
+Vehicle Profile
+Document Storage
+Load Tracking
+Carrier Network Access
+Driver/Vehicle Matching
+Dispatch Support
+Load Searching
+Rate Negotiation Assistance
+Broker Communication
+Load Coordination
+BOL/POD Management
+Revenue Tracking
+Driver Management
+Vehicle Management
+Driver Settlements
+Owner Settlements
+Fleet Reporting
+Operational Support
+
+Make the comparison mobile responsive.
+
+==================================================
+NEW SERVICES PAGE
+==================================================
+
+Add a navigation menu item:
+
+Services
+
+Create:
+
+/services
+
+The page should explain the FreightSync Carrier Network and all three service levels.
+
+Create individual sections or pages for:
+
+/services/connect
+/services/dispatch
+/services/fleet-management
+
+Each service page should have:
+
+Hero
+Service explanation
+Who it is for
+Features
+Pricing
+FAQ
+CTA
+Lead form
+
+==================================================
+LEAD MAGNET / APPLICATION FLOW
+==================================================
+
+Build a lead capture and qualification system similar to the existing IPM-style lead workflow, but completely integrated into FreightSync.
+
+Create:
+
+/get-started
+
+Headline:
+
+Let's Get You Moving.
+
+Subheadline:
+
+Tell us what you have, what you need, and how FreightSync can help.
+
+STEP 1: CONTACT INFORMATION
+
+First Name
+Last Name
+Email
+Phone Number
+Business Name
+City
+State
+ZIP Code
+
+STEP 2: WHO ARE YOU?
+
+Allow the user to select one or more:
+
+Owner Operator
+Vehicle Owner
+Fleet Owner
+Driver Looking for a Vehicle
+Dispatcher
+New Transportation Business
+Other
+
+STEP 3: WHAT DO YOU HAVE?
+
+Ask:
+
+Do you currently have a vehicle?
+
+Yes
+No
+
+If YES show:
+
+Vehicle Type
+
+Cargo Van
+Sprinter Van
+Box Truck
+Straight Truck
+Hotshot
+Pickup Truck
+Semi Truck
+Multiple Vehicles
+Other
+
+Year
+Make
+Model
+Vehicle length if applicable
+Payload capacity if known
+Number of vehicles
+
+Ask:
+
+Is the vehicle currently operating?
+
+Yes
+No
+
+STEP 4: AUTHORITY / BUSINESS INFORMATION
+
+Do you currently have operating authority?
+
+Yes
+No
+Not sure
+
+Fields when applicable:
+
+USDOT Number
+MC Number
+Insurance Status
+
+Options:
+
+Active
+Pending
+Need Assistance
+Not Applicable
+
+Do not require DOT or MC numbers for users who do not have them.
+
+STEP 5: WHAT DO YOU NEED?
+
+Allow multiple selections:
+
+I need loads
+I need dispatching
+I need a driver
+I need a vehicle
+I need fleet management
+I need TMS software
+I need help organizing my transportation business
+I need help getting started
+I am a dispatcher looking for carriers
+Other
+
+STEP 6: SERVICE INTEREST
+
+Which FreightSync service are you interested in?
+
+FreightSync Connect
+FreightSync Dispatch
+FreightSync Fleet Management
+Not Sure – Help Me Choose
+
+STEP 7: BUSINESS DETAILS
+
+How many vehicles do you currently operate?
+
+0
+1
+2–5
+6–10
+11–25
+25+
+
+Estimated monthly gross transportation revenue:
+
+Not operating yet
+Under $5,000
+$5,000–$10,000
+$10,000–$25,000
+$25,000–$50,000
+$50,000+
+
+When are you looking to start?
+
+Immediately
+Within 7 Days
+Within 30 Days
+Just Researching
+
+Additional information / notes
+
+STEP 8: NEXT STEP
+
+Allow the lead to choose:
+
+Schedule a Call
+Request FreightSync Review
+Start Onboarding
+
+Submit Application
+
+==================================================
+THANK YOU PAGE
+==================================================
+
+After submission, redirect to:
+
+/application-received
+
+Display:
+
+Application Received
+
+Thank you for your interest in joining the FreightSync Carrier Network.
+
+Our team will review your information and determine how FreightSync can best support your transportation business.
+
+Next steps:
+
+1. FreightSync reviews your application
+2. We determine the best service for your operation
+3. Our team contacts you
+4. We schedule your onboarding call
+5. Your FreightSync account is activated
+
+CTA:
+
+Schedule Your FreightSync Call
+
+If the website already contains a scheduling system, integrate it.
+
+If not, create the architecture so a scheduling link can easily be added later.
+
+==================================================
+ADMIN LEAD DASHBOARD
+==================================================
+
+Inside the existing FreightSync admin dashboard add:
+
+Carrier Network Leads
+
+Create statuses:
+
+NEW
+CONTACTED
+CALL SCHEDULED
+QUALIFIED
+APPROVED
+ONBOARDING
+ACTIVE
+NOT QUALIFIED
+FOLLOW UP
+CLOSED
+
+Admin should be able to view:
+
+Lead Name
+Email
+Phone
+Business
+Lead Type
+Vehicle Type
+Number of Vehicles
+Service Requested
+DOT Number
+MC Number
+Operating Status
+Revenue Range
+Start Timeline
+Submission Date
+Lead Source
+Lead Status
+Assigned Team Member
+Notes
+
+Admin should be able to:
+
+Change status
+Add internal notes
+Assign lead
+Send to onboarding
+Approve
+Reject
+Schedule follow-up
+Convert lead into FreightSync customer
+
+==================================================
+LEAD SOURCE TRACKING
+==================================================
+
+Track where leads originate.
+
+Examples:
+
+Homepage
+FreightSync Connect
+FreightSync Dispatch
+Fleet Management
+Facebook
+Instagram
+TikTok
+Google
+Referral
+Direct
+Other
+
+Store UTM parameters when available.
+
+==================================================
+CUSTOMER ONBOARDING
+==================================================
+
+When a lead is approved, allow an administrator to convert the lead into a FreightSync customer.
+
+Create an onboarding checklist:
+
+Contact information verified
+Vehicle information verified
+Driver information verified
+Operating authority reviewed
+Insurance reviewed
+Service selected
+Pricing confirmed
+Agreement signed
+Billing configured
+TMS account created
+Dispatcher assigned if applicable
+Vehicle activated
+Driver activated
+
+Status:
+
+Pending
+In Progress
+Completed
+
+==================================================
+DRIVER NETWORK
+==================================================
+
+Create a new section called:
+
+FreightSync Driver Network
+
+Allow drivers without vehicles to apply.
+
+Capture:
+
+Name
+Phone
+Email
+Location
+Driver license type
+Years driving
+Vehicle experience
+Cargo Van
+Sprinter
+Box Truck
+Straight Truck
+Hotshot
+Semi
+Other
+
+Availability
+Local
+Regional
+OTR
+
+Employment preference:
+
+Company Driver
+Independent Contractor
+Either
+
+Drivers should enter:
+
+Looking for a vehicle?
+Yes/No
+
+==================================================
+VEHICLE OWNER NETWORK
+==================================================
+
+Allow vehicle owners to indicate:
+
+I Have a Vehicle and Need a Driver
+
+Capture:
+
+Vehicle
+Location
+Operating authority
+Insurance
+Desired driver arrangement
+Local / Regional / OTR
+Estimated weekly schedule
+
+Create database records allowing FreightSync administrators to eventually match drivers with participating vehicle owners.
+
+DO NOT automatically connect people publicly yet.
+
+All matching must initially require FreightSync admin approval.
+
+==================================================
+DISPATCHER NETWORK
+==================================================
+
+Add an option:
+
+I Am a Dispatcher
+
+Capture:
+
+Dispatcher name
+Company
+Phone
+Email
+Years dispatching
+Equipment experience
+Cargo Van
+Sprinter
+Box Truck
+Hotshot
+Straight Truck
+Semi
+
+Number of carriers currently managed
+Load boards used
+States/regions serviced
+Availability
+
+Dispatcher applications must require FreightSync approval.
+
+==================================================
+MARKETING SECTION
+==================================================
+
+Add a homepage section:
+
+One Network. Every Side of Transportation.
+
+Create four cards:
+
+I HAVE A VEHICLE
+
+Get your vehicle connected with FreightSync technology, dispatch support, drivers, and transportation opportunities.
+
+CTA:
+Get My Vehicle Started
+
+I'M A DRIVER
+
+Don't have a vehicle? Join the FreightSync Driver Network and get considered for opportunities with participating vehicle and fleet owners.
+
+CTA:
+Join Driver Network
+
+I NEED DISPATCHING
+
+Already operating? FreightSync helps organize your loads, dispatch workflow, documentation, and back office.
+
+CTA:
+Get Dispatch Support
+
+I'M A DISPATCHER
+
+Join the FreightSync Dispatch Network and connect with approved carriers through the FreightSync ecosystem.
+
+CTA:
+Join Dispatcher Network
+
+==================================================
+TRUST / BENEFITS SECTION
+==================================================
+
+Add:
+
+Why FreightSync?
+
+One Transportation Platform
+
+Manage transportation operations from one system.
+
+Built for Independent Transportation Businesses
+
+Cargo vans, Sprinters, box trucks, hotshots, owner operators, and growing fleets.
+
+Technology + Human Support
+
+FreightSync combines our TMS technology with real operational support.
+
+Grow Without Building a Large Back Office
+
+Use FreightSync for dispatch organization, documentation, drivers, vehicles, reporting, and operations.
+
+No Long-Term Commitment
+
+Start with a free month and cancel without a cancellation fee.
+
+==================================================
+PRICING PAGE
+==================================================
+
+Create or update:
+
+/pricing
+
+Display the three plans clearly.
+
+FREIGHTSYNC CONNECT
+
+$49/month
+
+First month FREE
+
+FREIGHTSYNC DISPATCH
+
+$49/month
++
+5% of FreightSync-dispatched completed load revenue
+
+First month subscription FREE
+
+FREIGHTSYNC FLEET MANAGEMENT
+
+$49/month
++
+Starting at 8% of FreightSync-managed completed load revenue
+
+First month subscription FREE
+
+Larger fleet custom pricing available.
+
+Under all plans display:
+
+No setup fee
+No cancellation fee
+Cancel anytime
+
+Do not use misleading wording such as "completely free for one month" if percentage-based service fees could still apply.
+
+For clarity:
+
+The monthly $49 subscription is waived for the first month.
+
+If FreightSync provides dispatch or fleet management services during the trial month, applicable percentage-based fees may still apply.
+
+==================================================
+FAQ
+==================================================
+
+Add FAQs:
+
+Do I need my own vehicle?
+
+No. FreightSync also accepts applications from drivers looking to connect with participating vehicle owners.
+
+What types of vehicles do you support?
+
+Cargo vans, Sprinter vans, box trucks, straight trucks, hotshots, pickups, semi trucks, and fleets.
+
+Does FreightSync guarantee loads?
+
+No. FreightSync provides technology, dispatch support, load sourcing assistance, and transportation network resources, but freight availability and revenue cannot be guaranteed.
+
+Does FreightSync take a percentage of every load I run?
+
+No. Percentage-based FreightSync fees apply only according to the customer's selected service agreement and FreightSync-managed or FreightSync-dispatched freight.
+
+Can I cancel?
+
+Yes. There is no cancellation fee.
+
+Is there a contract?
+
+Customers must accept the appropriate FreightSync service agreement, but the plans should not be marketed as requiring a long-term commitment unless an individual fleet agreement specifically states otherwise.
+
+==================================================
+IMPORTANT LEGAL / COMPLIANCE LANGUAGE
+==================================================
+
+Do NOT present FreightSync as a freight broker unless FreightSync has the appropriate authority.
+
+Avoid statements such as:
+
+"We guarantee freight"
+"We guarantee loads"
+"We guarantee income"
+"We are your freight broker"
+
+Use:
+
+Dispatch support
+Load sourcing assistance
+Carrier support
+Transportation management
+Carrier network
+Driver network
+Operational support
+Technology services
+
+Add a general disclaimer:
+
+FreightSync TMS provides transportation technology, administrative support, carrier support, and dispatch-related services subject to the customer's agreement and operating authority. Freight availability, rates, revenue, driver placement, and vehicle placement are not guaranteed.
+
+==================================================
+DESIGN
+==================================================
+
+Use the existing FreightSync design system.
+
+Make the new pages modern, professional, SaaS-oriented, and transportation focused.
+
+Use:
+
+Large bold headings
+Service cards
+Pricing cards
+Clean icons
+Dashboard-style visual sections
+Progress indicators on lead forms
+Mobile-first forms
+Responsive layouts
+Sticky mobile CTA where appropriate
+
+Do not make the website look like a generic freight brokerage website.
+
+FreightSync should look like:
+
+Transportation Technology
+TMS Software
+Carrier Operations
+Dispatch Technology
+Driver/Fleet Network
+
+==================================================
+DATABASE
+==================================================
+
+Create normalized database structures for:
+
+carrier_network_leads
+drivers
+vehicles
+fleet_owners
+dispatchers
+service_applications
+lead_notes
+lead_status_history
+driver_vehicle_matches
+customer_onboarding
+service_subscriptions
+
+Link these records to existing FreightSync customer/user records whenever possible.
+
+Do not create duplicate customer records when an existing FreightSync account already exists.
+
+==================================================
+FINAL REQUIREMENT
+==================================================
+
+After implementing everything:
+
+1. Test every form.
+2. Test all database submissions.
+3. Test mobile and desktop.
+4. Test lead status changes.
+5. Test admin access controls.
+6. Test customer conversion.
+7. Ensure existing FreightSync functions still work.
+8. Confirm all new navigation links work.
+9. Verify the logo is the existing FreightSync logo.
+10. Provide me with a complete implementation summary showing:
+   Pages created
+   Database tables created/modified
+   Admin features added
+   Forms created
+   New routes
+   Any integrations that still require credentials
+   Anything requiring my approval before launch
+
+Do not deploy incomplete placeholder functionality.
+If an external integration is unavailable, build the UI and backend structure and clearly identify what still needs to be connected.

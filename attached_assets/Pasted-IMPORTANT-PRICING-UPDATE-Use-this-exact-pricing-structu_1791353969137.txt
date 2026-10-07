@@ -1,0 +1,96 @@
+IMPORTANT PRICING UPDATE
+
+Use this exact pricing structure everywhere on the FreightSync website, services pages, lead forms, pricing page, onboarding flow, and admin system.
+
+FREIGHTSYNC CONNECT
+
+$49/month
+
+Includes:
+FreightSync TMS access
+Carrier Network access
+Driver profile
+Vehicle profile
+Document storage
+Load tracking
+Revenue tracking
+Driver/vehicle matching opportunities
+Basic transportation business organization tools
+
+First month FREE
+No setup fee
+No cancellation fee
+Cancel anytime
+
+
+FREIGHTSYNC DISPATCH
+
+$49/month + 5% of completed FreightSync-dispatched load revenue
+
+Includes everything in FreightSync Connect plus:
+
+Active dispatch support
+Load searching
+Load opportunity matching
+Rate negotiation assistance
+Broker communication
+Load setup
+Pickup/delivery coordination
+Rate confirmation organization
+BOL/POD management
+Dispatch documentation
+Revenue and settlement tracking
+
+The 5% fee applies only to completed loads FreightSync dispatches or directly manages.
+
+First month $49 subscription FREE.
+The 5% dispatch fee still applies to completed FreightSync-dispatched loads during the free trial.
+
+No setup fee
+No cancellation fee
+Cancel anytime
+
+
+FREIGHTSYNC FLEET MANAGEMENT
+
+$49/month + 8% of completed FreightSync-managed load revenue
+
+Includes everything in FreightSync Dispatch plus:
+
+Fleet operations support
+Driver coordination
+Driver management
+Vehicle management
+Load assignment
+Driver scheduling
+Fleet availability
+Document management
+Driver/vehicle matching
+Pickup and delivery monitoring
+Driver settlements
+Owner settlements
+Vehicle-level reporting
+Driver-level reporting
+Fleet performance reporting
+Operational support
+
+The 8% fee applies to completed loads being managed through FreightSync Fleet Management.
+
+First month $49 subscription FREE.
+The 8% management fee still applies to completed FreightSync-managed loads during the free trial.
+
+No setup fee
+No cancellation fee
+Cancel anytime
+
+Custom pricing can be offered for larger fleets.
+
+IMPORTANT:
+
+Replace any previous pricing throughout the project with this structure:
+
+Connect = $49/month
+Dispatch = $49/month + 5%
+Fleet Management = $49/month + 8%
+
+Make sure every service card, pricing table, FAQ, application form, checkout/onboarding section, and admin record uses the same pricing so there are no conflicting numbers anywhere on the website.
