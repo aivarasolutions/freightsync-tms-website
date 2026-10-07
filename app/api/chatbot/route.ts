@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import OpenAI from 'openai';
+import { services, networkDisclaimer } from '@/lib/carrier-network';
 
 // Support both Replit AI Integrations (for Replit) and regular OpenAI (for Vercel)
 // the newest OpenAI model is "gpt-5" which was released August 7, 2025. do not change this unless explicitly requested by the user
@@ -72,9 +73,11 @@ const SYSTEM_PROMPT = `You are a helpful AI assistant for FreightSync TMS with d
 - Carrier APIs and EDI
 
 **Pricing Plans:**
-- **Starter**: $199/month - Up to 500 deliveries/month, 5 drivers, core features
-- **Professional**: $499/month - Up to 2,000 deliveries/month, 20 drivers, advanced analytics
-- **Enterprise**: Custom pricing - Unlimited deliveries, unlimited drivers, dedicated support, custom integrations
+- ${services.map(service => `**${service.name}**: ${service.price}. ${service.description} ${service.feeScope} ${service.trial}`).join('\n- ')}
+- Custom pricing can be offered for larger fleets.
+- All plans: no setup fee, no cancellation fee, cancel anytime. The first month's $49 subscription is waived. The 5% dispatch or 8% management fee STILL applies to qualifying completed loads during the trial. Do not describe percentage-based services as completely free.
+- Network applications: /get-started. Services: /services. Drivers without vehicles and dispatchers can apply; all matching requires administrator approval. Freight, rates, income, driver placement and vehicle placement are not guaranteed. Do not describe FreightSync as a freight broker.
+- ${networkDisclaimer}
 
 **Implementation:**
 - Typical timeline: 4 weeks (1-2 weeks setup, 1 week training, 1 week rollout)
