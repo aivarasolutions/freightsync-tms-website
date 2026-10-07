@@ -6,6 +6,14 @@ import { Phone, Mail, Globe, MapPin } from 'lucide-react'
 export function Footer() {
   const navigation = {
     program: [
+      { name: 'Carrier Network Services', href: '/services' },
+      { name: 'FreightSync Connect', href: '/services/connect' },
+      { name: 'FreightSync Dispatch', href: '/services/dispatch' },
+      { name: 'Fleet Management', href: '/services/fleet-management' },
+      { name: 'Get Started', href: '/get-started' },
+      { name: 'Driver Network', href: '/driver-network' },
+      { name: 'Vehicle Owner Network', href: '/vehicle-owner-network' },
+      { name: 'Dispatcher Network', href: '/dispatcher-network' },
       { name: 'Carrier Accelerator Program', href: '/carrier-accelerator-program' },
       { name: 'Vehicle Ownership', href: '/carrier-accelerator-program#program-options' },
       { name: 'Consultation Form', href: '/carrier-accelerator-program#consultation' },
