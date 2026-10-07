@@ -1,7 +1,7 @@
 {
   "/services/[service]/page": "app/services/[service]/page.js",
-  "/driver-network/page": "app/driver-network/page.js",
-  "/services/page": "app/services/page.js",
   "/vehicle-owner-network/page": "app/vehicle-owner-network/page.js",
+  "/driver-network/page": "app/driver-network/page.js",
+  "/page": "app/page.js",
   "/dispatcher-network/page": "app/dispatcher-network/page.js"
 }
