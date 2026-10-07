@@ -1,0 +1,1 @@
+- [Carrier Network backend](carrier-network-backend.md) — use the separate FreightSync Owner Portal for Carrier Network data, authentication, and admin features.
