@@ -1,2 +1,3 @@
 - [Carrier Network backend](carrier-network-backend.md) — use the separate FreightSync Owner Portal for Carrier Network data, authentication, and admin features.
 - [Website publishing](website-publishing.md) — preserve the existing GitHub-to-Vercel website; Replit publishing does not synchronize that production copy.
+- [Transportation news](transportation-news.md) — keep the blog current and homepage-consistent; distinguish linked headlines from licensed wire republication.
