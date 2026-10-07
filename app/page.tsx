@@ -27,6 +27,7 @@ import {
 } from 'lucide-react'
 import { HomepageCarrierNetwork } from '@/components/carrier-network/HomepageCarrierNetwork'
 import { NetworkLink } from '@/components/carrier-network/NetworkLink'
+import { CarrierNetworkVideo } from '@/components/carrier-network/CarrierNetworkVideo'
 
 export const metadata: Metadata = {
   title: 'FreightSync | TMS, Carrier Network and Fleet Operations',
@@ -218,6 +219,8 @@ export default function Home() {
           </div>
         </Container>
       </section>
+
+      <CarrierNetworkVideo source="Homepage Carrier Network video" />
 
       <HomepageCarrierNetwork />
 
