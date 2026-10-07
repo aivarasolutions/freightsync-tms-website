@@ -1,6 +1,9 @@
 'use client'
 
 import { useMemo, useState } from 'react'
+import { services } from '@/lib/carrier-network'
+
+const fleetPlan = services[2]
 
 const currency = new Intl.NumberFormat('en-US', {
   style: 'currency',
@@ -18,8 +21,8 @@ export function CarrierRoiCalculator() {
   const [otherCosts, setOtherCosts] = useState(900)
 
   const result = useMemo(() => {
-    const managementFee = grossRevenue * 0.25
-    const expenses = fuel + insurance + vehiclePayment + driverPay + maintenance + otherCosts + managementFee
+    const managementFee = grossRevenue * (fleetPlan.feePercent / 100)
+    const expenses = fuel + insurance + vehiclePayment + driverPay + maintenance + otherCosts + managementFee + fleetPlan.monthlyPrice
     return {
       managementFee,
       expenses,
@@ -43,7 +46,7 @@ export function CarrierRoiCalculator() {
         <div>
           <h3 className="text-2xl font-bold text-navy mb-2">Owner Cash Flow Planner</h3>
           <p className="text-neutral mb-6">
-            Estimate how revenue, operating costs, and FreightSync&apos;s management fee can affect monthly owner cash flow.
+            Estimate how revenue, operating costs, and FreightSync&apos;s management fee can affect monthly owner cash flow. {fleetPlan.price}. Assumes all entered revenue is from completed FreightSync-managed loads. Costs include the $49 subscription, waived for the first month; the 8% fee still applies.
           </p>
           <div className="grid sm:grid-cols-2 gap-5">
             {fields.map((field) => (
@@ -76,6 +79,10 @@ export function CarrierRoiCalculator() {
             <div className="flex items-center justify-between gap-4 border-b border-white/10 pb-3">
               <span className="text-white/80">FreightSync fee</span>
               <span className="font-bold">{currency.format(result.managementFee)}</span>
+            </div>
+            <div className="flex items-center justify-between gap-4 border-b border-white/10 pb-3">
+              <span className="text-white/80">Monthly subscription</span>
+              <span className="font-bold">{currency.format(fleetPlan.monthlyPrice)}</span>
             </div>
             <div className="flex items-center justify-between gap-4 border-b border-white/10 pb-3">
               <span className="text-white/80">Estimated total costs</span>

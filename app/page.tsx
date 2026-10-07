@@ -25,11 +25,13 @@ import {
   Wrench,
   XCircle,
 } from 'lucide-react'
+import { HomepageCarrierNetwork } from '@/components/carrier-network/HomepageCarrierNetwork'
+import { NetworkLink } from '@/components/carrier-network/NetworkLink'
 
 export const metadata: Metadata = {
-  title: 'FreightSync | Managed Transportation Assets and Fleet Ownership',
+  title: 'FreightSync | TMS, Carrier Network and Fleet Operations',
   description:
-    'Own transportation assets while FreightSync manages trucking operations, dispatch, reporting, settlements, and owner visibility through the Carrier Accelerator Program.',
+    'Transportation management software, carrier network access, dispatch support, and fleet operations for independent drivers, vehicle owners, and growing fleets.',
 }
 
 const images = {
@@ -216,6 +218,8 @@ export default function Home() {
           </div>
         </Container>
       </section>
+
+      <HomepageCarrierNetwork />
 
       <section id="roi-calculator" className="bg-white py-14 sm:py-20">
         <Container>
@@ -448,6 +452,45 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </Container>
+      </section>
+
+      <section className="bg-white py-16 sm:py-24">
+        <Container>
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-cyan">One Network</p>
+            <h2 className="text-4xl font-extrabold leading-tight text-navy sm:text-5xl">One Network. Every Side of Transportation.</h2>
+            <p className="mt-4 text-lg text-neutral">The right tools and operational support for every part of the carrier ecosystem.</p>
+          </div>
+          <div className="mt-10 grid gap-4 md:grid-cols-2">
+            {[
+              { title: 'I HAVE A VEHICLE', body: 'Get your vehicle connected with FreightSync technology, dispatch support, drivers, and transportation opportunities.', cta: 'Get My Vehicle Started', href: '/vehicle-owner-network', icon: Truck },
+              { title: 'I’M A DRIVER', body: 'Don’t have a vehicle? Join the FreightSync Driver Network and get considered for opportunities with participating vehicle and fleet owners.', cta: 'Join Driver Network', href: '/driver-network', icon: UserPlus },
+              { title: 'I NEED DISPATCHING', body: 'Already operating? FreightSync helps organize your loads, dispatch workflow, documentation, and back office.', cta: 'Get Dispatch Support', href: '/services/dispatch', icon: Headphones },
+              { title: 'I’M A DISPATCHER', body: 'Join the FreightSync Dispatch Network and connect with approved carriers through the FreightSync ecosystem.', cta: 'Join Dispatcher Network', href: '/dispatcher-network', icon: Handshake },
+            ].map(({title, body, cta, href, icon: Icon}) => <article key={title} className="flex h-full flex-col rounded-xl border border-border bg-muted/50 p-6 transition hover:border-cyan/50 hover:shadow-lg sm:p-7">
+              <Icon className="h-7 w-7 text-cyan" />
+              <h3 className="mt-4 text-lg font-extrabold tracking-wide text-navy">{title}</h3>
+              <p className="mt-2 flex-1 leading-relaxed text-neutral">{body}</p>
+              <NetworkLink href={href} source="Homepage" className="mt-5 inline-flex items-center gap-2 font-bold text-cyan hover:text-navy">{cta}<ArrowRight className="h-4 w-4" /></NetworkLink>
+            </article>)}
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-gradient-to-br from-navy to-royal py-16 text-white sm:py-24">
+        <Container>
+          <div className="max-w-3xl"><p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-cyan">Why FreightSync?</p><h2 className="text-4xl font-extrabold leading-tight text-white sm:text-5xl">Technology that works alongside people.</h2></div>
+          <div className="mt-10 grid gap-x-10 gap-y-8 md:grid-cols-2 lg:grid-cols-3">
+            {[
+              ['One Transportation Platform', 'Manage transportation operations from one system.'],
+              ['Built for Independent Transportation Businesses', 'Cargo vans, Sprinters, box trucks, hotshots, owner operators, and growing fleets.'],
+              ['Technology + Human Support', 'FreightSync combines TMS technology with real operational support.'],
+              ['Grow Without Building a Large Back Office', 'Use FreightSync for dispatch organization, documentation, drivers, vehicles, reporting, and operations.'],
+              ['No Long-Term Commitment', 'The first month’s $49 subscription is waived. Cancel without a cancellation fee.'],
+            ].map(([title, body]) => <div key={title} className="border-l-2 border-cyan pl-5"><h3 className="text-xl font-bold text-white">{title}</h3><p className="mt-2 leading-relaxed text-white/75">{body}</p></div>)}
+          </div>
+          <p className="mt-9 max-w-4xl text-xs leading-relaxed text-white/60">FreightSync TMS provides transportation technology, administrative support, carrier support, and dispatch-related services subject to the customer’s agreement and operating authority. Freight availability, rates, revenue, driver placement, and vehicle placement are not guaranteed.</p>
         </Container>
       </section>
     </>

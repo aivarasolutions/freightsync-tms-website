@@ -4,12 +4,13 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
-import { Button } from './ui/Button'
+import { NetworkLink } from './carrier-network/NetworkLink'
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const navigation = [
+    { name: 'Services', href: '/services' },
     { name: 'Carrier Program', href: '/carrier-accelerator-program' },
     { name: 'Pricing', href: '/pricing' },
     { name: 'Blog', href: '/blog' },
@@ -49,13 +50,13 @@ export function Header() {
                   {item.name}
                 </a>
               ) : (
-                <Link
+                <NetworkLink
                   key={item.name}
                   href={item.href}
                   className="text-sm text-neutral hover:text-navy transition-colors font-medium whitespace-nowrap"
                 >
                   {item.name}
-                </Link>
+                </NetworkLink>
               )
             ))}
             <a
@@ -66,9 +67,7 @@ export function Header() {
             >
               Access Owner Dashboard
             </a>
-            <Button href="/carrier-accelerator-program#consultation" size="sm" variant="teal">
-              Get Started
-            </Button>
+            <NetworkLink href="/get-started" source="Header" className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-cyan to-teal px-5 py-2 text-sm font-semibold text-white shadow-md transition hover:from-teal hover:to-cyan">Get Started</NetworkLink>
           </div>
 
           <div className="lg:hidden">
@@ -101,14 +100,14 @@ export function Header() {
                     {item.name}
                   </a>
                 ) : (
-                  <Link
+                  <NetworkLink
                     key={item.name}
                     href={item.href}
                     className="block text-neutral hover:text-navy font-medium"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.name}
-                  </Link>
+                  </NetworkLink>
                 )
               ))}
               <a
@@ -120,9 +119,7 @@ export function Header() {
               >
                 Access Owner Dashboard
               </a>
-              <Button href="/carrier-accelerator-program#consultation" className="w-full" variant="teal">
-                Get Started
-              </Button>
+              <NetworkLink href="/get-started" source="Header" className="inline-flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-cyan to-teal px-5 py-3 font-semibold text-white transition hover:from-teal hover:to-cyan">Get Started</NetworkLink>
             </div>
           </div>
         )}

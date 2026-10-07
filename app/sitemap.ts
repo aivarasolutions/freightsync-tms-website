@@ -4,6 +4,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.freightsynctms.com'
   
   return [
+    ...['services', 'services/connect', 'services/dispatch', 'services/fleet-management', 'get-started', 'driver-network', 'vehicle-owner-network', 'dispatcher-network'].map(path => ({
+      url: `${baseUrl}/${path}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    })),
     {
       url: baseUrl,
       lastModified: new Date(),

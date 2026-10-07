@@ -24,6 +24,7 @@ import { Container } from '@/components/ui/Container'
 import { Button } from '@/components/ui/Button'
 import { FAQ } from '@/components/ui/FAQ'
 import { ROICalculator } from '@/components/ui/ROICalculator'
+import { services } from '@/lib/carrier-network'
 
 export const metadata: Metadata = {
   title: 'Carrier Accelerator Program',
@@ -126,24 +127,15 @@ const comparison = {
   ],
 }
 
-const programOptions = [
-  {
-    title: 'Semi Truck',
-    icon: Truck,
-    onboarding: '$2,500',
-    payment: '$500 down + $333/month for 6 months',
-    fee: '25% of gross revenue',
-    additional: '$1,000 onboarding per added truck',
-  },
-  {
-    title: 'Sprinter Van',
-    icon: WalletCards,
-    onboarding: '$1,000',
-    payment: '$250 down + $125/month for 6 months',
-    fee: '25% of gross revenue',
-    additional: '$500 onboarding per added van',
-  },
-]
+const programOptions = services.map(service => ({
+  title: service.name,
+  icon: service.id === 'fleet_management' ? Truck : service.id === 'dispatch' ? Headphones : WalletCards,
+  onboarding: 'No setup fee',
+  payment: service.price,
+  fee: service.feeScope,
+  additional: service.id === 'fleet_management' ? 'Custom pricing can be offered for larger fleets.' : 'No cancellation fee. Cancel anytime.',
+  trial: service.trial,
+}))
 
 const included = [
   { label: 'Dispatching', icon: Headphones },
@@ -228,7 +220,7 @@ const faqs = [
   {
     question: 'Can I add more vehicles later?',
     answer:
-      'Yes. The program is designed for growth. Additional semi trucks and Sprinter vans can be onboarded later with reduced additional-vehicle onboarding fees.',
+      'Yes. Additional semi trucks and Sprinter vans can be added as your operation grows. There is no setup fee. Custom pricing can be offered for larger fleets.',
   },
   {
     question: 'How are settlements handled?',
@@ -546,12 +538,12 @@ export default function CarrierAcceleratorProgram() {
         <Container>
           <div className="text-center max-w-3xl mx-auto mb-12">
             <p className="text-sm font-semibold uppercase tracking-wide text-cyan mb-3">Program pricing</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-navy mb-4">Onboarding and Management Fee</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-navy mb-4">Choose Your FreightSync Service</h2>
             <p className="text-lg text-neutral">
-              Keep the current setup clear: onboarding covers launch support, while FreightSync earns a management fee tied to gross revenue.
+              No setup fee. No cancellation fee. Cancel anytime. Your first month&apos;s $49 subscription is waived; applicable percentage-based fees still apply to qualifying completed loads.
             </p>
           </div>
-          <div className="grid auto-rows-fr lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          <div className="grid auto-rows-fr lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
             {programOptions.map((option) => (
               <div key={option.title} className="h-full rounded-xl bg-white border border-border p-6 sm:p-8 shadow-lg">
                 <div className="flex items-center gap-4 mb-6">
@@ -566,11 +558,11 @@ export default function CarrierAcceleratorProgram() {
                     <span className="font-bold text-navy text-right">{option.onboarding}</span>
                   </div>
                   <div className="flex items-start justify-between gap-4 border-b border-border pb-4">
-                    <span className="text-neutral">Payment option</span>
+                    <span className="text-neutral">Pricing</span>
                     <span className="font-bold text-navy text-right">{option.payment}</span>
                   </div>
                   <div className="flex items-start justify-between gap-4 border-b border-border pb-4">
-                    <span className="text-neutral">FreightSync Management Fee</span>
+                    <span className="text-neutral">Service fee scope</span>
                     <span className="font-bold text-navy text-right">{option.fee}</span>
                   </div>
                   <div className="flex items-start justify-between gap-4">
@@ -578,6 +570,7 @@ export default function CarrierAcceleratorProgram() {
                     <span className="font-bold text-navy text-right">{option.additional}</span>
                   </div>
                 </div>
+                <p className="mt-5 text-sm text-neutral">{option.trial}</p>
               </div>
             ))}
           </div>

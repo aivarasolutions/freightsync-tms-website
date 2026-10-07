@@ -1,6 +1,9 @@
 'use client'
 
 import { useMemo, useState } from 'react'
+import { services } from '@/lib/carrier-network'
+
+const fleetPlan = services[2]
 
 const presets = {
   semi: {
@@ -42,7 +45,7 @@ function months(value: number) {
 export function ROICalculator() {
   const [vehicleType, setVehicleType] = useState<VehicleType>('semi')
   const [values, setValues] = useState(presets.semi)
-  const [managementFeePct, setManagementFeePct] = useState(25)
+  const managementFeePct = fleetPlan.feePercent
 
   const result = useMemo(() => {
     const managementFee = values.grossRevenue * (managementFeePct / 100)
@@ -53,7 +56,8 @@ export function ROICalculator() {
       values.maintenance -
       values.driverPay -
       values.otherExpenses -
-      managementFee
+      managementFee -
+      fleetPlan.monthlyPrice
 
     const annualNet = monthlyNet * 12
     const paybackMonths = monthlyNet > 0 ? values.purchasePrice / monthlyNet : null
@@ -128,8 +132,8 @@ export function ROICalculator() {
             <input className={inputClass} type="number" min="0" value={values.driverPay} onChange={(e) => updateValue('driverPay', e.target.value)} />
           </label>
           <label className="block">
-            <span className="mb-2 block text-sm font-semibold text-navy">FreightSync management fee %</span>
-            <input className={inputClass} type="number" min="0" max="100" value={managementFeePct} onChange={(e) => setManagementFeePct(Number(e.target.value) || 0)} />
+            <span className="mb-2 block text-sm font-semibold text-navy">FreightSync Fleet Management</span>
+            <p className="text-sm text-neutral">{fleetPlan.price}. Assumes all entered revenue is from completed FreightSync-managed loads. The $49 monthly subscription is included in costs; it is waived for the first month, while the 8% fee still applies.</p>
           </label>
           <label className="block">
             <span className="mb-2 block text-sm font-semibold text-navy">Other monthly expenses</span>
@@ -145,6 +149,7 @@ export function ROICalculator() {
           <div className="rounded-lg bg-white/10 p-4">
             <p className="text-sm text-white/70">FreightSync management fee</p>
             <p className="text-2xl font-bold text-white">{money(result.managementFee)}</p>
+            <p className="mt-2 text-sm text-white/70">Plus {money(fleetPlan.monthlyPrice)}/month subscription (waived for the first month).</p>
           </div>
           <div className="rounded-lg bg-white/10 p-4">
             <p className="text-sm text-white/70">Estimated monthly net profit</p>
